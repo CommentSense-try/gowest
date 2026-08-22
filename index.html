@@ -158,35 +158,96 @@
         </div>
     </div>
 
-    <!-- יום 2 -->
+<!-- יום 2 -->
     <div class="day-card">
         <div class="day-header">
-            <h2>יום 2: Washington DC</h2>
+            <h2>יום 2: Washington DC (הנשיונל מול)</h2>
             <span class="date">4.9 (יום ו')</span>
         </div>
         <div class="day-content">
             <div class="tag-group">
-                <span class="tag drive">🚗 0.0 שעות נהיגה</span>
-                <span class="tag food">🦞 פירות ים ב-Happy Hour ב-Old Ebbitt Grill</span>
+                <span class="tag drive">🚗 0.0 שעות נהיגה (מוניות/ברגל)</span>
+                <span class="tag food">🦞 Happy Hour ב-Old Ebbitt</span>
                 <span class="tag food">🌮 טאקו ב-District Taco</span>
                 <span class="tag stay">🏛️ Washington DC</span>
             </div>
             <div class="section-title">📍 אטרקציות ופעילויות:</div>
             <ul>
-                <li><strong>מוזיאון חיל האוויר והחלל</strong> המטוס של האחים רייט, ה-X1, מעבורת חלל ועוד.</li>
-                <li><strong>הבית הלבן</strong> </li>
-                <li><strong>National Mall:</strong> סיור בקריית הלאום של ארצות הברית, האנדרטאות, המוניומנטים ועוד</li>
-</ul> <!-- סגירת הרשימה הראשונה כאן -->
+                <li><strong>הקפיטול ומוזיאון חיל האוויר והחלל:</strong> התחלה בצד המזרחי של השדרה. תצפית על גבעת הקפיטול וביקור במוזיאון (המטוס של האחים רייט, ה-X1, מעבורת חלל ועוד).</li>
+                <li><strong>הנשיונל מול (National Mall):</strong> הליכה מערבה לאורך השדרה המרכזית. מעבר באנדרטת וושינגטון (האובליסק), אנדרטת מלחמת העולם השנייה, בריכת ההשתקפות, ועד לאנדרטת לינקולן בקצה.</li>
+                <li><strong>הבית הלבן וקולינריה:</strong> הליכה צפונה לתצפית על הבית הלבן. משם, במרחק הליכה קצרצר, מגיעים לארוחת הערב ב-Old Ebbitt Grill או District Taco.</li>
+            </ul> 
             <div class="section-title">📍 לוגיסטיקה ונסיעות:</div>
-<ul> <!-- פתיחת רשימה חדשה כאן -->
-                <li><strong>הזמנת מונית</strong> </li>
-</ul>
+            <ul> 
+                <li><strong>הזמנת מונית:</strong> מומלץ להזמין מונית לתחילת המסלול (באזור הקפיטול/המוזיאון), ומונית נוספת חזרה למלון מהמסעדה בסוף היום.</li>
+            </ul>
 
-            <a href="https://maps.app.goo.gl/rVdpvGz7VwBekNqh8" target="_blank" class="map-btn">🗺️ ניווט לאנדרטת לינקולן</a>
-            <a href="https://maps.app.goo.gl/aLWPEUrh6jTtdGtD7" target="_blank" class="map-btn">🗺️ ניווט למוזיאון חיל האוויר והחלל</a>
-            <a href="https://maps.app.goo.gl/QUFXwkewTyp9DL95A" target="_blank" class="map-btn">🗺️ ניווט לבית הלבן</a>
+            <!-- כפתורי ניווט ופתיחת מדריך וושינגטון -->
+            <a href="https://www.google.com/maps/dir/United+States+Capitol/National+Air+and+Space+Museum/Washington+Monument/Lincoln+Memorial/The+White+House/Old+Ebbitt+Grill" target="_blank" class="map-btn">🗺️ מסלול הליכה מלא על המפה</a>
+            <a href="javascript:void(0)" onclick="openDcModal()" class="map-btn" style="cursor: pointer; background-color: #2c3e50;">🏛️ מה יש בשדרת המול? (מדריך האטרקציות)</a>
+
+            <!-- חלון קופץ (Modal) - המרחב של וושינגטון די.סי -->
+            <div id="dcModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeDcModal()">&times;</span>
+                    
+                    <h2>🏛️ הנשיונל מול (National Mall)</h2>
+                    <p class="modal-intro">
+                        השדרה המרכזית של ארצות הברית. שטח פתוח ועצום באורך של כ-3 ק"מ, המאגד את כל סמלי השלטון, האנדרטאות והמוזיאונים הלאומיים החשובים ביותר.
+                    </p>
+
+                    <div class="bend-spot">
+                        <h3>🏛️ גבעת הקפיטול (US Capitol)</h3>
+                        <p><strong>מה המקום:</strong> מושב הקונגרס האמריקאי (הסנאט ובית הנבחרים). המבנה המרשים עם הכיפה הלבנה הענקית שחולש על הקצה המזרחי של השדרה.</p>
+                        <a href="https://maps.app.goo.gl/9t7qK6H8u2XW3vQv5" target="_blank" class="mini-nav-btn">📍 ניווט לקפיטול</a>
+                    </div>
+
+                    <div class="bend-spot">
+                        <h3>🚀 מוזיאון האוויר והחלל (Air and Space Museum)</h3>
+                        <p><strong>מה המקום:</strong> אחד המוזיאונים הפופולריים בעולם. מציג את ההיסטוריה של התעופה והחלל.</p>
+                        <p><strong>מה רואים:</strong> המטוס המקורי של האחים רייט (1903), מטוס ה-X-1 ששבר את קיר הקול, מודל של מעבורת החלל, וסלעי ירח שאפשר לגעת בהם.</p>
+                        <a href="https://maps.app.goo.gl/aLWPEUrh6jTtdGtD7" target="_blank" class="mini-nav-btn">📍 ניווט למוזיאון האוויר והחלל</a>
+                    </div>
+
+                    <div class="bend-spot">
+                        <h3>🗼 אנדרטת וושינגטון (Washington Monument)</h3>
+                        <p><strong>מה המקום:</strong> האובליסק הענק (בגובה 169 מטרים) שניצב בדיוק במרכז השדרה, לזכרו של ג'ורג' וושינגטון. זהו המבנה הגבוה ביותר בעיר.</p>
+                        <a href="https://maps.app.goo.gl/6mEwvW1t2Lbx1mDFA" target="_blank" class="mini-nav-btn">📍 ניווט לאנדרטת וושינגטון</a>
+                    </div>
+
+                    <div class="bend-spot">
+                        <h3>🏛️ אנדרטת לינקולן ובריכת ההשתקפות</h3>
+                        <p><strong>מה המקום:</strong> הקצה המערבי של השדרה. הפסל העצום של הנשיא אברהם לינקולן יושב בתוך מבנה דמוי מקדש יווני.</p>
+                        <p><strong>מה עושים:</strong> יושבים על המדרגות ומשקיפים מזרחה אל "בריכת ההשתקפות" (Reflecting Pool) שבה משתקף האובליסק – המיקום שבו נשא מרטין לותר קינג את נאום "יש לי חלום".</p>
+                        <a href="https://maps.app.goo.gl/rVdpvGz7VwBekNqh8" target="_blank" class="mini-nav-btn">📍 ניווט לאנדרטת לינקולן</a>
+                    </div>
+
+                    <div class="bend-spot">
+                        <h3>🇺🇸 הבית הלבן (The White House)</h3>
+                        <p><strong>מה המקום:</strong> מעונו הרשמי של נשיא ארצות הברית.</p>
+                        <p><strong>תצפית:</strong> רוב המבקרים מסתכלים עליו מהצד הדרומי (The Ellipse) או מהצד הצפוני (Lafayette Square). הוא נמצא מרחק הליכה קצר צפונה מאנדרטת וושינגטון.</p>
+                        <a href="https://maps.app.goo.gl/QUFXwkewTyp9DL95A" target="_blank" class="mini-nav-btn">📍 ניווט לבית הלבן</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- סקריפט לפתיחה וסגירה של המודל של וושינגטון (יש להוסיף לקובץ או לתחתית העמוד) -->
+    <script>
+        function openDcModal() {
+            document.getElementById('dcModal').style.display = 'block';
+        }
+        function closeDcModal() {
+            document.getElementById('dcModal').style.display = 'none';
+        }
+        window.addEventListener('click', function(event) {
+            var modal = document.getElementById('dcModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
 
 <!-- יום 3 -->
     <div class="day-card">
@@ -199,13 +260,19 @@
                 <span class="tag drive">✈️ 4.5 שעות טיסה</span>
                 <span class="tag drive">🚗 1.5-2 שעות נהיגה</span>
                 <span class="tag food">🛒 הצטיידות בוולמארט</span>
-                <span class="tag stay">⛺ אזור Logan (או בדרך)</span>
+                <span class="tag stay">⛺ אזור Logan (או Bear Lake)</span>
             </div>
             <div class="section-title">📍 אטרקציות ופעילויות:</div>
             <ul>
-                <li><strong>טיסת בוקר:</strong> יציאה ב-4:30 למונית. טיסה מוושינגטון ל-SLC.</li>
-                <li><strong>איסוף הקראוון והצטיידות:</strong> קבלת הרכב (לקחת בחשבון הדרכות ועיכובים). יציאה צפונה ממרכז העיר לכיוון ה-I-15, ועצירה בסניף וולמארט גדול בדרך לקניית מלאי לימי הטבע.</li>
-                <li><strong>מתקדמים לפי האנרגיה:</strong> נסיעה צפונה. היעד האידיאלי לזריקת עוגן הוא העיר Logan (רגע לפני תחילת הכביש ההררי). אם העייפות משתלטת קודם, עוצרים באזור Willard Bay. </li>
+                <li><strong>מונית לשדה"ת דולס (IAD):</strong> יציאה ב-4:30 מארלינגטון כדי להגיע ב-5:00.</li>
+                <li><strong>טיסה ל-Salt Lake City:</strong> טיסת Delta 432 בשעה 7:00 בבוקר (נחיתה ב-SLC לקראת 10:00).</li>
+                <li><strong>איסוף הקראוון והצטיידות:</strong> קבלת הרכב והדרכה בסוכנות (4125 S State St), יציאה צפונה על ה-I-15 ועצירה בסופר-סנטר של וולמארט בלייטון לקניית מלאי לימי הטבע הקרובים.</li>
+                <li><strong>התקדמות צפונה לפי רמת האנרגיה:</strong>
+                    <ul>
+                        <li><em>יעד ריאלי מומלץ:</em> זריקת עוגן בעיר <strong>Logan</strong> (לפני מעבר ההרים). במקרה של עייפות מוקדמת ניתן לעצור כבר ב-Willard Bay.</li>
+                        <li><em>אופציית בונוס (אם יש כוח וערנות):</em> המשך דרך Logan Canyon Byway (כביש 89) ישירות ל-<strong>Bear Lake</strong>, עצירה לשייק פטל מפורסם ב-<strong>LaBeau's</strong> ב-Garden City ולינה על שפת האגם.</li>
+                    </ul>
+                </li>
             </ul>
             <a href="https://www.google.com/maps/place/4125+S+State+St,+Millcreek,+UT+84107" target="_blank" class="map-btn">🗺️ ניווט לנקודת ההשכרה</a>
             <a href="https://www.google.com/maps/dir/4125+S+State+St,+Millcreek/Walmart+Supercenter,+Layton/Logan,+UT" target="_blank" class="map-btn">🗺️ ניווט: השכרה -> וולמארט בדרך -> לוגאן</a>
@@ -372,20 +439,23 @@
         <div class="day-content">
             <div class="tag-group">
                 <span class="tag drive">🚗 1.5 שעות נהיגה</span>
-                <span class="tag food">🥃 שופינג, קראפט וויסקי</span>
+                <span class="tag food">🥃 שופינג, קראפט, בירות ו-Rye ויסקי</span>
                 <span class="tag stay">⛺ Bend</span>
             </div>
             <div class="section-title">📍 אטרקציות ופעילויות:</div>
             <ul>
                 <li><strong>שופינג ללא מס:</strong> מתחם <strong>Old Mill District</strong> על הנהר מציע מותגי אאוטדור ואופנה ב-0% מס.</li>
-                <li><strong>הליכה בטבע:</strong> בחירה בין מסלול נהר המטוליוס (Metolius River) או גיחה ל<strong>מפל טומלו (Tumalo Falls)</strong>.</li>
-                <li><strong>אלכוהול מקומי:</strong> עצירה לטעימות ב-<strong>Crater Lake Spirits</strong> (מזקקת ויסקי וג'ין) וקינוח ב-<strong>Crux Fermentation Project</strong>.</li>
+                <li><strong>טבע ואקסטרים:</strong> בחירה בין הליכה במסלול נהר המטוליוס (Metolius River), גיחה ל<strong>מפל טומלו (Tumalo Falls)</strong>, או אפשרות לרפטינג על <strong>נהר הדשוטס (Deschutes River)</strong>.</li>
+                <li><strong>מזקקות ויסקי ושיפון (Rye):</strong> טעימות ב-<strong>Oregon Spirit Distillers</strong> (מתמחה ב-Straight Rye מקומי) וביקור ב-<strong>Crater Lake Spirits</strong>.</li>
+                <li><strong>ערב קראפט:</strong> סגירת היום במבשלת <strong>Crux Fermentation Project</strong> מול השקיעה.</li>
             </ul>
             
-            <!-- כפתורי ניווט ופתיחת מדריך בנד -->
+            <!-- כפתורי ניווט ופתיחת מדריכים -->
             <a href="https://maps.google.com/?q=Tumalo+Falls" target="_blank" class="map-btn">🗺️ ניווט למפל טומלו</a>
             <a href="https://maps.google.com/?q=Old+Mill+District+Bend" target="_blank" class="map-btn">🗺️ ניווט ל-Old Mill District</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="map-btn">🥃 ניווט למזקקת Oregon Spirit</a>
             <a href="javascript:void(0)" onclick="openBendModal()" class="map-btn" style="cursor: pointer;">🏙️ מה לעשות בבנד? (המדריך העירוני)</a>
+            <a href="javascript:void(0)" onclick="openRaftingModal()" class="map-btn" style="cursor: pointer; background-color: #0077b6;">🚣 מידע על רפטינג (Big Eddy)</a>
 
             <!-- חלון קופץ (Modal) - המרחב העירוני של בנד -->
             <div id="bendModal" class="custom-modal">
@@ -396,6 +466,13 @@
                     <p class="modal-intro">
                         בנד היא עיירת הרים תוססת עם אווירה של טבע ואיכות חיים. המרחב העירוני שלה קומפקטי, שטוח ונוח מאוד להליכה.
                     </p>
+
+                    <div class="bend-spot">
+                        <h3>🥃 Oregon Spirit Distillers</h3>
+                        <p><strong>מה המקום:</strong> מזקקת בוטיק עטורת פרסים המתמחה ב-Straight Bourbon ו-Straight American Rye Whiskey (מ-100% שיפון מקומי של אורגון המיושן בחביות עץ אלון חרוכות).</p>
+                        <p><strong>חוויה:</strong> חדר טעימות (Tasting Room) עם מגשי טעימות ויסקי, קוקטיילים מעולים ופאטיו פתוח.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="mini-nav-btn">📍 ניווט למזקקת Oregon Spirit</a>
+                    </div>
 
                     <div class="bend-spot">
                         <h3>🏭 Old Mill District</h3>
@@ -435,10 +512,41 @@
                     </div>
                 </div>
             </div>
+
+            <!-- חלון קופץ (Modal) - מדריך רפטינג Big Eddy -->
+            <div id="raftingModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeRaftingModal()">&times;</span>
+                    
+                    <h2>🚣 רפטינג Big Eddy (נהר הדשוטס)</h2>
+                    <p class="modal-intro">
+                        מסלול הרפטינג הקלאסי והפופולרי ביותר באזור בנד. מספק ריגוש ומים לבנים במינון מדויק שמתאים למתחילים ולכל הרמות, במרחק נסיעה קצרצר ממרכז העיר.
+                    </p>
+
+                    <div class="bend-spot">
+                        <h3>🌊 אופי המסלול (דרגה 3)</h3>
+                        <p><strong>החוויה:</strong> המסלול מתחיל בשייט נינוח על מי הטורקיז של נהר הדשוטס (Class I-II) ומאפשר ליהנות מהנוף המיוער. בהמשך מגיעים לקטע ה-Big Eddy – סדרה של אשדות בדרגה 3 (Class III) שמספקים אקשן, גלים גבוהים והרבה מים שמשפריצים לתוך הסירה.</p>
+                        <p><strong>משך זמן:</strong> הפעילות כולה אורכת כ-2.5 עד 3 שעות נטו (כולל נסיעה קצרה לנקודת ההשקה וחזרה).</p>
+                    </div>
+
+                    <div class="bend-spot">
+                        <h3>💵 עלויות ומפעילים</h3>
+                        <p><strong>מפעיל מומלץ:</strong> Sun Country Tours (החברה הוותיקה והמוכרת ביותר באזור).</p>
+                        <p><strong>מחיר משוער:</strong> בדרך כלל נע סביב 65$ - 85$ לאדם (תלוי בעונה ובשעת היציאה).</p>
+                        <p><strong>ציוד:</strong> החברה מספקת אפודות ציפה, משוטים, ואפשרות לשכור חליפות צלילה (Wetsuits) אם המים קרים מאוד בספטמבר.</p>
+                    </div>
+
+                    <div class="bend-spot">
+                        <h3>📍 נקודת יציאה ולוגיסטיקה</h3>
+                        <p><strong>איפה נפגשים:</strong> רוב הסיורים לא דורשים נסיעה עצמאית לנהר. נקודת המפגש נמצאת במשרדי החברה בתוך העיר בנד (ממש באזור ה-Old Mill District). משם הם לוקחים אתכם בהסעה מסודרת לנהר ומחזירים אתכם בסוף למרכז העיר.</p>
+                        <a href="https://maps.app.goo.gl/YourSunCountryLink" target="_blank" class="mini-nav-btn">📍 ניווט לנקודת האיסוף (Sun Country Tours)</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- עיצוב וסקריפט (ניתן להשאיר כאן או להעביר לקובץ CSS/JS הראשי) -->
+    <!-- עיצוב (CSS) -->
     <style>
         .custom-modal {
             display: none;
@@ -531,6 +639,7 @@
         }
     </style>
 
+    <!-- סקריפט JS לפתיחה וסגירה -->
     <script>
         function openBendModal() {
             document.getElementById('bendModal').style.display = 'block';
@@ -538,12 +647,22 @@
         function closeBendModal() {
             document.getElementById('bendModal').style.display = 'none';
         }
-        window.onclick = function(event) {
-            var modal = document.getElementById('bendModal');
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
+        function openRaftingModal() {
+            document.getElementById('raftingModal').style.display = 'block';
         }
+        function closeRaftingModal() {
+            document.getElementById('raftingModal').style.display = 'none';
+        }
+        window.addEventListener('click', function(event) {
+            var bendModal = document.getElementById('bendModal');
+            var raftingModal = document.getElementById('raftingModal');
+            if (event.target === bendModal) {
+                bendModal.style.display = "none";
+            }
+            if (event.target === raftingModal) {
+                raftingModal.style.display = "none";
+            }
+        });
     </script>
 
 <!-- יום 11 -->    <div class="day-card">
@@ -587,15 +706,16 @@
                 <li><strong>09:15-11:45 – Cleetwood Cove Trail:</strong> ירידה במסלול היחיד שמגיע עד המים הצלולים של אגם הלוע (ואפשרות לטבילה מרעננת) ועלייה חזרה.</li>
                 <li><strong>11:45-13:30 – Rim Drive & Rim Village:</strong> נסיעה לאורך מצוקי האגם, עצירה בתצפיות (Phantom Ship) וארוחת צהריים/קפה ב-Rim Village.</li>
                 <li><strong>14:30-16:30 – שייט ומים ב-Spring Creek (Collier Park):</strong> עצירה בנהר המעיינות הצלול והטורקיזי דרומית לפארק (Spring Creek Boat Launch / Day Use) – נקודה מושלמת למנוחה, שיט בקיאק/סאפ או הליכה קלה לאורך המים.</li>
-                <li><strong>17:30 – הגעה לקלאמת' פולס:</strong> התמקמות בחניון הקרוואנים, התארגנות וארוחת ערב בעיר.</li>
+                <li><strong>17:30 – הגעה לקלאמת' פולס:</strong> התמקמות בחניון הקרוואנים, התארגנות וארוחת ערב בעיר ב-Wubba's BBQ Shack.</li>
             </ul>
             <a href="https://maps.google.com/?q=Cleetwood+Cove+Trailhead" target="_blank" class="map-btn">🗺️ ניווט ל-Cleetwood Cove</a>
             <a href="https://maps.google.com/?q=Spring+Creek+Day+Use+Area+Chiloquin+OR" target="_blank" class="map-btn">🗺️ ניווט ל-Spring Creek</a>
-            <a href="https://maps.google.com/?q=Klamath+Falls+KOA+Journey" target="_blank" class="map-btn">🗺️ ניווט לחניון בקלאמת' פולס</a>
+            <a href="https://maps.app.goo.gl/6ZK1nXXMXpicE5Xd7" target="_blank" class="map-btn">🗺️ ניווט לחניון בקלאמת' פולס</a>
+            <a href="https://maps.app.goo.gl/RGs6dC9ipmciCbN38" target="_blank" class="map-btn">🗺️ ניווט למסעדה בקלאמת' פולס</a>
         </div>
     </div>
 
-    <!-- יום 13 -->
+<!-- יום 13 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 13: Klamath to Lassen Volcanic</h2>
@@ -603,17 +723,19 @@
         </div>
         <div class="day-content">
             <div class="tag-group">
-                <span class="tag drive">🚗 3.5 שעות נהיגה</span>
+                <span class="tag drive">🚗 כ-3.5 שעות נהיגה</span>
                 <span class="tag hike">🌋 Subway Cave & Burney Falls</span>
                 <span class="tag stay">⛺ Manzanita Lake</span>
             </div>
             <div class="section-title">📍 אטרקציות ופעילויות:</div>
             <ul>
-                <li><strong>מפלי ברני (McArthur-Burney Falls):</strong> שביל מעגלי של 1.9 ק"מ הלוך-חזור במפל המכונה "הפלא השמיני של העולם".</li>
-                <li><strong>Subway Cave:</strong> הליכה עם פנסים בצינור לבה נסתר וחשוך של כחצי ק"מ.</li>
-                <li>כניסה לפארק הלאומי לאסן בקליפורניה, התמקמות ב-Manzanita Lake.</li>
+                <li><strong>10:30 | מפלי ברני (McArthur-Burney Falls):</strong> שביל מעגלי יפהפה ומוצל (כ-2 ק"מ) סביב המפל. נקודה מצוינת לארוחת צהריים בקראוון לאחר ההליכה.</li>
+                <li><strong>13:30 | Subway Cave:</strong> צינור לבה נסתר וחשוך לחלוטין. <strong>חובה:</strong> להביא פנסי יד/ראש חזקים (פנס טלפון לא מספיק!) וז'קט, המערה קרה בפנים.</li>
+                <li><strong>15:00 | הפארק הלאומי לאסן:</strong> כניסה לפארק והתמקמות בחניון המיוער Manzanita Lake.</li>
+                <li><strong>אחה"צ | שייט מול ההר:</strong> השכרת קיאקים (או שימוש בציוד משלכם) בחנות שליד החניון לשייט רגוע באגם מנזניטה, עם השתקפות מושלמת של פסגת לאסן על המים. אופציה חלופית: מסלול הליכה שטוח המקיף את האגם.</li>
             </ul>
-            <a href="https://maps.google.com/?q=McArthur-Burney+Falls+Memorial+State+Park" target="_blank" class="map-btn">🗺️ ניווט למפלי ברני</a>
+            <a href="https://maps.google.com/?q=McArthur-Burney+Falls+Memorial+State+Park" target="_blank" class="map-btn">🗺️ ניווט ל-Burney Falls</a>
+            <a href="https://maps.google.com/?q=Subway+Cave+Lava+Tubes" target="_blank" class="map-btn">🗺️ ניווט ל-Subway Cave</a>
         </div>
     </div>
 
@@ -640,29 +762,212 @@
         </div>
     </div>
 
-    <!-- יום 15 -->
+<!-- יום 15 -->
     <div class="day-card">
         <div class="day-header">
-            <h2>יום 15: Tahoe to Carmel ⭐️</h2>
+            <h2>יום 15: Lake Tahoe to Monterey & Carmel</h2>
             <span class="date">17.9 (יום ה')</span>
         </div>
         <div class="day-content">
             <div class="tag-group">
-                <span class="tag drive">🚗 ~4.5 שעות נהיגה</span>
-                <span class="tag hike">🛶 קייאקים בפולסום</span>
+                <span class="tag drive">🚗 כ-5 שעות נהיגה</span>
+                <span class="tag food">🦞 Clam Chowder במזח</span>
                 <span class="tag stay">⛺ Moss Landing KOA</span>
             </div>
             <div class="section-title">📍 אטרקציות ופעילויות:</div>
             <ul>
-                <li><strong>שייט בוקר במים שקטים:</strong> ירידה מטאהו. עצירה והשכרת קייאקים/סאפ ב-<strong>Sacramento State Aquatic Center</strong> (Lake Natoma).</li>
-                <li><strong>Outback Steakhouse:</strong> אופציה מצוינת לארוחת צהריים בסניף Roseville (יש חנייה ענקית לקראוון).</li>
-                <li><strong>המשך לחוף (ויתור על סן פרנסיסקו):</strong> נסיעה ישירה דרומה כדי לעקוף פקקים ולהגיע בשעות אחה"צ לטיול רגלי ושקיעה ב-<strong>Carmel-by-the-Sea</strong>.</li>
+                <li><strong>07:30 | חציית קליפורניה:</strong> יציאה מוקדמת מטאהו וירידה מהרי הסיירה נבאדה בכביש US-50/CA-99 לעבר חוף האוקיינוס השקט.</li>
+                <li><strong>13:30 | מונטריי (Monterey):</strong> סיור ברציף הדייגים ההיסטורי, טעימות Clam Chowder בקערת לחם מחמצת, תצפית על אריות ים וסיבוב ברחוב Cannery Row.</li>
+                <li><strong>16:00 | כרמל-ביי-דה-סי (Carmel-by-the-Sea):</strong> עיירת חוף ציורית דמוית כפר אגדות. בתי קוטג' ייחודיים, חנויות בוטיק לאורך Ocean Avenue ושקיעה על החול הלבן של Carmel Beach.</li>
+                <li><strong>19:00 | התמקמות ב-Moss Landing KOA:</strong> נסיעה קצרה צפונה על כביש 1 והתחברות ללינה סמוך לשמורת הלגונה העשירה בלוטרות ים.</li>
             </ul>
-            <a href="https://maps.google.com/?q=Sacramento+State+Aquatic+Center" target="_blank" class="map-btn">🗺️ ניווט לקייאקים (סקרמנטו)</a>
-            <a href="https://maps.google.com/?q=Outback+Steakhouse+Roseville+CA" target="_blank" class="map-btn">🗺️ ניווט לאאוטבק (Roseville)</a>
+            
+            <!-- כפתורי פתיחת מדריכים וניווט מהיר -->
+            <a href="javascript:void(0)" onclick="openMontereyModal()" class="map-btn" style="cursor: pointer; background-color: #0077b6;">🏙️ מדריך מונטריי (נקודות עניין וחניה)</a>
+            <a href="javascript:void(0)" onclick="openCarmelModal()" class="map-btn" style="cursor: pointer; background-color: #2b7a78;">🏡 מדריך כרמל-ביי-דה-סי</a>
+            <a href="https://maps.google.com/?q=Moss+Landing+KOA+Express" target="_blank" class="map-btn">⛺ ניווט ל-Moss Landing KOA</a>
+
+            <!-- חלון קופץ 1: מונטריי -->
+            <div id="montereyModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeMontereyModal()">&times;</span>
+                    <h2>🌊 מדריך מונטריי (Monterey)</h2>
+                    <p class="modal-intro">
+                        עיר נמל היסטורית עם מורשת דיג עשירה, אריות ים פעילים וקו חוף מרהיב.
+                    </p>
+
+                    <div class="spot-card">
+                        <h3>⚓ Old Fisherman's Wharf (רציף הדייגים)</h3>
+                        <p><strong>מה עושים:</strong> טיילת עץ היסטורית עמוסת דוכני טעימות של מרק צ'אודר (Clam Chowder), חנויות מזכרות ומסעדות דגים. מקום מעולה לארוחת צהריים מהירה.</p>
+                        <p><strong>חיות בר:</strong> סביב עמודי המזח תמיד רובצים עשרות אריות ים ושוחים כלבי ים.</p>
+                        <a href="https://maps.google.com/?q=Old+Fisherman's+Wharf+Monterey" target="_blank" class="mini-nav-btn">📍 ניווט לרציף הדייגים</a>
+                    </div>
+
+                    <div class="spot-card">
+                        <h3>🥫 Cannery Row & Monterey Bay Aquarium</h3>
+                        <p><strong>מה המקום:</strong> הרחוב ההיסטורי של מפעלי הסרדינים (שזכה לתהילה בספרו של ג'ון סטיינבק). כיום זהו מתחם תוסס של מסעדות, חנויות שוקולד ומבשלות.</p>
+                        <p><strong>בקצה הרחוב:</strong> נמצא האקווריום המפורסם של מונטריי (Monterey Bay Aquarium), אחד הטובים בעולם לחיות ים של האוקיינוס השקט.</p>
+                        <a href="https://maps.google.com/?q=Cannery+Row+Monterey" target="_blank" class="mini-nav-btn">📍 ניווט ל-Cannery Row</a>
+                    </div>
+
+                    <div class="spot-card">
+                        <h3>🚐 טיפ חניה לקראוון במונטריי</h3>
+                        <p>החניה עם קראוון ליד הרציף עשויה להיות מאתגרת. הנקודה הטובה ביותר היא <strong>חניון Waterfront (Lot 7)</strong> ליד הרציף (חניה בתשלום עם מקומות מוארכים), או חניה לאורך <strong>Ocean View Blvd</strong> מעט מערבית לשם.</p>
+                        <a href="https://maps.google.com/?q=Waterfront+Parking+Lot+Monterey" target="_blank" class="mini-nav-btn">📍 ניווט לחניון Waterfront Lot 7</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- חלון קופץ 2: כרמל -->
+            <div id="carmelModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeCarmelModal()">&times;</span>
+                    <h2>🏡 מדריך כרמל-ביי-דה-סי (Carmel-by-the-Sea)</h2>
+                    <p class="modal-intro">
+                        עיירת אמנים ציורית עם תקנות שימור קפדניות (אין כתובות רחוב ממוספרות, אין רשתות מזון מהיר ואין עמודי תאורת רחוב מודרניים).
+                    </p>
+
+                    <div class="spot-card">
+                        <h3>🛍️ שדרת Ocean Avenue & חצרות האמנים</h3>
+                        <p><strong>מה עושים:</strong> הרחוב הראשי של העיירה יורד במתינות עד לים, מלא בגלריות אמנות, חנויות בוטיק, שוקולטיירים ומסעדות יוקרה. מומלץ להיכנס לחצרות הפנימיות הנסתרות (Courtyards) הפזורות לאורך הרחוב.</p>
+                        <a href="https://maps.google.com/?q=Ocean+Avenue+Carmel-By-The-Sea" target="_blank" class="mini-nav-btn">📍 ניווט לשדרת Ocean Ave</a>
+                    </div>
+
+                    <div class="spot-card">
+                        <h3>🧚 בתי האגדות של קומסטוק (Comstock Fairytale Cottages)</h3>
+                        <p><strong>מה רואים:</strong> כ-20 בתי קוטג' בעלי גגות מעוגלים וארובות אבן שנבנו בשנות ה-20 בהשראת אגדות האנס כריסטיאן אנדרסן (המוכרים: Tuck Box ו-Hansel & Gretel cottages).</p>
+                        <a href="https://maps.google.com/?q=The+Tuck+Box+Carmel" target="_blank" class="mini-nav-btn">📍 ניווט ל-The Tuck Box</a>
+                    </div>
+
+                    <div class="spot-card">
+                        <h3>🏖️ חוף כרמל (Carmel Beach)</h3>
+                        <p><strong>החוויה:</strong> רצועת חול לבן רך המוקפת עצי ברוש סייפרס קליפורניים עתיקים (Monterey Cypresses). המקום האולטימטיבי לצפייה בשקיעה מעל האוקיינוס השקט.</p>
+                        <a href="https://maps.google.com/?q=Carmel+Beach+Ocean+Ave" target="_blank" class="mini-nav-btn">📍 ניווט לחוף כרמל</a>
+                    </div>
+
+                    <div class="spot-card">
+                        <h3>🚐 טיפ לקראוון: עקיפת 17-Mile Drive</h3>
+                        <p><strong>חשוב לדעת:</strong> כביש 17-Mile Drive המפורסם <strong>אינו מאפשר כניסת קראוונים (RVs)</strong>. הדרך המהירה והנוחה ביותר לחבר בין מונטריי לכרמל היא נסיעה ישירה של 10 דקות דרומה על <strong>כביש 1 (CA-1)</strong>.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- עיצוב (CSS) -->
+    <style>
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(3px);
+            overflow-y: auto;
+            direction: rtl;
+            text-align: right;
+        }
+        .custom-modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 24px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 650px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .close-modal-btn {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .close-modal-btn:hover {
+            color: #000;
+        }
+        .custom-modal h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .modal-intro {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .spot-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 15px;
+        }
+        .spot-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            color: #1a252f;
+        }
+        .spot-card p {
+            margin: 6px 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #444;
+        }
+        .mini-nav-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background-color: #2b7a78;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .mini-nav-btn:hover {
+            background-color: #17252a;
+        }
+    </style>
+
+    <!-- סקריפט JS לפתיחה וסגירה של חלונות המודל -->
+    <script>
+        function openMontereyModal() {
+            document.getElementById('montereyModal').style.display = 'block';
+        }
+        function closeMontereyModal() {
+            document.getElementById('montereyModal').style.display = 'none';
+        }
+        function openCarmelModal() {
+            document.getElementById('carmelModal').style.display = 'block';
+        }
+        function closeCarmelModal() {
+            document.getElementById('carmelModal').style.display = 'none';
+        }
+
+        window.addEventListener('click', function(event) {
+            var montereyModal = document.getElementById('montereyModal');
+            var carmelModal = document.getElementById('carmelModal');
+            if (event.target === montereyModal) {
+                montereyModal.style.display = "none";
+            }
+            if (event.target === carmelModal) {
+                carmelModal.style.display = "none";
+            }
+        });
+    </script>
     <!-- יום 16 -->
     <div class="day-card">
         <div class="day-header">
