@@ -88,6 +88,7 @@
         .tag.alert { background-color: #fee2e2; color: #b91c1c; border: 1px solid #f87171; }
         .tag.time { background-color: #f3e8ff; color: #7e22ce; border: 1px solid #d8b4fe; }
         .tag.laundry { background-color: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+        .tag.drink { background-color: #fce7f3; color: #831843; border: 1px solid #fbcfe8; }
 
         .section-title {
             font-weight: 700;
@@ -117,1147 +118,6 @@
         li { margin-bottom: 0.4rem; }
         li strong { color: var(--primary); }
 
-        @media (max-width: 600px) {
-            .day-header { flex-direction: column; align-items: flex-start; }
-            header h1 { font-size: 1.75rem; }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>🚐 המסע הגדול בארה"ב</h1>
-    <p>וושינגטון ⬅️ סולט לייק סיטי ⬅️ לוס אנג'לס | ספטמבר 2026</p>
-</header>
-
-<div class="container">
-    <!-- יום 1 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 1: TLV-JFK-Washington DC</h2>
-            <span class="date">3.9 (יום ה')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">✈️ 13.5 שעות טיסה</span>
-                <span class="tag food">🥞 ארוחת בוקר איפשהו בארלינגטון</span>
-                <span class="tag food">🦐 ארוחת ערב בשוק האוכל Ballston Quarter</span>
-                <span class="tag stay">🏨 ארלינגטון </span>
-            </div>
-            <div class="section-title">✈️טיסות ולוגיסטיקה:</div>
-            <ul>
-                <li><strong>טיסה LY3 ל-JFK ב-0:05</strong> </li>
-                <li><strong>נחיתה בניו יורק ב-4:55</strong> </li>
-                <li><strong>טיסה LY4265 ל-DCA: 8:55</strong> </li>
-                <li><strong>נחיתה בוושינגטון ב-10:26</strong> </li>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-                <li><strong>מפגש עם אורלי</strong> </li>
-            </ul>
-            <a href="https://maps.app.goo.gl/96CVGZXDfSK7Lybi6" target="_blank" class="map-btn">🗺️ ניווט לאורלי</a>
-            <a href="https://maps.app.goo.gl/2jWujawq5pDtJf87A" target="_blank" class="map-btn">🗺️ ניווט לדירה</a>
-        </div>
-    </div>
-
-<!-- יום 2 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 2: Washington DC (הנשיונל מול)</h2>
-            <span class="date">4.9 (יום ו')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 0.0 שעות נהיגה (מוניות/ברגל)</span>
-                <span class="tag food">🦞 Happy Hour ב-Old Ebbitt</span>
-                <span class="tag food">🌮 טאקו ב-District Taco</span>
-                <span class="tag stay">🏛️ Washington DC</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>הקפיטול ומוזיאון חיל האוויר והחלל:</strong> התחלה בצד המזרחי של השדרה. תצפית על גבעת הקפיטול וביקור במוזיאון (המטוס של האחים רייט, ה-X1, מעבורת חלל ועוד).</li>
-                <li><strong>הנשיונל מול (National Mall):</strong> הליכה מערבה לאורך השדרה המרכזית. מעבר באנדרטת וושינגטון (האובליסק), אנדרטת מלחמת העולם השנייה, בריכת ההשתקפות, ועד לאנדרטת לינקולן בקצה.</li>
-                <li><strong>הבית הלבן וקולינריה:</strong> הליכה צפונה לתצפית על הבית הלבן. משם, במרחק הליכה קצרצר, מגיעים לארוחת הערב ב-Old Ebbitt Grill או District Taco.</li>
-            </ul> 
-            <div class="section-title">📍 לוגיסטיקה ונסיעות:</div>
-            <ul> 
-                <li><strong>הזמנת מונית:</strong> מומלץ להזמין מונית לתחילת המסלול (באזור הקפיטול/המוזיאון), ומונית נוספת חזרה למלון מהמסעדה בסוף היום.</li>
-            </ul>
-
-            <!-- כפתורי ניווט ופתיחת מדריך וושינגטון -->
-            <a href="https://www.google.com/maps/dir/United+States+Capitol/National+Air+and+Space+Museum/Washington+Monument/Lincoln+Memorial/The+White+House/Old+Ebbitt+Grill" target="_blank" class="map-btn">🗺️ מסלול הליכה מלא על המפה</a>
-            <a href="javascript:void(0)" onclick="openDcModal()" class="map-btn" style="cursor: pointer; background-color: #2c3e50;">🏛️ מה יש בשדרת המול? (מדריך האטרקציות)</a>
-
-            <!-- חלון קופץ (Modal) - המרחב של וושינגטון די.סי -->
-            <div id="dcModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <span class="close-modal-btn" onclick="closeDcModal()">&times;</span>
-                    
-                    <h2>🏛️ הנשיונל מול (National Mall)</h2>
-                    <p class="modal-intro">
-                        השדרה המרכזית של ארצות הברית. שטח פתוח ועצום באורך של כ-3 ק"מ, המאגד את כל סמלי השלטון, האנדרטאות והמוזיאונים הלאומיים החשובים ביותר.
-                    </p>
-
-                    <div class="bend-spot">
-                        <h3>🏛️ גבעת הקפיטול (US Capitol)</h3>
-                        <p><strong>מה המקום:</strong> מושב הקונגרס האמריקאי (הסנאט ובית הנבחרים). המבנה המרשים עם הכיפה הלבנה הענקית שחולש על הקצה המזרחי של השדרה.</p>
-                        <a href="https://maps.app.goo.gl/9t7qK6H8u2XW3vQv5" target="_blank" class="mini-nav-btn">📍 ניווט לקפיטול</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🚀 מוזיאון האוויר והחלל (Air and Space Museum)</h3>
-                        <p><strong>מה המקום:</strong> אחד המוזיאונים הפופולריים בעולם. מציג את ההיסטוריה של התעופה והחלל.</p>
-                        <p><strong>מה רואים:</strong> המטוס המקורי של האחים רייט (1903), מטוס ה-X-1 ששבר את קיר הקול, מודל של מעבורת החלל, וסלעי ירח שאפשר לגעת בהם.</p>
-                        <a href="https://maps.app.goo.gl/aLWPEUrh6jTtdGtD7" target="_blank" class="mini-nav-btn">📍 ניווט למוזיאון האוויר והחלל</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🗼 אנדרטת וושינגטון (Washington Monument)</h3>
-                        <p><strong>מה המקום:</strong> האובליסק הענק (בגובה 169 מטרים) שניצב בדיוק במרכז השדרה, לזכרו של ג'ורג' וושינגטון. זהו המבנה הגבוה ביותר בעיר.</p>
-                        <a href="https://maps.app.goo.gl/6mEwvW1t2Lbx1mDFA" target="_blank" class="mini-nav-btn">📍 ניווט לאנדרטת וושינגטון</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🏛️ אנדרטת לינקולן ובריכת ההשתקפות</h3>
-                        <p><strong>מה המקום:</strong> הקצה המערבי של השדרה. הפסל העצום של הנשיא אברהם לינקולן יושב בתוך מבנה דמוי מקדש יווני.</p>
-                        <p><strong>מה עושים:</strong> יושבים על המדרגות ומשקיפים מזרחה אל "בריכת ההשתקפות" (Reflecting Pool) שבה משתקף האובליסק – המיקום שבו נשא מרטין לותר קינג את נאום "יש לי חלום".</p>
-                        <a href="https://maps.app.goo.gl/rVdpvGz7VwBekNqh8" target="_blank" class="mini-nav-btn">📍 ניווט לאנדרטת לינקולן</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🇺🇸 הבית הלבן (The White House)</h3>
-                        <p><strong>מה המקום:</strong> מעונו הרשמי של נשיא ארצות הברית.</p>
-                        <p><strong>תצפית:</strong> רוב המבקרים מסתכלים עליו מהצד הדרומי (The Ellipse) או מהצד הצפוני (Lafayette Square). הוא נמצא מרחק הליכה קצר צפונה מאנדרטת וושינגטון.</p>
-                        <a href="https://maps.app.goo.gl/QUFXwkewTyp9DL95A" target="_blank" class="mini-nav-btn">📍 ניווט לבית הלבן</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- סקריפט לפתיחה וסגירה של המודל של וושינגטון (יש להוסיף לקובץ או לתחתית העמוד) -->
-    <script>
-        function openDcModal() {
-            document.getElementById('dcModal').style.display = 'block';
-        }
-        function closeDcModal() {
-            document.getElementById('dcModal').style.display = 'none';
-        }
-        window.addEventListener('click', function(event) {
-            var modal = document.getElementById('dcModal');
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    </script>
-
-<!-- יום 3 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 3: Salt Lake City to Logan (מתקדמים צפונה)</h2>
-            <span class="date">5.9 (יום ש')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">✈️ 4.5 שעות טיסה</span>
-                <span class="tag drive">🚗 1.5-2 שעות נהיגה</span>
-                <span class="tag food">🛒 הצטיידות בוולמארט</span>
-                <span class="tag stay">⛺ אזור Logan (או Bear Lake)</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>מונית לשדה"ת דולס (IAD):</strong> יציאה ב-4:30 מארלינגטון כדי להגיע ב-5:00.</li>
-                <li><strong>טיסה ל-Salt Lake City:</strong> טיסת Delta 432 בשעה 7:00 בבוקר (נחיתה ב-SLC לקראת 10:00).</li>
-                <li><strong>איסוף הקראוון והצטיידות:</strong> קבלת הרכב והדרכה בסוכנות (4125 S State St), יציאה צפונה על ה-I-15 ועצירה בסופר-סנטר של וולמארט בלייטון לקניית מלאי לימי הטבע הקרובים.</li>
-                <li><strong>התקדמות צפונה לפי רמת האנרגיה:</strong>
-                    <ul>
-                        <li><em>יעד ריאלי מומלץ:</em> זריקת עוגן בעיר <strong>Logan</strong> (לפני מעבר ההרים). במקרה של עייפות מוקדמת ניתן לעצור כבר ב-Willard Bay.</li>
-                        <li><em>אופציית בונוס (אם יש כוח וערנות):</em> המשך דרך Logan Canyon Byway (כביש 89) ישירות ל-<strong>Bear Lake</strong>, עצירה לשייק פטל מפורסם ב-<strong>LaBeau's</strong> ב-Garden City ולינה על שפת האגם.</li>
-                    </ul>
-                </li>
-            </ul>
-            <a href="https://www.google.com/maps/place/4125+S+State+St,+Millcreek,+UT+84107" target="_blank" class="map-btn">🗺️ ניווט לנקודת ההשכרה</a>
-            <a href="https://www.google.com/maps/dir/4125+S+State+St,+Millcreek/Walmart+Supercenter,+Layton/Logan,+UT" target="_blank" class="map-btn">🗺️ ניווט: השכרה -> וולמארט בדרך -> לוגאן</a>
-        </div>
-    </div>
-
-    <!-- יום 4 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 4: דרך Bear Lake אל Grand Teton</h2>
-            <span class="date">6.9 (יום א')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 כ-4.5 שעות נהיגה מצטברת</span>
-                <span class="tag bike">🚴 פארק אופניים ב-Jackson Hole</span>
-                <span class="tag stay">⛺ Colter Bay</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>בוקר | חציית לוגאן קניון ו-Bear Lake:</strong> נסיעה בבוקר רענן דרך הקניון ההררי. הגעה לעיירה Garden City, עצירה לתצפית על "הקריביים של הרוקיס" וטעימה משייק הפטל המפורסם ב-LaBeau's (קל יותר לחנות שם בבוקר).</li>
-                <li><strong>צהריים | השלמות בג'קסון (Jackson):</strong> המשך נסיעה צפונה לוויומינג. עצירה קצרה בסופרמרקט בג'קסון נטו להשלמת ירקות/לחם טריים לפני הכניסה לפארקים.</li>
-                <li><strong>אחה"צ | אופניים ב-Teton Village:</strong> נסיעה לאתר הסקי (מגרשי חניה נוחים לקראוון). השכרת אופניים ועלייה ברכבל לרכיבת "דאון-היל לייט" במסלולים הירוקים והזורמים לפריקת אנרגיה משמעותית.</li>
-                <li><strong>ערב | כניסה לגרנד טיטון:</strong> נסיעה צפונה לתוך הפארק והתמקמות בחניון הלילה Colter Bay.</li>
-            </ul>
-            <a href="https://www.google.com/maps/dir/Logan,+UT/Garden+City,+UT/Teton+Village,+WY/Colter+Bay+Village,+WY" target="_blank" class="map-btn">🗺️ ניווט: לוגאן -> ביר לייק -> אופניים -> קולטר ביי</a>
-        </div>
-    </div>
-
-    <!-- יום 5 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 5: Grand Teton (יום אקסטרים מלא)</h2>
-            <span class="date">7.9 (יום ב')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 כ-1.5 שעות נהיגה (מפוצל)</span>
-                <span class="tag hike">🥾 טרק Cascade Canyon ואופניים</span>
-                <span class="tag stay">⛺ Colter Bay</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>07:30 (הגעה מקסימלית) | Jenny Lake:</strong> נסיעה בבוקר מקולטר ביי דרומה לאגם ג'ני. חובה להגיע מוקדם כדי לתפוס חניית קראוון לפני שהמגרש הופך לסיוט תעבורתי.</li>
-                <li><strong>טרק לעומק הרכס (Cascade Canyon):</strong> לוקחים סירת מעבורת לצד השני של האגם. מטפסים במרץ דרך <strong>Hidden Falls</strong> ו-<strong>Inspiration Point</strong>, ובמקום לעצור שם עם ההמונים, ממשיכים הלאה לתוך <strong>Cascade Canyon</strong>. זהו טרק ארוך, פראי ושורף קלוריות אל לב ההרים (הלוך-חזור, הולכים עד שנגמרת האנרגיה ואז מסתובבים).</li>
-                <li><strong>אחה"צ | רכיבת אופניים ב-Moose:</strong> חוזרים לקראוון, מורידים אופניים, ויוצאים לרכיבה מהירה על השביל הסלול הייעודי (Multi-use Pathway) שיוצא מג'ני לייק דרומה מול נוף פתוח לחלוטין של הפסגות.</li>
-                <li><strong>ערב | חזרה צפונה:</strong> התקפלות וחזרה נעימה לחניון ב-Colter Bay למדורה וארוחת ערב מהבשר שנקנה בג'קסון.</li>
-            </ul>
-            <a href="https://www.google.com/maps/dir/Colter+Bay+Village/Jenny+Lake+Visitor+Center/Colter+Bay+Village" target="_blank" class="map-btn">🗺️ ניווט: מקולטר ביי ל-Jenny Lake וחזרה</a>
-        </div>
-    </div>
-<!-- יום 6 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 6: מגרנד טיטון לילוסטון (יום הגייזרים)</h2>
-            <span class="date">8.9 (יום ג')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 כ-2.5 שעות נהיגה מצטברת</span>
-                <span class="tag hike">🌋 גייזרים, תצפיות ומסלול מעגלי (11 ק"מ)</span>
-                <span class="tag stay">⛺ Fishing Bridge</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>נסיעת בוקר:</strong> יציאה מקולטר ביי. הניווט כולל את <strong>Moose Falls</strong> ואת <strong>Lewis Falls</strong> (יש להאט לפני ההגעה ולבדוק אם המפרץ מאפשר עצירת קראוון), ואחריהם עצירה ב-<strong>West Thumb Geyser Basin</strong> שעל שפת האגם.</li>
-                <li><strong>11:00 | Old Faithful:</strong> חניה בחניון הענק. תפיסת מקום קרוב לצפייה בהתפרצות, ומיד לאחר מכן טיפוס נמרץ ל-<strong>Observation Point Trail</strong> (כ-1.5 ק"מ הלוך-חזור) לתצפית פנורמית מלמעלה.</li>
-                <li><strong>14:00 | Grand Prismatic ואימפריאל גייזר:</strong> הגעה לחניון <strong>Fairy Falls Trailhead</strong>. יציאה למסלול מעגלי ארוך (כ-3.5 שעות): תצפית עליונה על הפריזמטיק ➔ מפל פיירי ➔ <strong>Imperial Geyser</strong> הפראי ➔ חזרה דרך ה-Imperial Meadows הפתוחים. (חובה לקחת תרסיס דובים זמין).</li>
-                <li><strong>17:30 | התקפלות לחניון:</strong> נסיעה שקטה באור יום למנוחת לילה ב-Fishing Bridge RV Park.</li>
-            </ul>
-            <a href="https://www.google.com/maps/dir/Colter+Bay+Village/Moose+Falls/Lewis+Falls/West+Thumb+Geyser+Basin/Old+Faithful" target="_blank" class="map-btn">🗺️ ניווט בוקר: קולטר ביי -> אולד פיית'פול (כולל 3 העצירות)</a>
-            <a href="https://www.google.com/maps/dir/Old+Faithful/Fairy+Falls+Trailhead/Fishing+Bridge+RV+Park" target="_blank" class="map-btn">🗺️ ניווט אחה"צ: אולד פיית'פול -> מסלול פריזמטיק -> פישינג ברידג'</a>
-        </div>
-    </div>
-
-    <!-- יום 7 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 7: הלולאה הצפונית (מדרגות ושבילי נחש)</h2>
-            <span class="date">9.9 (יום ד')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 נהיגה מפוצלת לפי שעות עומס</span>
-                <span class="tag hike">🥾 טיפוס מדרגות, שבילי נחש תלולים</span>
-                <span class="tag stay">⛺ Fishing Bridge</span>
-                <span class="tag laundry">🧺 תחנת כביסה בחניון</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>06:30 | ספארי בוקר בעמק היידן:</strong> יציאה מוקדמת מאוד מזרחה ל-<strong>Hayden Valley</strong> (כ-15 דק' נסיעה) לאיתור ביזונים וטורפים בשעות הפעילות שלהם, כשהכביש פנוי.</li>
-                <li><strong>08:30 | Norris Geyser Basin:</strong> הגעה מוקדמת וקריטית כדי לתפוס חניית RV. הליכה מהירה במסלול המעגלי המלא ב-Back Basin בין הבריכות המבעבעות.</li>
-                <li><strong>12:00 | Mammoth Hot Springs:</strong> חניה בחלק התחתון. את טרסות הגיר הלבנות כובשים דרך טיפוס רציף על כל מערכת המדרגות מה-Lower Terraces ועד לקצה העליון וחזרה.</li>
-                <li><strong>15:30 | הקניון הגדול של ילוסטון:</strong> נסיעה ל-North Rim. יורדים במסלול ה-<strong>Brink of the Lower Falls</strong> – זיגזגים תלולים (Switchbacks) שיורדים כ-180 מטר עד לנקודת השבירה של המפל האדיר, וטיפוס שורף שרירים חזרה.</li>
-                <li><strong>17:00 | חזרה והתארגנות:</strong> נסיעה קצרה של 45 דק' חזרה ל-Fishing Bridge. ניצול הערב למכונות כביסה ומנוחה לקראת מחר.</li>
-            </ul>
-            <a href="https://www.google.com/maps/dir/Fishing+Bridge+RV+Park/Hayden+Valley/Norris+Geyser+Basin/Mammoth+Hot+Springs/Brink+of+the+Lower+Falls/Fishing+Bridge+RV+Park" target="_blank" class="map-btn">🗺️ ניווט לולאה צפונית (כולל כל היעדים וחזרה)</a>
-        </div>
-    </div>
-    
-<!-- יום 8 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 8: Yellowstone to Boise (חוצים את איידהו) 🍎</h2>
-            <span class="date">10.9 (יום ה')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag alert">⚠️ התראת נהיגה ארוכה (כ-8 שעות נטו)</span>
-                <span class="tag hike">🏂 גלישת חול (Sandboarding)</span>
-                <span class="tag food">🍷 יקב Telaya</span>
-                <span class="tag food">🍔 The Sandbar</span>
-                <span class="tag stay">⛺ Boise Riverside RV Park</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>השכמה ונסיעה:</strong> יציאה מוקדמת מילוסטון מערבה. כדי לשבור את הנסיעה עוצרים ב-Blackfoot לביקור קצר ומשעשע ב-<strong><a href="https://www.idahopotatomuseum.com//" target="_blank">Idaho Potato Museum</a></strong> (כולל טעימת צ'יפס).</li>
-                <li><strong>Perrine Bridge:</strong> עצירת התרעננות מהירה ב-Twin Falls. הליכה קצרה לתצפית על הגשר העצום, ואם יתמזל מזלכם תראו קופצי B.A.S.E קופצים ממנו.</li>
-                <li><strong>Bruneau Dunes State Park:</strong> ה-עצירה האקטיבית של היום (כשעה לפני בויזי). שוכרים גלשני חול במרכז המבקרים, מטפסים על דיונת החול הגבוהה בצפון אמריקה, וגולשים למטה כדי לשרוף את כל האנרגיה שהצטברה בנסיעה.</li>
-                <li><strong>התמקמות ובילוי ערב על הנהר:</strong> הגעה והתמקמות ב-<strong>Boise Riverside RV Park</strong>. משם נסיעה קצרה (כ-8 דק') לטעימות יין מעמק סנייק ריבר ב-<strong>Telaya Wine Co.</strong> על גדת ה-Boise River Greenbelt, והמשך ברגל (חצי דקה) למתחם הפטיו הפתוח של <strong>The Sandbar Patio Bar & Grill</strong> לארוחת ערב, בירות מקומיות ומוזיקה מול המים.</li>
-            </ul>
-            <a href="https://www.google.com/maps/dir/Fishing+Bridge+RV+Park/Idaho+Potato+Museum/Perrine+Memorial+Bridge/Bruneau+Dunes+State+Park/Boise+Riverside+RV+Park" target="_blank" class="map-btn">🗺️ ניווט: חציית איידהו ל-RV Park (כולל דיונות החול)</a>
-            <a href="https://www.google.com/maps/dir/Boise+Riverside+RV+Park/Telaya+Wine+Co/The+Sandbar+Patio+Bar+%26+Grill" target="_blank" class="map-btn">🍷 ניווט בויזי: מהחניון ליקב ולמסעדה על הנהר</a>
-        </div>
-    </div>
-
-    <!-- יום 9 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 9: Boise to Bend 🍏 (ערב ראש השנה)</h2>
-            <span class="date">11.9 (יום ו')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag alert">⚠️ התראת יום נהיגה ארוך</span>
-                <span class="tag time">🕰️ אזור זמן: מרוויחים שעה (-1)</span>
-                <span class="tag drive">🚗 6 שעות נהיגה</span>
-                <span class="tag hike">⛳ גולף ו-Painted Hills</span>
-                <span class="tag stay">⛺ The Camp (Bend)</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>גולף בוקר:</strong> משחק מוקדם ב-<strong><a href="https://www.pierceparkgreens.com/" target="_blank">Pierce Park Greens</a></strong></li>
-                <li><strong>המדבר הגבוה ומעבר זמן:</strong> יציאה מאיידהו מערבה לאורגון. שימו לב: מזיזים את השעון שעה אחת אחורה!</li>
-                <li><strong>Painted Hills:</strong> עצירת התרעננות בטבע בגבעות הצבועות של מרכז אורגון.</li>
-                <li><strong>הגעה ל-Bend:</strong> התמקמות בחניון The Camp.</li>
-                <li><strong>משחק פוטבול ב-Bend Senior High School</strong> בשעה 19:00</li>
-
-            </ul>
-            <a href="https://maps.app.goo.gl/xThcV3ywtvHVxZ2H9" target="_blank" class="map-btn">🗺️ ניווט ל-Pierce Park Greens</a>
-            <a href="https://maps.google.com/?q=Painted+Hills+Oregon" target="_blank" class="map-btn">🗺️ ניווט ל-Painted Hills</a>
-            <a href="https://maps.app.goo.gl/DCGC8qbnMzDejHSJ7" target="_blank" class="map-btn">🗺️ ניווט ל-חניון The Camp</a>
-            <a href="https://maps.app.goo.gl/GBjfDt9AGdxXFKU27" target="_blank" class="map-btn">🗺️ ניווט ל-Bend Senior High School</a>
-
-        </div>
-    </div>
-
-<!-- יום 10 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 10: Bend (יום כוכב) (ראש השנה)</h2>
-            <span class="date">12.9 (יום ש')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 1.5 שעות נהיגה</span>
-                <span class="tag food">🥃 שופינג, קראפט, בירות ו-Rye ויסקי</span>
-                <span class="tag stay">⛺ Bend</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>שופינג ללא מס:</strong> מתחם <strong>Old Mill District</strong> על הנהר מציע מותגי אאוטדור ואופנה ב-0% מס.</li>
-                <li><strong>טבע ואקסטרים:</strong> בחירה בין הליכה במסלול נהר המטוליוס (Metolius River), גיחה ל<strong>מפל טומלו (Tumalo Falls)</strong>, או אפשרות לרפטינג על <strong>נהר הדשוטס (Deschutes River)</strong>.</li>
-                <li><strong>מזקקות ויסקי ושיפון (Rye):</strong> טעימות ב-<strong>Oregon Spirit Distillers</strong> (מתמחה ב-Straight Rye מקומי) וביקור ב-<strong>Crater Lake Spirits</strong>.</li>
-                <li><strong>ערב קראפט:</strong> סגירת היום במבשלת <strong>Crux Fermentation Project</strong> מול השקיעה.</li>
-            </ul>
-            
-            <!-- כפתורי ניווט ופתיחת מדריכים -->
-            <a href="https://maps.google.com/?q=Tumalo+Falls" target="_blank" class="map-btn">🗺️ ניווט למפל טומלו</a>
-            <a href="https://maps.google.com/?q=Old+Mill+District+Bend" target="_blank" class="map-btn">🗺️ ניווט ל-Old Mill District</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="map-btn">🥃 ניווט למזקקת Oregon Spirit</a>
-            <a href="javascript:void(0)" onclick="openBendModal()" class="map-btn" style="cursor: pointer;">🏙️ מה לעשות בבנד? (המדריך העירוני)</a>
-            <a href="javascript:void(0)" onclick="openRaftingModal()" class="map-btn" style="cursor: pointer; background-color: #0077b6;">🚣 מידע על רפטינג (Big Eddy)</a>
-
-            <!-- חלון קופץ (Modal) - המרחב העירוני של בנד -->
-            <div id="bendModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <span class="close-modal-btn" onclick="closeBendModal()">&times;</span>
-                    
-                    <h2>🌲 המרחב העירוני של בנד (Bend, Oregon)</h2>
-                    <p class="modal-intro">
-                        בנד היא עיירת הרים תוססת עם אווירה של טבע ואיכות חיים. המרחב העירוני שלה קומפקטי, שטוח ונוח מאוד להליכה.
-                    </p>
-
-                    <div class="bend-spot">
-                        <h3>🥃 Oregon Spirit Distillers</h3>
-                        <p><strong>מה המקום:</strong> מזקקת בוטיק עטורת פרסים המתמחה ב-Straight Bourbon ו-Straight American Rye Whiskey (מ-100% שיפון מקומי של אורגון המיושן בחביות עץ אלון חרוכות).</p>
-                        <p><strong>חוויה:</strong> חדר טעימות (Tasting Room) עם מגשי טעימות ויסקי, קוקטיילים מעולים ופאטיו פתוח.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="mini-nav-btn">📍 ניווט למזקקת Oregon Spirit</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🏭 Old Mill District</h3>
-                        <p><strong>מה המקום:</strong> מנסרת עצים היסטורית משוחזרת שהפכה למתחם קניות, בילוי והסעדה פתוח על גדת נהר הדשוטס (Deschutes River).</p>
-                        <p><strong>מה עושים:</strong> סיבוב בין חנויות מותגי טיולים ובוטיקים, ישיבה באחת המסעדות מול המים, או הליכה רגועה על שביל הנהר המרוצף.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Old+Mill+District+Bend+OR" target="_blank" class="mini-nav-btn">📍 ניווט ל-Old Mill District</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🌳 Downtown Bend & Drake Park</h3>
-                        <p><strong>מרכז העיר (Downtown):</strong> רחובות Wall St ו-Bond St מלאים בגלריות אמנות מקומית, חנויות ציוד אאוטדור, בתי קפה מעולים וגלידריות שוות (כמו Bonta Natural Artisan Gelato).</p>
-                        <p><strong>Drake Park & Mirror Pond:</strong> פארק ירוק ורחב הצמוד לדאונטאון, שבו הנהר מתרחב ויוצר מעין אגם מראה עם נוף לברווזים ולעצי ענק.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Drake+Park+Bend+OR" target="_blank" class="mini-nav-btn">📍 ניווט לדאונטאון ודריק פארק</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🏄 Bend Whitewater Park</h3>
-                        <p><strong>מה המקום:</strong> מתחם מים עירוני על הנהר שכולל גל מלאכותי לגלישה.</p>
-                        <p><strong>מה רואים:</strong> גולשי גלים וקיאקיסטים שגולשים במרכז העיר על גל עומד בתוך המים הקרים – עצירה נחמדה לצפייה מגשר ההולכים מעל.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Bend+Whitewater+Park" target="_blank" class="mini-nav-btn">📍 ניווט לפארק הגלישה</a>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>🍺 סצנת מבשלות הבוטיק (Bend Ale Trail)</h3>
-                        <p>בנד ידועה כאחת מבירות בירות הקראפט של ארה"ב, עם ריכוז עצום של מבשלות פתוחות עם חצרות ישיבה (Taprooms).</p>
-                        <p>המוכרות והנגישות ביותר: <strong>Deschutes Brewery Public House</strong> הוותיקה בדאונטאון, ו-<strong>Crux Fermentation Project</strong> שידועה בחצר דשא ענקית ותצפית שקיעה.</p>
-                        <div class="nav-btn-group">
-                            <a href="https://www.google.com/maps/search/?api=1&query=Deschutes+Brewery+Public+House+Bend" target="_blank" class="mini-nav-btn">📍 Deschutes Brewery</a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Crux+Fermentation+Project+Bend" target="_blank" class="mini-nav-btn">📍 Crux Fermentation</a>
-                        </div>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>📼 The Last Blockbuster</h3>
-                        <p><strong>הסניף האחרון בעולם:</strong> ממוקם בדרום העיר (כ-5 דקות נסיעה מהמרכז). סניף פעיל ונוסטלגי של רשת בלוקבסטר שהפך לאתר אייקוני, מלא במרצ'נדייז וזיכרונות משנות ה-90.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=The+Last+Blockbuster+Bend+OR" target="_blank" class="mini-nav-btn">📍 ניווט לבלוקבסטר האחרון</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- חלון קופץ (Modal) - מדריך רפטינג Big Eddy -->
-            <div id="raftingModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <span class="close-modal-btn" onclick="closeRaftingModal()">&times;</span>
-                    
-                    <h2>🚣 רפטינג Big Eddy (נהר הדשוטס)</h2>
-                    <p class="modal-intro">
-                        מסלול הרפטינג הקלאסי והפופולרי ביותר באזור בנד. מספק ריגוש ומים לבנים במינון מדויק שמתאים למתחילים ולכל הרמות, במרחק נסיעה קצרצר ממרכז העיר.
-                    </p>
-
-                    <div class="bend-spot">
-                        <h3>🌊 אופי המסלול (דרגה 3)</h3>
-                        <p><strong>החוויה:</strong> המסלול מתחיל בשייט נינוח על מי הטורקיז של נהר הדשוטס (Class I-II) ומאפשר ליהנות מהנוף המיוער. בהמשך מגיעים לקטע ה-Big Eddy – סדרה של אשדות בדרגה 3 (Class III) שמספקים אקשן, גלים גבוהים והרבה מים שמשפריצים לתוך הסירה.</p>
-                        <p><strong>משך זמן:</strong> הפעילות כולה אורכת כ-2.5 עד 3 שעות נטו (כולל נסיעה קצרה לנקודת ההשקה וחזרה).</p>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>💵 עלויות ומפעילים</h3>
-                        <p><strong>מפעיל מומלץ:</strong> Sun Country Tours (החברה הוותיקה והמוכרת ביותר באזור).</p>
-                        <p><strong>מחיר משוער:</strong> בדרך כלל נע סביב 65$ - 85$ לאדם (תלוי בעונה ובשעת היציאה).</p>
-                        <p><strong>ציוד:</strong> החברה מספקת אפודות ציפה, משוטים, ואפשרות לשכור חליפות צלילה (Wetsuits) אם המים קרים מאוד בספטמבר.</p>
-                    </div>
-
-                    <div class="bend-spot">
-                        <h3>📍 נקודת יציאה ולוגיסטיקה</h3>
-                        <p><strong>איפה נפגשים:</strong> רוב הסיורים לא דורשים נסיעה עצמאית לנהר. נקודת המפגש נמצאת במשרדי החברה בתוך העיר בנד (ממש באזור ה-Old Mill District). משם הם לוקחים אתכם בהסעה מסודרת לנהר ומחזירים אתכם בסוף למרכז העיר.</p>
-                        <a href="https://maps.app.goo.gl/YourSunCountryLink" target="_blank" class="mini-nav-btn">📍 ניווט לנקודת האיסוף (Sun Country Tours)</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- עיצוב (CSS) -->
-    <style>
-        .custom-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(3px);
-            overflow-y: auto;
-            direction: rtl;
-            text-align: right;
-        }
-        .custom-modal-content {
-            background-color: #ffffff;
-            margin: 5% auto;
-            padding: 24px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 650px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-        .close-modal-btn {
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #888;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .close-modal-btn:hover {
-            color: #000;
-        }
-        .custom-modal h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            font-size: 1.4rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .modal-intro {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .bend-spot {
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            padding: 14px;
-            margin-bottom: 15px;
-        }
-        .bend-spot h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.1rem;
-            color: #1a252f;
-        }
-        .bend-spot p {
-            margin: 6px 0;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #444;
-        }
-        .mini-nav-btn {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 6px 12px;
-            background-color: #2b7a78;
-            color: #ffffff !important;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .mini-nav-btn:hover {
-            background-color: #17252a;
-        }
-        .nav-btn-group {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-    </style>
-
-    <!-- סקריפט JS לפתיחה וסגירה -->
-    <script>
-        function openBendModal() {
-            document.getElementById('bendModal').style.display = 'block';
-        }
-        function closeBendModal() {
-            document.getElementById('bendModal').style.display = 'none';
-        }
-        function openRaftingModal() {
-            document.getElementById('raftingModal').style.display = 'block';
-        }
-        function closeRaftingModal() {
-            document.getElementById('raftingModal').style.display = 'none';
-        }
-        window.addEventListener('click', function(event) {
-            var bendModal = document.getElementById('bendModal');
-            var raftingModal = document.getElementById('raftingModal');
-            if (event.target === bendModal) {
-                bendModal.style.display = "none";
-            }
-            if (event.target === raftingModal) {
-                raftingModal.style.display = "none";
-            }
-        });
-    </script>
-
-<!-- יום 11 -->    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 11: דרך האגמים למפלי אומפקווה</h2>
-            <span class="date">13.9 (יום א')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 כ-4.5 שעות נהיגה (כולל כביש נופי)</span>
-                <span class="tag hike">🌊 3 מפלים (כביש 138)</span>
-                <span class="tag stay">⛺ Diamond Lake RV Park</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>בוקר נופי (Cascade Lakes Byway):</strong> נסיעה מ-Bend דרך כביש האגמים (46). מומלץ לעצור לתצפיות קצרות ב-Sparks Lake וב-Devils Lake (אגם בצבע טורקיז שנמצא ממש על אם הדרך).</li>
-                <li><strong>12:30 | מפל Toketee:</strong> תחילת מסלול המפלים על כביש 138. הליכה בתוך יער קסום (כ-40 דקות הלוך ושוב) אל מרפסת תצפית על המפל האייקוני והבזלתי.</li>
-                <li><strong>13:10 | הפסקת צהריים ומפל Watson:</strong> נסיעה של 10 דקות לחניון ווטסון. זמן אידיאלי לארוחת צהריים קלה בקראוון, ולאחריה טיפוס קצר (כ-45 דקות הלוך ושוב) למפל הגבוה ביותר בדרום אורגון.</li>
-                <li><strong>14:45 | מפל Clearwater:</strong> נסיעה מזרחה ועצירה זריזה של 10-15 דקות במפל יפהפה שפורץ מסלעי לבה מכוסי טחב, מטרים בודדים מהחניה.</li>
-                <li><strong>15:30 | הגעה לחניון:</strong> נסיעה קצרה והתמקמות בחניון Diamond Lake RV Park. נשאר הרבה אור יום למנוחה, התארגנות וטיול רגוע ליד האגם לקראת הכניסה לקרייטר לייק מחר.</li>
-            </ul>
-            <a href="https://maps.app.goo.gl/pEZtexT9db3afZsB6" target="_blank" class="map-btn">🗺️ ניווט לחניון Diamond Lake RV Park</a>
-        </div>
-    </div>
-
-<!-- יום 12 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 12: Diamond Lake to Klamath Falls</h2>
-            <span class="date">14.9 (יום ב')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 כ-2.5 שעות נהיגה</span>
-                <span class="tag hike">🏞️ Crater Lake & Spring Creek</span>
-                <span class="tag stay">⛺ Klamath Falls KOA</span>
-            </div>
-            <div class="section-title">📍 לו״ז מומלץ ואטרקציות:</div>
-            <ul>
-                <li><strong>08:30 – יציאה מ-Diamond Lake RV Park:</strong> נסיעה קצרה של כ-30 דקות לכניסה הצפונית של קרייטר לייק.</li>
-                <li><strong>09:15-11:45 – Cleetwood Cove Trail:</strong> ירידה במסלול היחיד שמגיע עד המים הצלולים של אגם הלוע (ואפשרות לטבילה מרעננת) ועלייה חזרה.</li>
-                <li><strong>11:45-13:30 – Rim Drive & Rim Village:</strong> נסיעה לאורך מצוקי האגם, עצירה בתצפיות (Phantom Ship) וארוחת צהריים/קפה ב-Rim Village.</li>
-                <li><strong>14:30-16:30 – שייט ומים ב-Spring Creek (Collier Park):</strong> עצירה בנהר המעיינות הצלול והטורקיזי דרומית לפארק (Spring Creek Boat Launch / Day Use) – נקודה מושלמת למנוחה, שיט בקיאק/סאפ או הליכה קלה לאורך המים.</li>
-                <li><strong>17:30 – הגעה לקלאמת' פולס:</strong> התמקמות בחניון הקרוואנים, התארגנות וארוחת ערב בעיר ב-Wubba's BBQ Shack.</li>
-            </ul>
-            <a href="https://maps.google.com/?q=Cleetwood+Cove+Trailhead" target="_blank" class="map-btn">🗺️ ניווט ל-Cleetwood Cove</a>
-            <a href="https://maps.google.com/?q=Spring+Creek+Day+Use+Area+Chiloquin+OR" target="_blank" class="map-btn">🗺️ ניווט ל-Spring Creek</a>
-            <a href="https://maps.app.goo.gl/6ZK1nXXMXpicE5Xd7" target="_blank" class="map-btn">🗺️ ניווט לחניון בקלאמת' פולס</a>
-            <a href="https://maps.app.goo.gl/RGs6dC9ipmciCbN38" target="_blank" class="map-btn">🗺️ ניווט למסעדה בקלאמת' פולס</a>
-        </div>
-    </div>
-
-<!-- יום 13 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 13: Klamath to Lassen Volcanic</h2>
-            <span class="date">15.9 (יום ג')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 כ-3.5 שעות נהיגה</span>
-                <span class="tag hike">🌋 Subway Cave & Burney Falls</span>
-                <span class="tag stay">⛺ Manzanita Lake</span>
-            </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
-            <ul>
-                <li><strong>10:30 | מפלי ברני (McArthur-Burney Falls):</strong> שביל מעגלי יפהפה ומוצל (כ-2 ק"מ) סביב המפל. נקודה מצוינת לארוחת צהריים בקראוון לאחר ההליכה.</li>
-                <li><strong>13:30 | Subway Cave:</strong> צינור לבה נסתר וחשוך לחלוטין. <strong>חובה:</strong> להביא פנסי יד/ראש חזקים (פנס טלפון לא מספיק!) וז'קט, המערה קרה בפנים.</li>
-                <li><strong>15:00 | הפארק הלאומי לאסן:</strong> כניסה לפארק והתמקמות בחניון המיוער Manzanita Lake.</li>
-                <li><strong>אחה"צ | שייט מול ההר:</strong> השכרת קיאקים (או שימוש בציוד משלכם) בחנות שליד החניון לשייט רגוע באגם מנזניטה, עם השתקפות מושלמת של פסגת לאסן על המים. אופציה חלופית: מסלול הליכה שטוח המקיף את האגם.</li>
-            </ul>
-            <a href="https://maps.google.com/?q=McArthur-Burney+Falls+Memorial+State+Park" target="_blank" class="map-btn">🗺️ ניווט ל-Burney Falls</a>
-            <a href="https://maps.google.com/?q=Subway+Cave+Lava+Tubes" target="_blank" class="map-btn">🗺️ ניווט ל-Subway Cave</a>
-        </div>
-    </div>
-
-<!-- יום 14 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 14: Lassen to Lake Tahoe (דרך אלמנור וטראקי)</h2>
-            <span class="date">16.9 (יום ד')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 4 מקטעי נהיגה (כ-4.5 ש' נטו)</span>
-                <span class="tag hike">🌋 Bumpass Hell & אגמים</span>
-                <span class="tag stay">⛺ Camp Richardson (Tahoe)</span>
-                <span class="tag laundry">🧺 כביסה בריזורט</span>
-            </div>
-            <div class="section-title">📍 לוח זמנים ומקטעי היום:</div>
-            <ul>
-                <li><strong>08:30 – 09:15 | מקטע 1 (45 דק'):</strong> נסיעה מחניון Manzanita Lake לחניון המסלול של Bumpass Hell.</li>
-                <li><strong>09:15 – 11:30 | Bumpass Hell (לאסן):</strong> מסלול שבילי עץ (4.8 ק"מ הלוך-חזור) מעל מכתש געשי פעיל, בריכות בוץ מבעבעות ופתחי קיטור.</li>
-                <li><strong>11:30 – 12:30 | מקטע 2 (55 דק'):</strong> יציאה מהשער הדרומי ונסיעה אל עבר <strong>Lake Almanor</strong> לעצירת נוף והתרעננות מול המים.</li>
-                <li><strong>13:00 – 14:45 | צהריים בסיירה:</strong> נסיעה קצרה וארוחת צהריים באחת העיירות הכפריות לאורך כביש 89 (Sierraville / Graeagle).</li>
-                <li><strong>14:45 – 15:45 | מקטע 3 (55 דק'):</strong> נסיעה אל עיירת הרכבת ההיסטורית <strong>Truckee</strong>.</li>
-                <li><strong>15:45 – 16:45 | טראקי (Truckee):</strong> חניה נוחה במגרש הציבורי הגדול, שיטוט רגלי בדאונטאון וטעימות Rye ויסקי מקומי ב-Old Tahoe Distillery.</li>
-                <li><strong>16:45 – 18:00 | מקטע 4 (שעה ו-15 דק'):</strong> נסיעה נופית לאורך החוף המערבי של טאהו עד להגעה ל-<strong>Camp Richardson Resort</strong> להתמקמות וכביסה.</li>
-            </ul>
-            
-            <!-- כפתורי ניווט ופתיחת פופ-אפ -->
-            <a href="https://maps.google.com/?q=Bumpass+Hell+Trailhead" target="_blank" class="map-btn">🗺️ ניווט ל-Bumpass Hell</a>
-            <a href="https://maps.google.com/?q=Lake+Almanor+Scenic+Overlook" target="_blank" class="map-btn">🏞️ תצפית Lake Almanor</a>
-            <a href="javascript:void(0)" onclick="openFoodModal()" class="map-btn" style="cursor: pointer; background-color: #e67e22;">🍔 איפה אוכלים בצהריים? (סיירהוויל / גראיגל)</a>
-            <a href="https://maps.google.com/?q=Truckee+River+Regional+Park+Parking" target="_blank" class="map-btn">🅿️ חניית קראוון מרווחת בטראקי</a>
-            <a href="https://maps.google.com/?q=Old+Tahoe+Distillery+Truckee" target="_blank" class="map-btn">🥃 ניווט למזקקת Old Tahoe</a>
-            <a href="https://maps.google.com/?q=Camp+Richardson+Historic+Resort+and+Marina" target="_blank" class="map-btn">⛺ ניווט ל-Camp Richardson</a>
-
-            <!-- חלון קופץ (Modal) - מסעדות צהריים בדרך -->
-            <div id="foodModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <span class="close-modal-btn" onclick="closeFoodModal()">&times;</span>
-                    <h2>🍴 אפשרויות צהריים בין אלמנור לטראקי</h2>
-                    <p class="modal-intro">
-                        שתי עיירות כפריות לאורך ציר CA-89 עם גישה נוחה לקראוון ואוכל מקומי מצוין:
-                    </p>
-
-                    <div class="spot-card">
-                        <h3>📍 Sierraville (על המסלול הישיר - מומלץ ביותר)</h3>
-                        <p>עיירת צומת כפרית ורגועה, בדיוק באמצע הדרך לטראקי בלי שום סטייה מהכביש.</p>
-                        <p><strong>Fork & Horn:</strong> דיינר כפרי משובח עם המבורגרים מבקר מקומי, כריכים מושקעים ופשטידות תוצרת בית. חניה רחבה ונוחה מאוד בצד הדרך.</p>
-                        <p><strong>Los Dos Hermanos:</strong> מסעדה מקסיקנית משפחתית, מנות ענקיות, סלסות טריות ואווירה חמה.</p>
-                        <div class="nav-btn-group">
-                            <a href="https://maps.google.com/?q=Fork+and+Horn+Sierraville" target="_blank" class="mini-nav-btn">📍 Fork & Horn</a>
-                            <a href="https://maps.google.com/?q=Los+Dos+Hermanos+Sierraville" target="_blank" class="mini-nav-btn">📍 Los Dos Hermanos</a>
-                        </div>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🌲 Graeagle (סטייה קלה של 10 דקות)</h3>
-                        <p>עיירת עץ ציורית הבנויה כולה בסגנון בקתות אדומות מול יערות המחט.</p>
-                        <p><strong>Grizzly Grill:</strong> מסעדת גריל עץ (Wood-fired) עם מנות בשר איכותיות, סלטים והמבורגרים באווירת הרים מוקפדת.</p>
-                        <p><strong>The Graeagle Restaurant:</strong> דיינר הרים קלאסי ומהיר עם מרפסת נעימה.</p>
-                        <div class="nav-btn-group">
-                            <a href="https://maps.google.com/?q=Grizzly+Grill+Graeagle" target="_blank" class="mini-nav-btn">📍 Grizzly Grill</a>
-                            <a href="https://maps.google.com/?q=The+Graeagle+Restaurant" target="_blank" class="mini-nav-btn">📍 Graeagle Restaurant</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- עיצוב (CSS) -->
-    <style>
-        .custom-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(3px);
-            overflow-y: auto;
-            direction: rtl;
-            text-align: right;
-        }
-        .custom-modal-content {
-            background-color: #ffffff;
-            margin: 5% auto;
-            padding: 24px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 650px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-        .close-modal-btn {
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #888;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .close-modal-btn:hover {
-            color: #000;
-        }
-        .custom-modal h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            font-size: 1.4rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .modal-intro {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .spot-card {
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            padding: 14px;
-            margin-bottom: 15px;
-        }
-        .spot-card h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.1rem;
-            color: #1a252f;
-        }
-        .spot-card p {
-            margin: 6px 0;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #444;
-        }
-        .mini-nav-btn {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 6px 12px;
-            background-color: #2b7a78;
-            color: #ffffff !important;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .mini-nav-btn:hover {
-            background-color: #17252a;
-        }
-        .nav-btn-group {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-    </style>
-
-    <!-- סקריפט JS לפתיחה וסגירה של המודל -->
-    <script>
-        function openFoodModal() {
-            document.getElementById('foodModal').style.display = 'block';
-        }
-        function closeFoodModal() {
-            document.getElementById('foodModal').style.display = 'none';
-        }
-        window.addEventListener('click', function(event) {
-            var foodModal = document.getElementById('foodModal');
-            if (event.target === foodModal) {
-                foodModal.style.display = "none";
-            }
-        });
-    </script>
-
-<!-- יום 15 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 15: Lake Tahoe to Monterey & Carmel</h2>
-            <span class="date">17.9 (יום ה')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 3 מקטעים קצרים (כ-5.5 ש' נטו)</span>
-                <span class="tag hike">🎮 ארקייד & שקיעה בחוף כרמל</span>
-                <span class="tag food">🥩 צהריים באאוטבק & Clam Chowder</span>
-                <span class="tag stay">⛺ Moss Landing KOA</span>
-            </div>
-            <div class="section-title">📍 לוח זמנים ומקטעי היום:</div>
-            <ul>
-                <li><strong>08:30 – 10:30 | מקטע 1 (שעתיים):</strong> ירידה מטאהו בכביש US-50/I-80 אל עבר מתחם הקניות ברוזוויל (סקרמנטו).</li>
-                <li><strong>10:30 – 11:30 | עצירת ארקייד (שעה):</strong> פריקת אנרגיה במתחם משחקי הווידאו <strong>Round1 Roseville</strong> (חניה מרווחת לקראוון).</li>
-                <li><strong>11:30 – 13:00 | מקטע 2 (שעה וחצי):</strong> נסיעה דרומה דרך I-5/CA-99 אל נקודת האמצע בעמק.</li>
-                <li><strong>13:00 – 14:00 | ארוחת צהריים:</strong> סטייקים ובורגרים ב-<strong>Outback Steakhouse Modesto</strong> (חניה קלה לקראוון במתחם המסחרי).</li>
-                <li><strong>14:00 – 16:00 | מקטע 3 (שעתיים):</strong> נסיעה דרך כביש 152 וכביש 1 מערבה אל חצי האי מונטריי.</li>
-                <li><strong>16:00 – 17:30 | מונטריי (Monterey):</strong> חניה ב-Waterfront Lot 7, סיור מורחב ברציף הדייגים ההיסטורי, טעימות צ'אודר וצפייה באריות ים.</li>
-                <li><strong>17:45 – 19:30 | כרמל-ביי-דה-סי (Carmel):</strong> מעבר בכביש 1, חניה מוסדרת לקראוון ב-Sunset Center, סיור בין בתי האגדות ושקיעה בחוף הלבן Carmel Beach.</li>
-                <li><strong>20:00 | Moss Landing KOA:</strong> נסיעה של 25 דקות צפונה על כביש 1 והתמקמות בחניון הלילה (מול רציף שייט הלווייתנים של מחר בבוקר).</li>
-            </ul>
-            
-            <!-- כפתורי ניווט ופתיחת מודלים -->
-            <a href="https://maps.google.com/?q=Round1+Bowling+and+Arcade+Roseville" target="_blank" class="map-btn">🎮 ניווט לארקייד (Round1 Roseville)</a>
-            <a href="https://maps.google.com/?q=Outback+Steakhouse+Modesto+CA" target="_blank" class="map-btn">🥩 ניווט לאאוטבק (Modesto)</a>
-            <a href="javascript:void(0)" onclick="openMontereyModal()" class="map-btn" style="cursor: pointer; background-color: #0077b6;">🏙️ המדריך המלא למונטריי</a>
-            <a href="javascript:void(0)" onclick="openCarmelModal()" class="map-btn" style="cursor: pointer; background-color: #2b7a78;">🏡 המדריך המלא לכרמל-ביי-דה-סי</a>
-            <a href="https://maps.google.com/?q=Sunset+Cultural+Center+Carmel" target="_blank" class="map-btn" style="background-color: #d90429;">🅿️ חניית קראוון מוסדרת בכרמל (Sunset Center)</a>
-            <a href="https://maps.google.com/?q=Moss+Landing+KOA+Express" target="_blank" class="map-btn">⛺ ניווט ל-Moss Landing KOA</a>
-
-            <!-- חלון קופץ 1: מונטריי מורחב -->
-            <div id="montereyModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <span class="close-modal-btn" onclick="closeMontereyModal()">&times;</span>
-                    <h2>🌊 מונטריי (Monterey): היסטוריה, ים וקולינריה</h2>
-                    <p class="modal-intro">
-                        מונטריי הייתה הבירה ההיסטורית של קליפורניה תחת השלטון הספרדי והמקסיקני, ובהמשך בירת תעשיית הסרדינים העולמית. כיום היא בירת חיות הבר הימיות של החוף המערבי בזכות הקניון התת-ימי העמוק המזין את המפרץ.
-                    </p>
-
-                    <div class="spot-card">
-                        <h3>⚓ Old Fisherman's Wharf (רציף הדייגים ההיסטורי)</h3>
-                        <p><strong>מה רואים ועושים:</strong> טיילת עץ נוסטלגית שנבנתה במקור ב-1845. לאורך המזח ניצבים עשרות דוכני מסעדות המציעים כוסיות טעימה חמות בחינם של מרק צ'אודר כדי למשוך עוברים ושבים.</p>
-                        <p><strong>חיות בר מקרוב:</strong> מתחת לקורות העץ שוכבים עשרות אריות ים קליפורניים (California Sea Lions) הנובחים ללא הפסקה, בעוד לוטרות ים צפות על הגב בין אצות הקלפ בנמל.</p>
-                        <a href="https://maps.google.com/?q=Old+Fisherman's+Wharf+Monterey" target="_blank" class="mini-nav-btn">📍 ניווט לרציף הדייגים</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🥫 Cannery Row & Monterey Bay Aquarium</h3>
-                        <p><strong>מורשת ג'ון סטיינבק:</strong> הרחוב נקרא במקור Ocean View Avenue והתפרסם בעקבות ספרו של זוכה פרס נובל ג'ון סטיינבק, "סמטת השימורים". בשנות ה-30 פעלו כאן עשרות מפעלי אריזת סרדינים. כיום המבנים התעשייתיים שוחזרו והפכו למבשלות בירה, מסעדות ובוטיקים.</p>
-                        <p><strong>האקווריום המפורסם:</strong> בקצה הרחוב שוכן אחד ממוסדות המחקר והשימור הימיים המובילים בעולם, הבנוי כולו בתוך מפעל שימורים ישן עם מכלי מים פתוחים ישירות למפרץ.</p>
-                        <a href="https://maps.google.com/?q=Cannery+Row+Monterey" target="_blank" class="mini-nav-btn">📍 ניווט ל-Cannery Row</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🍲 חוויית הקולינריה: Clam Chowder בקערת לחם</h3>
-                        <p>המאכל המזוהה ביותר עם המפרץ. המרק העשיר (ציר צדפות, שמנת ותפוחי אדמה) מוגש רותח בתוך כיכר עגולה של לחם מחמצת (Sourdough Bread Bowl) שנאפית בסגנון המסורתי של סן פרנסיסקו.</p>
-                        <p><strong>מקומות מומלצים ברציף:</strong> <em>Old Fisherman's Grotto</em> או <em>Crabby Jim's</em>.</p>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🚐 הנחיות חניה לקראוון במונטריי</h3>
-                        <p>רחובות העיר העתיקה צרים. <strong>אין להיכנס לחניונים מקורים או לרחובות סמטת השימורים עם קראוון.</strong></p>
-                        <p><strong>החניה המומלצת:</strong> מגרש <strong>Waterfront Parking Lot (Lot 7)</strong> – מגרש עירוני פתוח בתשלום עם מקומות מוארכים במרחק 3 דקות הליכה מרציף הדייגים.</p>
-                        <a href="https://maps.google.com/?q=Waterfront+Parking+Lot+Monterey" target="_blank" class="mini-nav-btn">📍 ניווט לחניון Waterfront Lot 7</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- חלון קופץ 2: כרמל מורחב -->
-            <div id="carmelModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <span class="close-modal-btn" onclick="closeCarmelModal()">&times;</span>
-                    <h2>🏡 כרמל-ביי-דה-סי (Carmel-by-the-Sea): כפר האגדות</h2>
-                    <p class="modal-intro">
-                        כרמל הוקמה בראשית המאה ה-20 כמושבת אמנים, סופרים ומשוררים שביקשו להגן על המקום מפני פיתוח מודרני. עד היום העיירה שומרת על חוקי עזר עירוניים ייחודיים: אין בה כתובות רחוב עם מספרים (לבתים יש שמות אישיים), אין תאורת רחוב בוהקת, אין מדיחני חניה, ורשתות מזון מהיר אסורות בחוק.
-                    </p>
-
-                    <div class="spot-card">
-                        <h3>🧚 בתי האגדות של יו קומסטוק (Comstock Cottages)</h3>
-                        <p><strong>הסיפור מאחורי הבתים:</strong> בשנות ה-20 בנה האדריכל יו קומסטוק קוטג'ים זעירים בסגנון כפרי-אירופי עם גגות גליים, קירות טיח עקומים וארובות אבן מסולסלות כדי לשכן את בובות הבד שיצרה אשתו. הבתים הפכו לסמל האדריכלי של העיירה.</p>
-                        <p><strong>בתים בולטים לסיור רגלי:</strong> <em>Hansel</em> ו-<em>Gretel</em> ברחוב Torres, וקפה <em>The Tuck Box</em> ברחוב Dolores.</p>
-                        <a href="https://maps.google.com/?q=The+Tuck+Box+Carmel" target="_blank" class="mini-nav-btn">📍 ניווט ל-The Tuck Box</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🛍️ שדרת Ocean Avenue והחצרות הנסתרות (Secret Courtyards)</h3>
-                        <p><strong>מרכז העיירה:</strong> השדרה הראשית משופעת ומובילה מהרכס ישירות אל חוף הים. לאורך הרחוב פזורות עשרות גלריות אמנות, שוקולטיירים בעבודת יד, חנויות עתיקות ובוטיקי יין מקומיים מעמק כרמל.</p>
-                        <p><strong>החצרות הנסתרות:</strong> מאחורי החנויות הראשיות מסתתרים 21 מעברים וחצרות מרוצפות אבן (Passageways & Courtyards) עם מזרקות, מטפסים ופסלי ברונזה.</p>
-                        <a href="https://maps.google.com/?q=Ocean+Avenue+Carmel-By-The-Sea" target="_blank" class="mini-nav-btn">📍 ניווט לשדרת Ocean Ave</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🏖️ חוף כרמל (Carmel Beach) ועצי הברוש</h3>
-                        <p>אחד מחופי האוקיינוס השקט היפים בקליפורניה – רצועת חול לבן ודק הגובלת במצוקים שעליהם גדלים עצי ברוש מונטריי (Monterey Cypress) מכופפים מהרוח. זהו המקום המרכזי שבו תושבי המקום מתכנסים מדי ערב עם שמיכות לצפייה בשקיעה.</p>
-                        <a href="https://maps.google.com/?q=Carmel+Beach+Ocean+Ave" target="_blank" class="mini-nav-btn">📍 ניווט לחוף כרמל</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>⛔ כללי חניה ונהיגה לקראוון בכרמל</h3>
-                        <p><strong>אזהרה:</strong> חל איסור מוחלט על כניסת קראוונים ורכבים מעל 20 פיט לרחובות המגורים הצרים ולשדרת Ocean Ave. כמו כן, חל איסור כניסת קראוונים לכביש האגרה <em>17-Mile Drive</em>.</p>
-                        <p><strong>איפה חונים בבטחה:</strong> חניון <strong>Sunset Cultural Center</strong> (בפינת San Carlos & 9th Ave). מגרש פתוח ורחב ללא תשלום המאפשר חניה נוחה לקראוון במרחק 5 דקות הליכה רגלית ממרכז העיירה.</p>
-                        <a href="https://maps.google.com/?q=Sunset+Cultural+Center+Carmel" target="_blank" class="mini-nav-btn">🅿️ ניווט לחניית Sunset Center</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- עיצוב (CSS) -->
-    <style>
-        .custom-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(3px);
-            overflow-y: auto;
-            direction: rtl;
-            text-align: right;
-        }
-        .custom-modal-content {
-            background-color: #ffffff;
-            margin: 5% auto;
-            padding: 24px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 650px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-        .close-modal-btn {
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #888;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .close-modal-btn:hover {
-            color: #000;
-        }
-        .custom-modal h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            font-size: 1.35rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .modal-intro {
-            color: #444;
-            font-size: 0.92rem;
-            line-height: 1.6;
-            margin-bottom: 18px;
-        }
-        .spot-card {
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            padding: 14px;
-            margin-bottom: 15px;
-        }
-        .spot-card h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.05rem;
-            color: #1a252f;
-        }
-        .spot-card p {
-            margin: 6px 0;
-            font-size: 0.88rem;
-            line-height: 1.5;
-            color: #333;
-        }
-        .mini-nav-btn {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 6px 12px;
-            background-color: #2b7a78;
-            color: #ffffff !important;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .mini-nav-btn:hover {
-            background-color: #17252a;
-        }
-    </style>
-
-    <!-- סקריפט JS לניהול מודלים -->
-    <script>
-        function openMontereyModal() {
-            document.getElementById('montereyModal').style.display = 'block';
-        }
-        function closeMontereyModal() {
-            document.getElementById('montereyModal').style.display = 'none';
-        }
-        function openCarmelModal() {
-            document.getElementById('carmelModal').style.display = 'block';
-        }
-        function closeCarmelModal() {
-            document.getElementById('carmelModal').style.display = 'none';
-        }
-
-        window.addEventListener('click', function(event) {
-            var montereyModal = document.getElementById('montereyModal');
-            var carmelModal = document.getElementById('carmelModal');
-            if (event.target === montereyModal) {
-                montereyModal.style.display = "none";
-            }
-            if (event.target === carmelModal) {
-                carmelModal.style.display = "none";
-            }
-        });
-    </script>
-
-<!-- יום 16 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 16: Moss Landing to Yosemite ⭐️</h2>
-            <span class="date">18.9 (יום ו')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag hike">🐋 שייט לווייתנים במוס לנדינג</span>
-                <span class="tag drive">🚗 2 מקטעים (כ-3.5 ש' נטו)</span>
-                <span class="tag stay">⛺ Thousand Trails Yosemite</span>
-                <span class="tag laundry">🧺 כביסה בלילה בחניון</span>
-            </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומקטעי היום:</div>
-            <ul>
-                <li><strong>08:30 – 12:30 | שייט לווייתנים (Moss Landing Harbor):</strong> התייצבות ויציאה לשייט של כ-3.5 שעות מעל הקניון התת-ימי העמוק. צפייה בלווייתנים גדולי-סנפיר (Humpbacks), דולפינים ולוטרות ים.</li>
-                <li><strong>12:30 – 13:45 | ארוחת צהריים במעגן:</strong> פירות ים טריים, מרק סרטנים (Clam Chowder) וקדרת הצ'יופינו המפורסמת ב-<strong>Phil's Fish Market</strong>.</li>
-                <li><strong>13:45 – 15:00 | מקטע נסיעה 1 (שעה ורבע):</strong> נסיעה מזרחה על כביש CA-152 דרך מעבר Pacheco אל עבר העמק המרכזי.</li>
-                <li><strong>15:00 – 16:00 | הצטיידות גדולה לקראת יוסמיטי:</strong> עצירה לסופרמרקט ענק (Walmart Supercenter ב-Los Banos) למילוי מקרר הקראוון במצרכים, פחמים ומים לימי הפארק.</li>
-                <li><strong>16:00 – 18:30 | מקטע נסיעה 2 (שעתיים ורבע):</strong> טיפוס מזרחה דרך כביש CA-120 אל הרי הסיירה נבאדה והשער המערבי של יוסמיטי (Big Oak Flat).</li>
-                <li><strong>18:30 ואילך | התמקמות וכביסת לילה:</strong> הגעה לחניון <strong>Thousand Trails Yosemite</strong>, התחברות לחשמל/מים/ביוב, הפעלת סבב כביסות לילי במכבסת החניון והתארגנות ליומיים מלאים ביוסמיטי.</li>
-            </ul>
-            
-            <!-- כפתורי ניווט -->
-            <a href="https://maps.google.com/?q=Moss+Landing+Boat+Hatchery+Whale+Watching" target="_blank" class="map-btn">🐋 ניווט למעגן שייט הלווייתנים</a>
-            <a href="https://maps.google.com/?q=Phils+Fish+Market+Moss+Landing" target="_blank" class="map-btn">🦞 ניווט ל-Phil's Fish Market</a>
-            <a href="https://maps.google.com/?q=Walmart+Supercenter+Los+Banos+CA" target="_blank" class="map-btn">🛒 ניווט לסופרמרקט ענק (Walmart Los Banos)</a>
-            <a href="https://maps.google.com/?q=Thousand+Trails+Yosemite+Lakes+RV+Campground" target="_blank" class="map-btn">⛺ ניווט ל-Thousand Trails Yosemite</a>
-        </div>
-    </div>
-
-<!-- יום 17 -->
-    <div class="day-card">
-        <div class="day-header">
-            <h2>יום 17: Yosemite National Park 🕯️</h2>
-            <span class="date">19.9 (יום שבת')</span>
-        </div>
-        <div class="day-content">
-            <div class="tag-group">
-                <span class="tag drive">🚗 כ-2.5 שעות נהיגה מצטברת</span>
-                <span class="tag hike">🥾 Mist Trail & Glacier Point</span>
-                <span class="tag stay">⛺ Thousand Trails Yosemite</span>
-            </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומסלולי היום:</div>
-            <ul>
-                <li><strong>07:00 – 08:00 | כניסה מוקדמת לעמק:</strong> יציאה מ-Thousand Trails לפני פקקי השבת, חציית שער Big Oak Flat וחניית הקראוון בחניון היום ב-Curry Village / Trailhead Parking.</li>
-                <li><strong>08:15 – 10:45 | Mist Trail (מפל Vernal Fall):</strong> מסלול הדגל בעמק (3.8 ק"מ הלוך-חזור לגשר התצפית). עלייה לצד ערוץ נהר המרסד והמפל המרשים.</li>
-                <li><strong>11:00 – 12:30 | Lower Yosemite Falls & הכפר:</strong> מעבר בשאטל למרכז העמק, הליכה קלילה ושטוחה (1.6 ק"מ) אל בסיס המפלים התחתונים והפסקת צהריים בעמק.</li>
-                <li><strong>13:00 | תצפית Tunnel View:</strong> עצירת צילום פנורמית אייקונית ביציאה מהעמק מול El Capitan, Half Dome ומפל Bridalveil.</li>
-                <li><strong>14:30 – 17:00 | Sentinel Dome & Glacier Point:</strong> טיפוס בכביש Glacier Point Road, מסלול רגלי (3.5 ק"מ הלוך-חזור) לכיפת הסלע של Sentinel Dome (תצפית 360 מעלות פתוחה) ותצפית מצוק Glacier Point המשקיפה על כל העמק מגובה קילומטר.</li>
-                <li><strong>17:30 – 19:00 | חזרה לחניון:</strong> נסיעה חזרה ל-Thousand Trails Yosemite והתארגנות לערב שקט בחניון.</li>
-            </ul>
-            
-            <!-- כפתורי ניווט ופתיחת מודל -->
-            <a href="javascript:void(0)" onclick="openYosemiteModal()" class="map-btn" style="cursor: pointer; background-color: #2b7a78;">🏔️ המדריך המלא ליוסמיטי ומסלולי הטיול</a>
-            <a href="https://maps.google.com/?q=Curry+Village+Parking+Yosemite" target="_blank" class="map-btn">🅿️ חניית בוקר מומלצת לקראוון (Curry Village)</a>
-            <a href="https://maps.google.com/?q=Tunnel+View+Yosemite" target="_blank" class="map-btn">📸 ניווט לתצפית Tunnel View</a>
-            <a href="https://maps.google.com/?q=Sentinel+Dome+Trailhead" target="_blank" class="map-btn">🥾 ניווט ל-Sentinel Dome Trailhead</a>
-            <a href="https://maps.google.com/?q=Glacier+Point+Yosemite" target="_blank" class="map-btn">🗺️ ניווט לתצפית Glacier Point</a>
-
-            <!-- חלון קופץ (Modal) - המדריך המלא ליוסמיטי -->
-            <div id="yosemiteModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <span class="close-modal-btn" onclick="closeYosemiteModal()">&times;</span>
-                    <h2>🏔️ יוסמיטי: מדריך מקיף, מסלולים ותצפיות</h2>
-                    <p class="modal-intro">
-                        עמק יוסמיטי (Yosemite Valley) הוא פלא גיאולוגי עולמי שנוצר על ידי קרחוני ענק שחרצו את סלעי הגרניט של הסיירה נבאדה. זהו ביתם של צוקי הגרניט המונוליתיים הגדולים בעולם, מפלים שוצפים ויערות מחט אלפיניים.
-                    </p>
-
-                    <div class="spot-card">
-                        <h3>🥾 מסלול 1: Mist Trail (עד גשר Vernal Fall)</h3>
-                        <p><strong>אופי המסלול:</strong> מסלול ההליכה המפורסם והאהוב ביותר בפארק. השביל סלול אך כולו בעלייה מתונה לצד נהר ה-Merced הגועש.</p>
-                        <p><strong>מרחק ומשך:</strong> 3.8 ק"מ הלוך-חזור (כ-1.5 עד 2.5 שעות). טיפוס של כ-120 מטר.</p>
-                        <p><strong>נקודת השיא:</strong> גשר העץ (Vernal Fall Footbridge) שמספק תצפית חזיתית מרהיבה על המפל השוצף מגובה של כ-97 מטר. בגשר יש נקודת מילוי מים ושירותים.</p>
-                        <p><strong>לוגיסטיקה:</strong> תחילת המסלול מ-Happy Isles (תחנת שאטל 16). ההגעה אליו מתבצעת ברגל או בשאטל מחניון Curry Village.</p>
-                        <a href="https://maps.google.com/?q=Mist+Trail+Trailhead+Yosemite" target="_blank" class="mini-nav-btn">📍 ניווט ל-Mist Trail Trailhead</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🚶 מסלול 2: Lower Yosemite Fall Trail</h3>
-                        <p><strong>אופי המסלול:</strong> שביל טבעתי סלול, מישורי וקליל במרכז העמק המתאים לחילוץ עצמות והליכה רגועה.</p>
-                        <p><strong>מרחק ומשך:</strong> 1.6 ק"מ (כ-30 עד 45 דקות).</p>
-                        <p><strong>מה רואים:</strong> הליכה ביער מוצל המובילה ישירות אל גשר העץ שבתחתית המפלים התחתונים (גובה מצטבר של המפלים העליונים והתחתונים הוא 739 מטר – הגבוהים ביותר בצפון אמריקה).</p>
-                        <a href="https://maps.google.com/?q=Lower+Yosemite+Fall+Trailhead" target="_blank" class="mini-nav-btn">📍 ניווט ל-Lower Yosemite Falls</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>⛰️ מסלול 3: Sentinel Dome (כיפת הסלע)</h3>
-                        <p><strong>אופי המסלול:</strong> מסלול הליכה הררי מרהיב היוצא מכביש Glacier Point Road. השביל מתון ברובו ועובר ביער אלפיני, כשסופו בטיפוס רגלי קצר על גבי כיפת הגרניט החשופה.</p>
-                        <p><strong>מרחק ומשך:</strong> 3.5 ק"מ הלוך-חזור (כשעה וחצי עד שעתיים).</p>
-                        <p><strong>הנוף מהפסגה (גובה 2,470 מטר):</strong> תצפית פנורמית פתוחה של 360 מעלות ללא מעקות – רואים את El Capitan, Half Dome, Yosemite Falls ורכסי הסיירה הגבוהים. מקום מפורסם בזכות עץ האורן העתיק (Fallen Jeffrey Pine) שצמח על הסלע.</p>
-                        <a href="https://maps.google.com/?q=Sentinel+Dome+Trailhead" target="_blank" class="mini-nav-btn">📍 ניווט ל-Sentinel Dome Trailhead</a>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>📸 נקודות תצפית אייקוניות ברכב</h3>
-                        <p><strong>Tunnel View:</strong> התצפית הקלאסית ביותר בעולם. ממוקמת ביציאה המערבית של מנהרת Wawona. חושפת במבט אחד את מצוק El Capitan משמאל, Half Dome במרכז, ומפל Bridalveil מימין.</p>
-                        <p><strong>Glacier Point:</strong> שפת מצוק גרניט בגובה קילומטר תלול מעל קרקעית העמק. מספקת מבט ישיר מגבוה על Curry Village, Half Dome ומפלי Vernal ו-Nevada.</p>
-                        <div class="nav-btn-group">
-                            <a href="https://maps.google.com/?q=Tunnel+View+Yosemite" target="_blank" class="mini-nav-btn">📍 Tunnel View</a>
-                            <a href="https://maps.google.com/?q=Glacier+Point+Yosemite" target="_blank" class="mini-nav-btn">📍 Glacier Point</a>
-                        </div>
-                    </div>
-
-                    <div class="spot-card">
-                        <h3>🚐 הנחיות התניידות וקראוון ביוסמיטי (שבת)</h3>
-                        <p><strong>העומס בשבת:</strong> עמק יוסמיטי סובל מעומסי תנועה כבדים בסופי שבוע. הגעה אחרי 08:30 פירושה עמידה ממושכת בפקקים וחוסר במקומות חניה לקראוון.</p>
-                        <p><strong>איך מתנהלים:</strong> מחנים בבוקר מוקדם בחניון Curry Village / Day Use Parking ולא מזיזים את הקראוון במהלך שעות הבוקר. מתניידים בתוך העמק אך ורק באמצעות <em>Yosemite Valley Shuttle</em> (שאטל חינמי בתדירות גבוהה שעוצר בכל האטרקציות).</p>
-                        <p><strong>הנסיעה ל-Glacier Point:</strong> את הנסיעה ל-Glacier Point ו-Sentinel Dome מבצעים אחה"צ כשעוזבים את קרקעית העמק. הכביש מפותל אך מותר לנסיעת קראוונים.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- עיצוב (CSS) -->
-    <style>
         .custom-modal {
             display: none;
             position: fixed;
@@ -1347,26 +207,567 @@
             gap: 8px;
             flex-wrap: wrap;
         }
+
+        @media (max-width: 600px) {
+            .day-header { flex-direction: column; align-items: flex-start; }
+            header h1 { font-size: 1.75rem; }
+        }
     </style>
+</head>
+<body>
 
-    <!-- סקריפט JS לפתיחה וסגירה של המודל -->
-    <script>
-        function openYosemiteModal() {
-            document.getElementById('yosemiteModal').style.display = 'block';
-        }
-        function closeYosemiteModal() {
-            document.getElementById('yosemiteModal').style.display = 'none';
-        }
+<header>
+    <h1>🚐 המסע הגדול בארה"ב</h1>
+    <p>וושינגטון ⬅️ סולט לייק סיטי ⬅️ לוס אנג'לס | ספטמבר 2026</p>
+</header>
 
-        window.addEventListener('click', function(event) {
-            var yosemiteModal = document.getElementById('yosemiteModal');
-            if (event.target === yosemiteModal) {
-                yosemiteModal.style.display = "none";
-            }
-        });
-    </script>
+<div class="container">
+    <!-- יום 1 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 1: TLV-JFK-Washington DC</h2>
+            <span class="date">3.9 (יום ה')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">✈️ 13.5 שעות טיסה</span>
+                <span class="tag food">🥞 ארוחת בוקר בארלינגטון</span>
+                <span class="tag food">🦐 Ballston Quarter</span>
+                <span class="tag stay">🏨 ארלינגטון</span>
+            </div>
+            <div class="section-title">✈️ טיסות ולוגיסטיקה:</div>
+            <ul>
+                <li><strong>טיסה LY3 ל-JFK ב-0:05</strong></li>
+                <li><strong>נחיתה בניו יורק ב-4:55</strong></li>
+                <li><strong>טיסה LY4265 ל-DCA: 8:55</strong></li>
+                <li><strong>נחיתה בוושינגטון ב-10:26</strong></li>
+            </ul>
+            <div class="section-title">📍 אטרקציות ופעילויות:</div>
+            <ul>
+                <li><strong>מפגש עם אורלי והתארגנות קלה בעיר.</strong></li>
+            </ul>
+            <a href="https://maps.app.goo.gl/96CVGZXDfSK7Lybi6" target="_blank" class="map-btn">🗺️ ניווט לאורלי</a>
+            <a href="https://maps.app.goo.gl/2jWujawq5pDtJf87A" target="_blank" class="map-btn">🗺️ ניווט לדירה</a>
+        </div>
+    </div>
 
-  <!-- יום 18 -->
+    <!-- יום 2 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 2: Washington DC (הנשיונל מול)</h2>
+            <span class="date">4.9 (יום ו')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 0.0 שעות נהיגה (מוניות/ברגל)</span>
+                <span class="tag hike">🥾 שדרת המול (6.5 ק"מ)</span>
+                <span class="tag food">🦞 Old Ebbitt & District Taco</span>
+                <span class="tag stay">🏛️ Washington DC</span>
+            </div>
+            <div class="section-title">📍 אטרקציות וטרק עירוני:</div>
+            <ul>
+                <li><strong>מסלול הליכה ב-National Mall:</strong> הליכה רציפה של כ-6.5 ק"מ (3-4 שעות נינוחות) מהקפיטול ומוזיאון האוויר והחלל, דרך אנדרטת וושינגטון (האובליסק), בריכת ההשתקפות, אנדרטת לינקולן, ועד לתצפית על הבית הלבן.</li>
+                <li><strong>קולינריה והפי הוואר:</strong> סיום בארוחה וקוקטיילים/בירות ב-Old Ebbitt Grill ההיסטורי או District Taco.</li>
+            </ul> 
+            <div class="section-title">📍 לוגיסטיקה ונסיעות:</div>
+            <ul> 
+                <li><strong>מוניות:</strong> מונית לתחילת המסלול בקפיטול ומונית חזרה למלון מהמסעדה בסוף היום.</li>
+            </ul>
+
+            <a href="https://www.google.com/maps/dir/United+States+Capitol/National+Air+and+Space+Museum/Washington+Monument/Lincoln+Memorial/The+White+House/Old+Ebbitt+Grill" target="_blank" class="map-btn">🗺️ מסלול הליכה מלא על המפה</a>
+            <a href="javascript:void(0)" onclick="openDcModal()" class="map-btn" style="cursor: pointer; background-color: #2c3e50;">🏛️ מה יש בשדרת המול? (מדריך האטרקציות)</a>
+
+            <div id="dcModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeDcModal()">&times;</span>
+                    <h2>🏛️ הנשיונל מול (National Mall)</h2>
+                    <p class="modal-intro">השדרה המרכזית של ארצות הברית באורך של כ-3 ק"מ, המאגדת את סמלי השלטון והאנדרטאות הלאומיות.</p>
+                    <div class="spot-card">
+                        <h3>🏛️ גבעת הקפיטול (US Capitol)</h3>
+                        <p>מושב הקונגרס האמריקאי החולש על הקצה המזרחי של השדרה.</p>
+                        <a href="https://maps.app.goo.gl/9t7qK6H8u2XW3vQv5" target="_blank" class="mini-nav-btn">📍 ניווט לקפיטול</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🚀 מוזיאון האוויר והחלל (Air and Space Museum)</h3>
+                        <p>המטוס המקורי של האחים רייט, ה-X-1 ששבר את מהירות הקול, מודל מעבורת חלל וסלעי ירח.</p>
+                        <a href="https://maps.app.goo.gl/aLWPEUrh6jTtdGtD7" target="_blank" class="mini-nav-btn">📍 ניווט למוזיאון</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🗼 אנדרטת וושינגטון (Washington Monument)</h3>
+                        <p>האובליסק העצום (169 מ') שניצב במרכז השדרה לזכרו של ג'ורג' וושינגטון.</p>
+                        <a href="https://maps.app.goo.gl/6mEwvW1t2Lbx1mDFA" target="_blank" class="mini-nav-btn">📍 ניווט לאנדרטת וושינגטון</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🏛️ אנדרטת לינקולן ובריכת ההשתקפות</h3>
+                        <p>הפסל העצום של לינקולן מול בריכת ההשתקפות – המקום בו נישא נאום "יש לי חלום".</p>
+                        <a href="https://maps.app.goo.gl/rVdpvGz7VwBekNqh8" target="_blank" class="mini-nav-btn">📍 ניווט לאנדרטת לינקולן</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🇺🇸 הבית הלבן (The White House)</h3>
+                        <p>מעונו הרשמי של הנשיא. תצפית מעולה מהמדשאה הצפונית או הדרומית.</p>
+                        <a href="https://maps.app.goo.gl/QUFXwkewTyp9DL95A" target="_blank" class="mini-nav-btn">📍 ניווט לבית הלבן</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- יום 3 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 3: Salt Lake City to Logan (מתקדמים צפונה)</h2>
+            <span class="date">5.9 (יום ש')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">✈️ 4.5 שעות טיסה</span>
+                <span class="tag drive">🚗 1.5-2 שעות נהיגה</span>
+                <span class="tag food">🛒 הצטיידות בוולמארט</span>
+                <span class="tag stay">⛺ אזור Logan (או Bear Lake)</span>
+            </div>
+            <div class="section-title">📍 לוח זמנים ולוגיסטיקה:</div>
+            <ul>
+                <li><strong>טיסה ל-Salt Lake City:</strong> טיסת Delta 432 בשעה 7:00 בבוקר (נחיתה ב-SLC לקראת 10:00).</li>
+                <li><strong>איסוף הקראוון והצטיידות:</strong> קבלת הרכב ב-Millcreek (4125 S State St), יציאה צפונה על ה-I-15 וקניות גדולות בסופר-סנטר של וולמארט בלייטון.</li>
+                <li><strong>התקדמות ל-Logan / Bear Lake:</strong> נסיעה דרך Logan Canyon Byway (כביש 89) לעבר אגם Bear Lake או לינה בלוגאן.</li>
+            </ul>
+            <a href="https://www.google.com/maps/place/4125+S+State+St,+Millcreek,+UT+84107" target="_blank" class="map-btn">🗺️ ניווט לנקודת ההשכרה</a>
+            <a href="https://www.google.com/maps/dir/4125+S+State+St,+Millcreek/Walmart+Supercenter,+Layton/Logan,+UT" target="_blank" class="map-btn">🗺️ ניווט: השכרה -> וולמארט בדרך -> לוגאן</a>
+        </div>
+    </div>
+
+    <!-- יום 4 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 4: דרך Bear Lake אל Grand Teton</h2>
+            <span class="date">6.9 (יום א')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-4.5 שעות נהיגה מצטברת</span>
+                <span class="tag hike">🚴 פארק אופניים ב-Jackson Hole</span>
+                <span class="tag stay">⛺ Colter Bay</span>
+            </div>
+            <div class="section-title">📍 אטרקציות ופעילויות:</div>
+            <ul>
+                <li><strong>בוקר | חציית לוגאן קניון ו-Bear Lake:</strong> נסיעה בנופי ההרים ועצירה ב-Garden City לשייק פטל ב-LaBeau's.</li>
+                <li><strong>צהריים | השלמות בג'קסון (Jackson):</strong> עצירה מהירה להשלמת מצרכים טריים. חובבי ויסקי יכולים להציץ ב-<strong>Jackson Hole Still Works</strong> (מזקקת בוטיק מקומית).</li>
+                <li><strong>אחה"צ | אופניים ב-Teton Village:</strong> השכרת אופניים ועלייה ברכבל לרכיבת דאון-היל זורמת במסלולים הירוקים.</li>
+                <li><strong>ערב | כניסה לגרנד טיטון:</strong> נסיעה לחניון Colter Bay והתמקמות.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Logan,+UT/Garden+City,+UT/Teton+Village,+WY/Colter+Bay+Village,+WY" target="_blank" class="map-btn">🗺️ ניווט: לוגאן -> ביר לייק -> אופניים -> קולטר ביי</a>
+        </div>
+    </div>
+
+    <!-- יום 5 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 5: Grand Teton (טרק עמוק ואקסטרים)</h2>
+            <span class="date">7.9 (יום ב')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-1.5 שעות נהיגה</span>
+                <span class="tag hike">🥾 טרק Cascade Canyon (7.5-14.5 ק"מ)</span>
+                <span class="tag stay">⛺ Colter Bay</span>
+            </div>
+            <div class="section-title">📍 פירוט הטרק ולוח הזמנים:</div>
+            <ul>
+                <li><strong>07:30 | הגעה מוקדמת ל-Jenny Lake:</strong> תפיסת חניית קראוון וחציית האגם במעבורת סירה.</li>
+                <li><strong>🥾 טרק Cascade Canyon:</strong> 
+                    <ul>
+                        <li><strong>אופי וקושי:</strong> מסלול אלפיני יפהפה בדרגת קושי בינונית-מאתגרת.</li>
+                        <li><strong>מרחק וזמן:</strong> 7.5 ק"מ הלוך-חזור (עד Inspiration Point והכניסה לקניון, כ-3 שעות) או עד 14.5 ק"מ לעומק הערוץ מול פסגת Grand Teton (כ-5 שעות, טיפוס של 350 מטר).</li>
+                    </ul>
+                </li>
+                <li><strong>אחה"צ | רכיבת אופניים ב-Moose:</strong> רכיבה מהירה בשביל הסלול הייעודי (Multi-use Pathway) מול הפסגות.</li>
+                <li><strong>ערב:</strong> חזרה לחניון Colter Bay למדורה וברביקיו.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Colter+Bay+Village/Jenny+Lake+Visitor+Center/Colter+Bay+Village" target="_blank" class="map-btn">🗺️ ניווט: מקולטר ביי ל-Jenny Lake וחזרה</a>
+        </div>
+    </div>
+
+    <!-- יום 6 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 6: מגרנד טיטון לילוסטון (יום הגייזרים)</h2>
+            <span class="date">8.9 (יום ג')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-2.5 שעות נהיגה</span>
+                <span class="tag hike">🌋 Observation Point & Fairy Falls (12 ק"מ מצטבר)</span>
+                <span class="tag stay">⛺ Fishing Bridge</span>
+            </div>
+            <div class="section-title">📍 פירוט המסלולים והטרקים:</div>
+            <ul>
+                <li><strong>עצירות בוקר:</strong> Moose Falls, Lewis Falls ומתחם West Thumb Geyser Basin על שפת האגם.</li>
+                <li><strong>🥾 מסלול 1 | Observation Point (Old Faithful):</strong> טיפוס לתצפית עילית על הגייזר המפורסם (1.8 ק"מ הלוך-חזור, 45 דקות, עלייה מתונה של 70 מ').</li>
+                <li><strong>🥾 מסלול 2 | Grand Prismatic Overlook, Fairy Falls & Imperial Geyser:</strong>
+                    <ul>
+                        <li><strong>מרחק ומשך:</strong> 10.5 ק"מ מעגלי מלא (כ-3.5 שעות הליכה, קל-בינוני ומישורי).</li>
+                        <li><strong>דגשים:</strong> תצפית פנורמית על צבעי הטורקיז של הגראנד פריזמטיק, מפל פיירי בגובה 60 מטר, והגייזר הפראי והמבעבע Imperial Geyser. חובה תרסיס דובים!</li>
+                    </ul>
+                </li>
+                <li><strong>17:30 | Fishing Bridge:</strong> נסיעה והתמקמות בחניון המוסדר.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Colter+Bay+Village/Moose+Falls/Lewis+Falls/West+Thumb+Geyser+Basin/Old+Faithful" target="_blank" class="map-btn">🗺️ ניווט בוקר: קולטר ביי -> אולד פיית'פול</a>
+            <a href="https://www.google.com/maps/dir/Old+Faithful/Fairy+Falls+Trailhead/Fishing+Bridge+RV+Park" target="_blank" class="map-btn">🗺️ ניווט אחה"צ: אולד פיית'פול -> מסלול פריזמטיק -> פישינג ברידג'</a>
+        </div>
+    </div>
+
+    <!-- יום 7 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 7: הלולאה הצפונית (מדרגות ושבילי נחש)</h2>
+            <span class="date">9.9 (יום ד')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 נהיגה מפוצלת לפי שעות עומס</span>
+                <span class="tag hike">🥾 Brink of Lower Falls & Mammoth (6 ק"מ)</span>
+                <span class="tag stay">⛺ Fishing Bridge</span>
+                <span class="tag laundry">🧺 כביסה בחניון</span>
+            </div>
+            <div class="section-title">📍 פירוט המסלולים:</div>
+            <ul>
+                <li><strong>06:30 | ספארי בוקר בעמק היידן (Hayden Valley):</strong> איתור ביזונים וזאבים.</li>
+                <li><strong>🥾 מסלול 1 | Norris Geyser Basin:</strong> שבילי עץ טבעתיים (כ-2.5 ק"מ, שעה וחצי) במתחם הגייזרים החם והעתיק ביותר בפארק.</li>
+                <li><strong>🥾 מסלול 2 | Mammoth Hot Springs Terraces:</strong> טיפוס מדרגות עץ רציף (1.5 ק"מ, כ-45 דקות) בין טרסות הטרברטין הלבנות.</li>
+                <li><strong>🥾 מסלול 3 | Brink of the Lower Falls (הקניון הגדול):</strong> 
+                    <ul>
+                        <li><strong>אופי וקושי:</strong> ירידה וטיפוס זיגזגים תלולים (1.2 ק"מ הלוך-חזור, ירידה ועלייה של 180 מטר, כ-45 דקות שורפות רגליים) ממש אל סף הנפילה של המפל הענק.</li>
+                    </ul>
+                </li>
+                <li><strong>17:00 | מנוחה וכביסות:</strong> חזרה ל-Fishing Bridge.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Fishing+Bridge+RV+Park/Hayden+Valley/Norris+Geyser+Basin/Mammoth+Hot+Springs/Brink+of+the+Lower+Falls/Fishing+Bridge+RV+Park" target="_blank" class="map-btn">🗺️ ניווט לולאה צפונית מלאה</a>
+        </div>
+    </div>
+
+    <!-- יום 8 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 8: Yellowstone to Boise (חוצים את איידהו) 🍎</h2>
+            <span class="date">10.9 (יום ה')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag alert">⚠️ התראת נהיגה (כ-8 שעות נטו)</span>
+                <span class="tag hike">🏂 Bruneau Dunes (טיפוס וגלישה)</span>
+                <span class="tag drink">🍷 יין מקומי ב-Telaya Wine Co.</span>
+                <span class="tag stay">⛺ Boise Riverside RV Park</span>
+            </div>
+            <div class="section-title">📍 מסלולים, אקסטרים ויין:</div>
+            <ul>
+                <li><strong>Potato Museum & Perrine Bridge:</strong> עצירות ב-Blackfoot ובגשר התלוי ב-Twin Falls.</li>
+                <li><strong>🥾 אקסטרים בחול | Bruneau Dunes:</strong> טיפוס רגלי תלול על דיונת החול הגבוהה בצפון אמריקה (1.5 ק"מ, שעה וחצי) וגלישת חול בבורדים שכורים.</li>
+                <li><strong>🍷 יקב Telaya Wine Co. (בויזי):</strong> טעימות יין מעולה מעמק Snake River Valley (סירה, קברנה פרנק ושרדונה) בחדר טעימות פתוח הצמוד לנהר ה-Boise River Greenbelt.</li>
+                <li><strong>ערב:</strong> ארוחה והופעות חיות במרחק צעדים ב-<em>The Sandbar Patio Bar & Grill</em>.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Fishing+Bridge+RV+Park/Idaho+Potato+Museum/Perrine+Memorial+Bridge/Bruneau+Dunes+State+Park/Boise+Riverside+RV+Park" target="_blank" class="map-btn">🗺️ ניווט חוצה איידהו לחניון</a>
+            <a href="https://www.google.com/maps/dir/Boise+Riverside+RV+Park/Telaya+Wine+Co/The+Sandbar+Patio+Bar+%26+Grill" target="_blank" class="map-btn">🍷 ניווט ליקב ולמסעדה על הנהר</a>
+        </div>
+    </div>
+
+    <!-- יום 9 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 9: Boise to Bend 🍏 (ערב ראש השנה)</h2>
+            <span class="date">11.9 (יום ו')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag time">🕰️ אזור זמן: מרוויחים שעה (-1)</span>
+                <span class="tag drive">🚗 6 שעות נהיגה</span>
+                <span class="tag hike">🥾 Painted Hills Trails (1.5 ק"מ)</span>
+                <span class="tag stay">⛺ The Camp (Bend)</span>
+            </div>
+            <div class="section-title">📍 אטרקציות ופעילויות:</div>
+            <ul>
+                <li><strong>גולף בוקר:</strong> משחק מהיר ב-<strong>Pierce Park Greens</strong> בבויזי.</li>
+                <li><strong>🥾 Painted Hills Overlook & Painted Cove:</strong> שני שבילי הליכה קצרים וסלולים (1.5 ק"מ סך הכל, 45 דקות) בין שכבות הסלע הצבעוניות של מדבר אורגון הגבוה.</li>
+                <li><strong>הגעה ל-Bend:</strong> התמקמות בחניון The Camp ומשחק פוטבול ב-Bend Senior High School (19:00).</li>
+            </ul>
+            <a href="https://maps.app.goo.gl/xThcV3ywtvHVxZ2H9" target="_blank" class="map-btn">🗺️ ניווט ל-Pierce Park Greens</a>
+            <a href="https://maps.google.com/?q=Painted+Hills+Oregon" target="_blank" class="map-btn">🗺️ ניווט ל-Painted Hills</a>
+            <a href="https://maps.app.goo.gl/DCGC8qbnMzDejHSJ7" target="_blank" class="map-btn">🗺️ ניווט לחניון The Camp</a>
+        </div>
+    </div>
+
+    <!-- יום 10 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 10: Bend (יום כוכב) (ראש השנה)</h2>
+            <span class="date">12.9 (יום ש')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 1.5 שעות נהיגה</span>
+                <span class="tag hike">🥾 Tumalo Falls Trail (3.5 ק"מ)</span>
+                <span class="tag drink">🥃 Straight Rye ויסקי ב-Oregon Spirit</span>
+                <span class="tag stay">⛺ Bend</span>
+            </div>
+            <div class="section-title">📍 טבע, ויסקי וקראפט:</div>
+            <ul>
+                <li><strong>🥾 מסלול טבע | Tumalo Falls:</strong> הליכה ביער מחטני לאורך ערוץ הנחל עד למרפסת התצפית של ראש המפל ומפלי Double Falls (3.5 ק"מ הלוך-חזור, שעה וחצי, עלייה קלה).</li>
+                <li><strong>🥃 בירת ה-Rye ויסקי | Oregon Spirit Distillers:</strong> מזקקת בוטיק מובילה המתמחה ב-100% Straight American Rye ובורבון מקומי המיושן בחביות אלון חדשות. חדר טעימות עם פאטיו פתוח.</li>
+                <li><strong>קראפט ושופינג:</strong> קניות ללא מס ב-Old Mill District, רפטינג Big Eddy או בירה מול השקיעה ב-<strong>Crux Fermentation Project</strong>.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Tumalo+Falls" target="_blank" class="map-btn">🗺️ ניווט למפל טומלו</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="map-btn">🥃 ניווט למזקקת Oregon Spirit</a>
+            <a href="javascript:void(0)" onclick="openBendModal()" class="map-btn" style="cursor: pointer;">🏙️ המדריך העירוני לבנד</a>
+            <a href="javascript:void(0)" onclick="openRaftingModal()" class="map-btn" style="cursor: pointer; background-color: #0077b6;">🚣 מדריך רפטינג Big Eddy</a>
+
+            <div id="bendModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeBendModal()">&times;</span>
+                    <h2>🌲 המרחב העירוני של בנד (Bend, Oregon)</h2>
+                    <div class="spot-card">
+                        <h3>🥃 Oregon Spirit Distillers</h3>
+                        <p><strong>ויסקי שיפון עטור פרסים:</strong> 100% שיפון מאורגון, יישון בחביות עץ אלון חרוכות, מגשי טעימות וקוקטיילים.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="mini-nav-btn">📍 ניווט למזקקה</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🏭 Old Mill District</h3>
+                        <p>קניות ללא מס (0% Tax) על גדות נהר הדשוטס.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🍺 מבשלות קראפט</h3>
+                        <p><em>Deschutes Brewery</em> בדאונטאון ו-<em>Crux Fermentation Project</em> עם חצר דשא ושקיעה.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>📼 The Last Blockbuster</h3>
+                        <p>סניף הבלוקבסטר האחרון בעולם הפעיל עד היום!</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=The+Last+Blockbuster+Bend+OR" target="_blank" class="mini-nav-btn">📍 ניווט לבלוקבסטר</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="raftingModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeRaftingModal()">&times;</span>
+                    <h2>🚣 רפטינג Big Eddy (נהר הדשוטס)</h2>
+                    <div class="spot-card">
+                        <p><strong>דרגה ואופי:</strong> Class III - גלים, אשדות ומים משפריצים (2.5-3 שעות פעילות עם Sun Country Tours).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- יום 11 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 11: דרך האגמים למפלי אומפקווה</h2>
+            <span class="date">13.9 (יום א')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-4.5 שעות נהיגה</span>
+                <span class="tag hike">🌊 3 מפלים (3.2 ק"מ מצטבר)</span>
+                <span class="tag stay">⛺ Diamond Lake RV Park</span>
+            </div>
+            <div class="section-title">📍 פירוט מסלולי המפלים (כביש 138):</div>
+            <ul>
+                <li><strong>בוקר:</strong> נסיעה דרך Cascade Lakes Byway עם תצפיות ב-Sparks Lake ו-Devils Lake.</li>
+                <li><strong>🥾 מסלול 1 | Toketee Falls:</strong> הליכה קסומה ביער גשם עתיק (1.3 ק"מ הלוך-חזור, 40 דק', 200 מדרגות עץ) אל עבר קירות עמודי בזלת מרהיבים.</li>
+                <li><strong>🥾 מסלול 2 | Watson Falls:</strong> טיפוס קצר ביער (1.6 ק"מ הלוך-חזור, 45 דק', עלייה של 90 מ') אל המפל הגבוה בדרום אורגון (83 מטר גובה נפילה).</li>
+                <li><strong>🥾 מסלול 3 | Clearwater Falls:</strong> הליכה קצרצרה של 300 מטר לצד מפל הפורץ מתוך טחב ולבה.</li>
+                <li><strong>התמקמות:</strong> מנוחה ושקט על שפת האגם ב-Diamond Lake RV Park.</li>
+            </ul>
+            <a href="https://maps.app.goo.gl/pEZtexT9db3afZsB6" target="_blank" class="map-btn">🗺️ ניווט לחניון Diamond Lake RV Park</a>
+        </div>
+    </div>
+
+    <!-- יום 12 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 12: Diamond Lake to Klamath Falls</h2>
+            <span class="date">14.9 (יום ב')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-2.5 שעות נהיגה</span>
+                <span class="tag hike">🏞️ Cleetwood Cove (ירידה ללוע - 3.5 ק"מ)</span>
+                <span class="tag stay">⛺ Klamath Falls KOA</span>
+            </div>
+            <div class="section-title">📍 פירוט הטרק והאטרקציות:</div>
+            <ul>
+                <li><strong>🥾 טרק Cleetwood Cove (קרייטר לייק):</strong> 
+                    <ul>
+                        <li><strong>אופי וקושי:</strong> המסלול היחיד המאפשר גישה רגלית לקו המים של אגם הלוע. ירידה מתונה אך עלייה תלולה ומאומצת (שיפוע של 11%).</li>
+                        <li><strong>מרחק ומשך:</strong> 3.5 ק"מ הלוך-חזור, טיפוס של 215 מטר (כשעתיים הליכה). טבילה במים הצלולים והקרים מומלצת למעוניינים!</li>
+                    </ul>
+                </li>
+                <li><strong>תצפיות וקפה:</strong> נסיעה ב-Rim Drive, תצפית Phantom Ship ועצירה ב-Rim Village.</li>
+                <li><strong>Spring Creek & Collier Park:</strong> מנוחה ושכשוך במעיינות הטורקיז הצלולים.</li>
+                <li><strong>ערב:</strong> התמקמות ב-Klamath Falls KOA וארוחה ב-Wubba's BBQ Shack.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Cleetwood+Cove+Trailhead" target="_blank" class="map-btn">🗺️ ניווט ל-Cleetwood Cove</a>
+            <a href="https://maps.google.com/?q=Spring+Creek+Day+Use+Area+Chiloquin+OR" target="_blank" class="map-btn">🗺️ ניווט ל-Spring Creek</a>
+            <a href="https://maps.app.goo.gl/6ZK1nXXMXpicE5Xd7" target="_blank" class="map-btn">🗺️ ניווט לחניון בקלאמת' פולס</a>
+        </div>
+    </div>
+
+    <!-- יום 13 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 13: Klamath to Lassen Volcanic</h2>
+            <span class="date">15.9 (יום ג')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-3.5 שעות נהיגה</span>
+                <span class="tag hike">🌋 Burney Falls & Subway Cave (3.5 ק"מ)</span>
+                <span class="tag stay">⛺ Manzanita Lake</span>
+            </div>
+            <div class="section-title">📍 פירוט המסלולים:</div>
+            <ul>
+                <li><strong>🥾 מסלול 1 | McArthur-Burney Falls:</strong> שביל מעגלי מוצל (2.1 ק"מ, 45 דק') סביב המפל השוצף שנחשב לאחד היפים בארה"ב.</li>
+                <li><strong>🥾 מסלול 2 | Subway Cave:</strong> הליכה של 1 ק"מ בתוך צינור לבה תת-קרקעי חשוך לחלוטין (חובה להביא פנסים חזקים ומעיל חם!).</li>
+                <li><strong>אגם מנזניטה (Manzanita Lake):</strong> כניסה לפארק לאסן, שייט קיאקים באגם מול השתקפות ההר או הליכה רגועה בשביל המקיף את האגם (2.5 ק"מ שטוחים).</li>
+            </ul>
+            <a href="https://maps.google.com/?q=McArthur-Burney+Falls+Memorial+State+Park" target="_blank" class="map-btn">🗺️ ניווט ל-Burney Falls</a>
+            <a href="https://maps.google.com/?q=Subway+Cave+Lava+Tubes" target="_blank" class="map-btn">🗺️ ניווט ל-Subway Cave</a>
+        </div>
+    </div>
+
+    <!-- יום 14 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 14: Lassen to Lake Tahoe (דרך אלמנור וטראקי)</h2>
+            <span class="date">16.9 (יום ד')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 4 מקטעים (כ-4.5 ש' נטו)</span>
+                <span class="tag hike">🌋 Bumpass Hell (4.8 ק"מ)</span>
+                <span class="tag drink">🥃 ויסקי ב-Old Tahoe Distillery</span>
+                <span class="tag stay">⛺ Camp Richardson (Tahoe)</span>
+                <span class="tag laundry">🧺 כביסה בריזורט</span>
+            </div>
+            <div class="section-title">📍 טרק געשי, ויסקי ואגם:</div>
+            <ul>
+                <li><strong>🥾 טרק Bumpass Hell (לאסן):</strong>
+                    <ul>
+                        <li><strong>אופי וקושי:</strong> מסלול שבילי עץ וגשרונים (4.8 ק"מ הלוך-חזור, כשעתיים הליכה, טיפוס של כ-150 מ') מעל מכתש געשי פעיל, בריכות בוץ מבעבעות ופתחי קיטור גופרתיים.</li>
+                    </ul>
+                </li>
+                <li><strong>צהריים בסיירה:</strong> עצירה ב-Lake Almanor והמשך לארוחה כפרית ב-Sierraville / Graeagle.</li>
+                <li><strong>🥃 ויסקי אלפיני בטראקי (Truckee):</strong> עצירה בעיירת הרכבת ההיסטורית לטעימות Straight Rye מקומי ב-<strong>Old Tahoe Distillery</strong> (או יין ב-Truckee River Winery).</li>
+                <li><strong>ערב:</strong> נסיעה לאורך החוף המערבי של טאהו והתמקמות ב-<strong>Camp Richardson Resort</strong>.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Bumpass+Hell+Trailhead" target="_blank" class="map-btn">🗺️ ניווט ל-Bumpass Hell</a>
+            <a href="https://maps.google.com/?q=Old+Tahoe+Distillery+Truckee" target="_blank" class="map-btn">🥃 ניווט למזקקת Old Tahoe</a>
+            <a href="https://maps.google.com/?q=Camp+Richardson+Historic+Resort+and+Marina" target="_blank" class="map-btn">⛺ ניווט ל-Camp Richardson</a>
+        </div>
+    </div>
+
+    <!-- יום 15 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 15: Lake Tahoe to Monterey & Carmel</h2>
+            <span class="date">17.9 (יום ה')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-5.5 שעות נהיגה</span>
+                <span class="tag hike">🌊 שקיעה בחוף כרמל</span>
+                <span class="tag drink">🍷 יינות Carmel Valley</span>
+                <span class="tag stay">⛺ Moss Landing KOA</span>
+            </div>
+            <div class="section-title">📍 אטרקציות, קולינריה ויין:</div>
+            <ul>
+                <li><strong>עצירות בדרך:</strong> ארקייד ב-Round1 Roseville וארוחת צהריים ב-Outback Steakhouse Modesto.</li>
+                <li><strong>מונטריי (Monterey):</strong> רציף הדייגים ההיסטורי, טעימות Clam Chowder בחינם וצפייה באריות ים.</li>
+                <li><strong>🍷 כרמל-ביי-דה-סי ויינות עמק כרמל:</strong> שיטוט בין בתי האגדות של קומסטוק והחצרות הנסתרות של Ocean Ave, המציעות מעל 15 חדרי טעימות של יינות פינו נואר ושרדונה מובחרים (כמו <em>Galante Vineyards</em> ו-<em>Albatross Ridge</em>).</li>
+                <li><strong>שקיעה:</strong> צפייה בשקיעה על החול הלבן בחוף Carmel Beach.</li>
+                <li><strong>לינה:</strong> חניון Moss Landing KOA.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Sunset+Cultural+Center+Carmel" target="_blank" class="map-btn" style="background-color: #d90429;">🅿️ חניית קראוון מוסדרת בכרמל</a>
+            <a href="https://maps.google.com/?q=Moss+Landing+KOA+Express" target="_blank" class="map-btn">⛺ ניווט ל-Moss Landing KOA</a>
+        </div>
+    </div>
+
+    <!-- יום 16 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 16: Moss Landing to Yosemite ⭐️</h2>
+            <span class="date">18.9 (יום ו')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag hike">🐋 שייט לווייתנים (3.5 שעות)</span>
+                <span class="tag drive">🚗 2 מקטעים (כ-3.5 ש' נטו)</span>
+                <span class="tag stay">⛺ Thousand Trails Yosemite</span>
+                <span class="tag laundry">🧺 כביסה בלילה בחניון</span>
+            </div>
+            <div class="section-title">📍 לוח זמנים מתוזמן:</div>
+            <ul>
+                <li><strong>08:30 – 12:30 | שייט לווייתנים:</strong> יציאה לשייט עמוק במפרץ מונטריי לצפייה בלווייתנים גדולי-סנפיר ודולפינים.</li>
+                <li><strong>12:30 | צהריים:</strong> מרק סרטנים וקדרת צ'יופינו ב-<strong>Phil's Fish Market</strong>.</li>
+                <li><strong>הצטיידות וטיפוס להרים:</strong> קניות בוולמארט סופרסנטר ב-Los Banos ונסיעה מזרחה ל-Thousand Trails Yosemite.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Moss+Landing+Boat+Hatchery+Whale+Watching" target="_blank" class="map-btn">🐋 ניווט למעגן שייט הלווייתנים</a>
+            <a href="https://maps.google.com/?q=Thousand+Trails+Yosemite+Lakes+RV+Campground" target="_blank" class="map-btn">⛺ ניווט ל-Thousand Trails Yosemite</a>
+        </div>
+    </div>
+
+    <!-- יום 17 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>יום 17: Yosemite National Park 🕯️</h2>
+            <span class="date">19.9 (יום שבת')</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 כ-2.5 שעות נהיגה</span>
+                <span class="tag hike">🥾 Mist Trail & Sentinel Dome (9 ק"מ)</span>
+                <span class="tag stay">⛺ Thousand Trails Yosemite</span>
+            </div>
+            <div class="section-title">📍 פירוט מסלולי הטרקים ביוסמיטי:</div>
+            <ul>
+                <li><strong>🥾 טרק 1 | Mist Trail (עד גשר Vernal Fall):</strong> 
+                    <ul>
+                        <li><strong>מרחק, משך וקושי:</strong> 3.8 ק"מ הלוך-חזור, כשעתיים הליכה, עלייה מתונה של 120 מ' לצד נהר המרסד אל גשר התצפית של המפל השוצף.</li>
+                    </ul>
+                </li>
+                <li><strong>🥾 טרק 2 | Lower Yosemite Falls Loop:</strong> שביל מעגלי סלול ומישורי של 1.6 ק"מ (30 דקות) אל בסיס המפלים הגבוהים בצפון אמריקה.</li>
+                <li><strong>תצפית Tunnel View:</strong> עצירת צילום מול El Capitan ו-Half Dome.</li>
+                <li><strong>🥾 טרק 3 | Sentinel Dome & Glacier Point:</strong> 
+                    <ul>
+                        <li><strong>מרחק ומשך:</strong> 3.5 ק"מ הלוך-חזור (שעה וחצי) מדרך Glacier Point אל פסגת כיפת הגרניט (גובה 2,470 מטר) לתצפית 360 מעלות פתוחה. המשך לתצפית מצוק Glacier Point.</li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="javascript:void(0)" onclick="openYosemiteModal()" class="map-btn" style="cursor: pointer; background-color: #2b7a78;">🏔️ המדריך המלא ליוסמיטי ומסלולי הטיול</a>
+            <a href="https://maps.google.com/?q=Curry+Village+Parking+Yosemite" target="_blank" class="map-btn">🅿️ חניית בוקר לקראוון (Curry Village)</a>
+            <a href="https://maps.google.com/?q=Sentinel+Dome+Trailhead" target="_blank" class="map-btn">🥾 ניווט ל-Sentinel Dome Trailhead</a>
+            <a href="https://maps.google.com/?q=Glacier+Point+Yosemite" target="_blank" class="map-btn">🗺️ ניווט ל-Glacier Point</a>
+
+            <div id="yosemiteModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeYosemiteModal()">&times;</span>
+                    <h2>🏔️ יוסמיטי: פירוט מלא של המסלולים</h2>
+                    <div class="spot-card">
+                        <h3>🥾 Mist Trail</h3>
+                        <p><strong>3.8 ק"מ הלוך-חזור | שעתיים | קושי בינוני:</strong> עלייה לצד נהר ה-Merced עד לגשר Vernal Fall Footbridge.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🚶 Lower Yosemite Falls</h3>
+                        <p><strong>1.6 ק"מ מעגלי | 30 דקות | קל:</strong> הליכה מישורית ביער אל תחתית המפלים.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>⛰️ Sentinel Dome</h3>
+                        <p><strong>3.5 ק"מ הלוך-חזור | שעה וחצי | קושי בינוני:</strong> טיפוס אל כיפת הסלע לתצפית 360 מעלות על כל עמק יוסמיטי והסיירה הגבוהה.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- יום 18 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 18: Yosemite to Mammoth via Tioga Pass ✡️ (ערב יום כיפור)</h2>
@@ -1375,30 +776,24 @@
         <div class="day-content">
             <div class="tag-group">
                 <span class="tag drive">🚗 כ-2.5 שעות נהיגה</span>
-                <span class="tag hike">🏞️ Tioga Pass & Mono Lake</span>
-                <span class="tag food">🧗 זיפליין & מגלשות הרים</span>
+                <span class="tag hike">🏞️ Mono Lake South Tufa (1.6 ק"מ)</span>
+                <span class="tag food">🧗 מגלשות הרים ואומגה</span>
                 <span class="tag stay">⛺ Mammoth Mountain</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומסלולי היום:</div>
+            <div class="section-title">📍 אטרקציות ומסלולים:</div>
             <ul>
-                <li><strong>08:00 – 10:30 | מעבר טיוגה (Tioga Pass):</strong> חצייה מזרחה בכביש CA-120 דרך מעבר ההרים האלפיני הגבוה בקליפורניה (גובה 3,031 מטר).</li>
-                <li><strong>10:30 – 12:00 | אגם טנאיה וטואולמי:</strong> עצירת רגליים במי הקריסטל של <strong>Tenaya Lake</strong> ושיטוט באחו האלפיני הרחב <strong>Tuolumne Meadows</strong>.</li>
-                <li><strong>13:30 – 16:00 | אקסטרים במאמות' (Mammoth Mountain):</strong> עצירה במתחם <em>Woolly's Adventure Summit</em> לאומגות כפולות (Dual Zip Line) ומגלשת הרים אלפינית מפותלת (Mountain Coaster) ביער.</li>
-                <li><strong>16:30 – 17:30 | שמורת זקיפי הגיר (Mono Lake South Tufa):</strong> שביל הליכה קליל (1.6 ק"מ) בין עמודי ה-Tufa הגיריים הבוקעים ממי האגם המלוח העתיק.</li>
-                <li><strong>18:00 | התמקמות לקראת כניסת החג:</strong> הגעה לחניון <strong>Mammoth Mountain RV Park</strong>, התחברות לחשמל/מים, התארגנות מוקדמת, ארוחה מפסקת וסגירת היום בערב יום כיפור.</li>
+                <li><strong>מעבר טיוגה (Tioga Pass):</strong> חצייה בגובה 3,031 מטר ועצירת רגליים באגם טנאיה (Tenaya Lake) ובאחו האלפיני Tuolumne Meadows.</li>
+                <li><strong>אקסטרים במאמות' (Mammoth Mountain):</strong> מגלשת הרים אלפינית (Mountain Coaster) ואומגה כפולה במתחם Woolly's Adventure Summit.</li>
+                <li><strong>🥾 שמורת Mono Lake (South Tufa):</strong> שביל הליכה קליל ושטוח (1.6 ק"מ, 40 דקות) בין עמודי הגיר הלבנים הבוקעים ממי האגם המלוח.</li>
+                <li><strong>ערב יום כיפור:</strong> התמקמות ב-Mammoth Mountain RV Park, ארוחה מפסקת וכניסת החג.</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
-            <a href="https://maps.google.com/?q=Tenaya+Lake+Yosemite" target="_blank" class="map-btn">💎 ניווט לאגם טנאיה (Tenaya Lake)</a>
-            <a href="https://maps.google.com/?q=Tuolumne+Meadows+Visitor+Center" target="_blank" class="map-btn">🌲 ניווט ל-Tuolumne Meadows</a>
-            <a href="https://maps.google.com/?q=Woolly's+Adventure+Summit+Mammoth+Lakes" target="_blank" class="map-btn" style="background-color: #d90429;">🧗 ניווט לזיפליין ומגלשות הרים (Woolly's)</a>
-            <a href="https://maps.google.com/?q=Mono+Lake+South+Tufa+Area" target="_blank" class="map-btn">🗿 ניווט לזקיפי הגיר (Mono Lake South Tufa)</a>
-            <a href="https://maps.google.com/?q=Mammoth+Mountain+RV+Park" target="_blank" class="map-btn">⛺ ניווט ל-Mammoth Mountain RV Park</a>
+            <a href="https://maps.google.com/?q=Tenaya+Lake+Yosemite" target="_blank" class="map-btn">💎 ניווט לאגם טנאיה</a>
+            <a href="https://maps.google.com/?q=Woolly's+Adventure+Summit+Mammoth+Lakes" target="_blank" class="map-btn" style="background-color: #d90429;">🧗 ניווט למגלשות ההרים והאומגה</a>
+            <a href="https://maps.google.com/?q=Mono+Lake+South+Tufa+Area" target="_blank" class="map-btn">🗿 ניווט לזקיפי הגיר (Mono Lake)</a>
         </div>
     </div>
 
     <!-- יום 19 -->
-<!-- יום 19 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 19: Mammoth to Lone Pine & Alabama Hills (יום כיפור) ✡️</h2>
@@ -1406,29 +801,29 @@
         </div>
         <div class="day-content">
             <div class="tag-group">
-                <span class="tag drive">🚗 כ-2 שעות נהיגה מצטברת</span>
-                <span class="tag hike">🏔️ Little Lakes Valley & Mobius Arch</span>
+                <span class="tag drive">🚗 כ-2 שעות נהיגה</span>
+                <span class="tag hike">🏔️ Little Lakes Valley & Mobius Arch (5 ק"מ)</span>
                 <span class="tag stay">⛺ Alabama Hills (לינת שטח BLM)</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומסלולי היום:</div>
+            <div class="section-title">📍 פירוט מסלולי ההליכה:</div>
             <ul>
-                <li><strong>09:00 – 10:15 | Hot Creek Geological Site:</strong> תצפית מעל ערוץ קניון גיאותרמי שבו נביעות מים רותחים וקיטור מתפרצים לתוך הנחל הקר.</li>
-                <li><strong>10:30 – 13:30 | Little Lakes Valley Trail (עמק האגמים הקטנים):</strong> פנייה ל-Rock Creek לקראת תחילת מסלול בגובה 3,100 מטר (Mosquito Flat). מסלול אלפיני שטוח ומתון להפליא עם נוף לפסגות מושלגות. הליכה מודולרית (3 עד 5 ק"מ הלוך-חזור) דרך Heart Lake, Box Lake ו-Long Lake מול מצוקי ענק.</li>
-                <li><strong>13:30 – 15:30 | נסיעה דרומה על כביש US-395:</strong> ירידה לאורך עמק Owens Valley המדברי בין רכס הסיירה להרי האיניו עד לעיירה Lone Pine.</li>
-                <li><strong>15:30 – 17:00 | התמקמות מדברית ב-Alabama Hills:</strong> כניסה ל-Movie Flat Road (אתר צילומי מערבונים קלאסיים ואיירון מן) ותפיסת ספוט חניה מבודד לקראוון במתחמי ה-BLM המורשים.</li>
-                <li><strong>17:00 – 18:00 | Mobius Arch Loop Trail:</strong> הליכה מעגלית קלילה ושטוחה (1 ק"מ, כ-30 דקות) אל קשת האבן הטבעית הממסגרת בצורה מושלמת את פסגת הר וויטני (Mount Whitney).</li>
-                <li><strong>18:30 ואילך | שקיעה, צאת החג וצפייה בכוכבים:</strong> סיום יום כיפור בשקט מוחלט, ארוחה בקראוון ולינת שטח (Dry Camping) תחת שמי מדבר מלאי כוכבים.</li>
+                <li><strong>Hot Creek:</strong> תצפית מעל ערוץ הקניון הגיאותרמי והנביעות המהבילות.</li>
+                <li><strong>🥾 טרק Little Lakes Valley (עמק האגמים הקטנים):</strong>
+                    <ul>
+                        <li><strong>אופי ומיקום:</strong> תחילת מסלול בגובה 3,100 מטר (Mosquito Flat ב-Rock Creek). שביל אלפיני שטוח ומתון להפליא עם נוף לפסגות מושלגות.</li>
+                        <li><strong>מרחק ומשך:</strong> הליכה מודולרית של 3 עד 5 ק"מ הלוך-חזור (כשעתיים הליכה קלה) בין Heart Lake, Box Lake ו-Long Lake.</li>
+                    </ul>
+                </li>
+                <li><strong>🥾 מסלול Mobius Arch (Alabama Hills):</strong> הליכה מעגלית קלילה ושטוחה (1 ק"מ, 30 דקות) אל קשת האבן הטבעית הממסגרת את פסגת הר וויטני.</li>
+                <li><strong>ערב:</strong> צאת החג, ארוחה ולינת שטח (Dry Camping) תחת שמי כוכבים.</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
-            <a href="https://maps.google.com/?q=Hot+Creek+Geological+Site" target="_blank" class="map-btn">♨️ ניווט ל-Hot Creek</a>
-            <a href="https://maps.google.com/?q=Mosquito+Flat+Trailhead+Rock+Creek" target="_blank" class="map-btn" style="background-color: #2b7a78;">🏔️ ניווט למסלול האגמים (Mosquito Flat)</a>
+            <a href="https://maps.google.com/?q=Mosquito+Flat+Trailhead+Rock+Creek" target="_blank" class="map-btn" style="background-color: #2b7a78;">🏔️ ניווט לטרק האגמים (Mosquito Flat)</a>
             <a href="https://maps.google.com/?q=Mobius+Arch+Trailhead" target="_blank" class="map-btn">🪨 ניווט ל-Mobius Arch</a>
-            <a href="https://maps.google.com/?q=Movie+Flat+Road+Lone+Pine+CA" target="_blank" class="map-btn">🎬 ניווט ל-Movie Flat Road (מתחמי BLM)</a>
+            <a href="https://maps.google.com/?q=Movie+Flat+Road+Lone+Pine+CA" target="_blank" class="map-btn">🎬 ניווט ל-Movie Flat Road (חניוני BLM)</a>
         </div>
     </div>
 
-<!-- יום 20 -->
+    <!-- יום 20 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 20: Lone Pine to Las Vegas</h2>
@@ -1436,21 +831,16 @@
         </div>
         <div class="day-content">
             <div class="tag-group">
-                <span class="tag drive">🚗 2 מקטעי נהיגה (כ-4.5 ש' נטו)</span>
-                <span class="tag hike">🛸 חייזרים & Red Rock Canyon</span>
-                <span class="tag stay">🏨 צ'ק-אין במלון בווגאס</span>
+                <span class="tag drive">🚗 2 מקטעים (כ-4.5 ש' נטו)</span>
+                <span class="tag hike">🛸 חייזרים & Red Rock Scenic Drive</span>
+                <span class="tag stay">🏨 מלון בווגאס</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומקטעי היום:</div>
+            <div class="section-title">📍 לוח זמנים מתוזמן:</div>
             <ul>
-                <li><strong>08:30 – 11:00 | מקטע נסיעה 1 (שעתיים וחצי):</strong> יציאה מ-Lone Pine וחציית הגבול מזרחה למדבר נבאדה על ציר US-95.</li>
-                <li><strong>11:00 – 11:45 | עצירת חייזרים (Amargosa Valley):</strong> התרעננות ב-<strong>Alien Travel Center</strong> – תחנת דרכים מפורסמת עם מוטיב חוצנים, חנות מזכרות משעשעת וקפה.</li>
-                <li><strong>11:45 – 13:15 | מקטע נסיעה 2 (שעה וחצי):</strong> המשך נסיעה דרומה אל עבר המבואות המערביים של לאס וגאס.</li>
-                <li><strong>13:15 – 15:15 | Red Rock Canyon (הקניון האדום):</strong> נסיעה בדרך הטבעתית הסלולה (Scenic Drive - 21 ק"מ) בין מצוקי אבן חול אדומה ותצפיות מדבריות.</li>
-                <li><strong>15:30 – 16:30 | עגינת הקראוון ב-Oasis Las Vegas RV:</strong> הגעה לחניון המאובטח, חניית הקראוון ונעילתו, והתארגנות עם טרולי/תיקי מלון שנארזו מראש.</li>
-                <li><strong>16:30 ואילך | צ'ק-אין במלון:</strong> מעבר ישיר למלון, מקלחת מפנקת, ארוחת ערב וחיי לילה בלאס וגאס.</li>
+                <li><strong>Alien Travel Center:</strong> עצירת התרעננות בתחנת החייזרים ב-Amargosa Valley.</li>
+                <li><strong>Red Rock Canyon:</strong> נסיעה בדרך הטבעתית הנופית (21 ק"מ סלולים) מול מצוקי החול האדומים.</li>
+                <li><strong>עגינת הקראוון ומעבר למלון:</strong> חניית הקראוון ב-Oasis Las Vegas RV, מעבר עם טרולי ישירות לצ'ק-אין במלון על הסטריפ.</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
             <a href="https://maps.google.com/?q=Alien+Travel+Center+Amargosa+Valley+NV" target="_blank" class="map-btn">🛸 ניווט ל-Alien Travel Center</a>
             <a href="https://maps.google.com/?q=Red+Rock+Canyon+Visitor+Center+Las+Vegas" target="_blank" class="map-btn">🏜️ ניווט ל-Red Rock Canyon</a>
             <a href="https://maps.google.com/?q=Oasis+Las+Vegas+RV+Resort" target="_blank" class="map-btn">⛺ ניווט לחניון הקראוונים (Oasis Las Vegas)</a>
@@ -1467,20 +857,25 @@
         <div class="day-content">
             <div class="tag-group">
                 <span class="tag drive">🚗 0 שעות נהיגה</span>
-                <span class="tag food">🍹 Area 15 & מופעים</span>
+                <span class="tag drink">🥃 וויסקי ורום ב-Lost Spirits / ספיק-איזי</span>
                 <span class="tag stay">🏨 מלון בוגאס</span>
-                <span class="tag laundry">🧺 תחנת כביסה (Oasis RV)</span>
+                <span class="tag laundry">🧺 כביסה ב-Oasis RV</span>
             </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
+            <div class="section-title">📍 אטרקציות, מופעים וויסקי:</div>
             <ul>
-                <li><strong>מנוחה:</strong> בוקר רגוע בבריכות המלון. בזמן הזה, אם הקראוון חונה ב-Oasis, יש שם מכבסה מעולה ונוחה מאוד לשימוש.</li>
-                <li><strong>Area 15:</strong> בילוי במתחם האמנות האינטראקטיבי המציע חוויות מציאות מדומה ותערוכות ייחודיות כמו Omega Mart.</li>
-                <li><strong>בערב:</strong> ארוחות שחיתות, מזרקות הבלג'יו ומופעים לאורך הסטריפ.</li>
+                <li><strong>מנוחה ובריכה:</strong> בוקר רגוע במלון (או כביסות בנוחות בחניון Oasis).</li>
+                <li><strong>🥃 מזקקות וחיי לילה:</strong> 
+                    <ul>
+                        <li><em>Lost Spirits Distillery</em> (מתחם Area 15 / Omega Mart) – מזקקת בוטיק מעוצבת בסגנון פנטזיה עם טעימות רום וויסקי.</li>
+                        <li><em>The Underground at The Mob Museum</em> – בר ספיק-איזי אותנטי עם מזקקת ירח (Moonshine) וויסקי מקומי.</li>
+                    </ul>
+                </li>
+                <li><strong>ערב:</strong> מזרקות הבלג'יו, מופעי הסטריפ וארוחת ערב שף.</li>
             </ul>
         </div>
     </div>
 
- <!-- יום 22 -->
+    <!-- יום 22 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 22: Las Vegas to Zion National Park 🌿</h2>
@@ -1489,29 +884,28 @@
         <div class="day-content">
             <div class="tag-group">
                 <span class="tag time">🕰️ אזור זמן: מפסידים שעה (+1)</span>
-                <span class="tag drive">🚗 כ-3.5 שעות נהיגה מצטברת</span>
-                <span class="tag hike">🥾 Kanarra Falls & Emerald Pools</span>
+                <span class="tag drive">🚗 כ-3.5 שעות נהיגה</span>
+                <span class="tag hike">🥾 Kanarra Falls & Emerald Pools (8 ק"מ)</span>
                 <span class="tag stay">⛺ Zion Canyon Campground</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומקטעי היום:</div>
+            <div class="section-title">📍 פירוט טרקי המים והנוף:</div>
             <ul>
-                <li><strong>07:30 – 08:30 | איסוף הקראוון בווגאס:</strong> צ'ק-אאוט מהמלון, הגעה לחניון Oasis RV, ניתוק מהיר ויציאה צפונה על כביש I-15.</li>
-                <li><strong>08:30 – 11:30 | מקטע 1 + קפיצת שעה (+1):</strong> חציית הגבול מנבאדה ליוטה (השעון קופץ שעה קדימה) והגעה לעיר St. George.</li>
-                <li><strong>11:30 – 12:30 | הצטיידות בסנט ג'ורג':</strong> קניות מרוכזות בסופרמרקט ענק (Costco / Walmart) עם חניה מרווחת לקראוון לקראת ימי הטבע ביוטה.</li>
-                <li><strong>13:15 – 15:45 | מסלול Kanarra Falls:</strong> הליכה אתגרית רטובה בתוך קניון סלוט אדום אל סולמות העץ והמפלים השוצפים (חובה פרמיט שהוזמן מראש).</li>
-                <li><strong>16:45 | התמקמות ב-Zion Canyon Campground:</strong> הגעה לספרינגדייל, חניית הקראוון והתחברות לתשתיות. מרגע זה מתניידים אך ורק ברגל ובשאטל החינמי!</li>
-                <li><strong>17:30 – 19:30 | שקיעה בפארק ציון:</strong> נסיעה קצרה בשאטל ל-<strong>Lower Emerald Pools</strong> (מפלים ובריכות תלויות) או הליכה רגועה בשביל הסלול <strong>Pa'rus Trail</strong> מול מצוקי הפארק המוארים בשקיעה.</li>
+                <li><strong>בוקר:</strong> איסוף הקראוון מווגאס, כניסה ליוטה (מפסידים שעה) וקניות גדולות ב-Costco St. George.</li>
+                <li><strong>🥾 טרק 1 | Kanarra Falls Slot Canyon:</strong> 
+                    <ul>
+                        <li><strong>מרחק, משך וקושי:</strong> 6 ק"מ הלוך-חזור, כ-2.5 שעות, קושי בינוני. הליכה במים בתוך קניון סלוט אדום וצר עד לסולם העץ שעל המפל הראשון (חובה פרמיט מראש ונעלי מים!).</li>
+                    </ul>
+                </li>
+                <li><strong>התמקמות:</strong> הגעה ל-Zion Canyon Campground (ספרינגדייל) ומעבר להתניידות בשאטלים.</li>
+                <li><strong>🥾 טרק 2 | Lower Emerald Pools / Pa'rus Trail:</strong> מסלול הליכה מעגלי (2.2 ק"מ, כשעה) מתחת לבריכות ומפלי מים תלויים או הליכה רגועה בשקיעה לאורך נהר הווירג'ין.</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
             <a href="https://maps.google.com/?q=Costco+Wholesale+St+George+UT" target="_blank" class="map-btn">🛒 ניווט לקניות (Costco St. George)</a>
-            <a href="https://maps.google.com/?q=Kanarra+Falls+Parking+and+Trailhead" target="_blank" class="map-btn">💧 ניווט לחניית קנארה פולס (Kanarra Falls)</a>
+            <a href="https://maps.google.com/?q=Kanarra+Falls+Parking+and+Trailhead" target="_blank" class="map-btn">💧 ניווט ל-Kanarra Falls</a>
             <a href="https://maps.google.com/?q=Zion+Canyon+Campground+and+RV+Resort" target="_blank" class="map-btn">⛺ ניווט ל-Zion Canyon Campground</a>
-            <a href="https://maps.google.com/?q=Zion+Canyon+Visitor+Center" target="_blank" class="map-btn">🚌 ניווט למרכז המבקרים ולשאטל של ציון</a>
         </div>
     </div>
 
-<!-- יום 23 -->
+    <!-- יום 23 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 23: Zion to Page / Lake Powell 🍋 (ערב סוכות)</h2>
@@ -1521,29 +915,29 @@
             <div class="tag-group">
                 <span class="tag time">🕰️ אזור זמן: מרוויחים שעה (-1)</span>
                 <span class="tag drive">🚗 כ-2.5 שעות נהיגה (מעקף UT-59)</span>
-                <span class="tag hike">🌊 הנארוז & Lone Rock Beach</span>
+                <span class="tag hike">🌊 הנארוז בציון (4-7 ק"מ בתוך המים)</span>
                 <span class="tag stay">⛺ Lone Rock Beach (על המים)</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומקטעי היום:</div>
+            <div class="section-title">📍 טרק הנארוז והמעבר לפייג':</div>
             <ul>
-                <li><strong>07:30 – 11:00 | הנארוז (The Narrows, ציון):</strong> השאטל המוקדם לתחנה 9 (Temple of Sinawava), הליכה ב-Riverside Walk וכניסה להליכה במי נהר הווירג'ין בין קירות המצוק הענקיים.</li>
-                <li><strong>11:00 – 12:00 | מקלחת והתארגנות:</strong> חזרה לקראוון ב-Zion Canyon Campground, מקלחת חמה, ניתוק תשתיות ויציאה לדרך.</li>
-                <li><strong>12:00 – 13:30 | נסיעה עוקפת מנהרה (UT-59 / AZ-389):</strong> עקיפת מנהרת ציון (האסורה לקראוונים) דרך כביש 59 ו-389 לעבר קנאב (Kanab). במעבר לאריזונה מרוויחים שעה בשעון (-1).</li>
-                <li><strong>13:30 – 14:15 | פטריות הסלע (Toadstool Hoodoos - אופציונלי):</strong> עצירה קלילה ומהירה של 20-30 דקות ממש על כביש 89 לצילום פטריות האבן האדומות-לבנות (ניתן לדלג ולהמשיך ישירות לאגם).</li>
-                <li><strong>14:45 – 15:30 | סכר גלן קניון (Glen Canyon Dam):</strong> עצירת תצפית מעל הסכר העצום שיוצר את אגם פאוול וגשר הפלדה מעל נהר הקולורדו.</li>
-                <li><strong>15:30 ואילך | התמקמות ב-Lone Rock Beach:</strong> הגעה מוקדמת ונינוחה לחופי אגם פאוול, חניה ממש על קו המים מול סלע Lone Rock, רחצה רגועה, ארוחת חג והתארגנות לשקיעה (🌅 <strong>שקיעת שמש: 18:18</strong>).</li>
+                <li><strong>🥾 טרק The Narrows (Bottom-Up, ציון):</strong> 
+                    <ul>
+                        <li><strong>אופי וקושי:</strong> הטרק האגדי של נהר הווירג'ין בתוך קניון עמוק. הליכה במים זורמים על חלוקי נחל (דרגת קושי בינונית, חובה מקל הליכה ונעלי מים).</li>
+                        <li><strong>מרחק ומשך:</strong> הליכה מודולרית של 4 עד 7 ק"מ הלוך-חזור (3 עד 3.5 שעות) מתחנה 9 (Temple of Sinawava).</li>
+                    </ul>
+                </li>
+                <li><strong>נסיעה עוקפת מנהרה (UT-59 / AZ-389):</strong> עקיפת מנהרת ציון (אסורה לקראוונים) דרך קנאב. מרוויחים שעה בחזרה בכניסה לאריזונה.</li>
+                <li><strong>Toadstool Hoodoos & סכר גלן קניון:</strong> עצירת רשות קלילה לפטריות הסלע (20 דק') ותצפית על גשר סכר גלן קניון.</li>
+                <li><strong>התמקמות:</strong> הגעה ב-15:30-16:00 ל-Lone Rock Beach לרחצה ושקיעה לקראת ערב סוכות (🌅 <strong>שקיעה: 18:18</strong>).</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
-            <a href="https://maps.google.com/?q=Temple+of+Sinawava+Zion" target="_blank" class="map-btn">🌊 ניווט לשאטל הנארוז (Temple of Sinawava)</a>
+            <a href="https://maps.google.com/?q=Temple+of+Sinawava+Zion" target="_blank" class="map-btn">🌊 ניווט לשאטל הנארוז</a>
             <a href="https://maps.google.com/?q=Springdale+UT+to+Page+AZ+via+UT-59+S" target="_blank" class="map-btn" style="background-color: #d90429;">🛣️ ניווט עוקף מנהרה לקראוונים (UT-59 / US-89)</a>
-            <a href="https://maps.google.com/?q=Toadstool+Hoodoos+Trailhead" target="_blank" class="map-btn">🍄 ניווט לפטריות הסלע (אופציונלי)</a>
-            <a href="https://maps.google.com/?q=Glen+Canyon+Dam+Overlook" target="_blank" class="map-btn">🌊 ניווט לתצפית סכר גלן קניון</a>
+            <a href="https://maps.google.com/?q=Glen+Canyon+Dam+Overlook" target="_blank" class="map-btn">🌊 ניווט לסכר גלן קניון</a>
             <a href="https://maps.google.com/?q=Lone+Rock+Beach+Campground+Lake+Powell" target="_blank" class="map-btn">⛺ ניווט לחוף Lone Rock Beach</a>
         </div>
     </div>
 
-<!-- יום 24 -->
+    <!-- יום 24 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 24: Page to Grand Canyon (סוכות)</h2>
@@ -1552,30 +946,25 @@
         <div class="day-content">
             <div class="tag-group">
                 <span class="tag drive">🚗 כ-3.5 שעות נהיגה</span>
-                <span class="tag hike">🌅 Horseshoe Bend & Grand Canyon</span>
+                <span class="tag hike">🌅 Horseshoe Bend & Rim Trail (5 ק"מ)</span>
                 <span class="tag stay">⛺ Trailer Village RV Park</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומקטעי היום:</div>
+            <div class="section-title">📍 פירוט שבילי התצפית והקניון:</div>
             <ul>
-                <li><strong>08:30 – 09:30 | יציאה מ-Lone Rock Beach:</strong> התארגנות ונסיעה קצרה דרומה לעבר פייג'.</li>
-                <li><strong>09:30 – 11:00 | עיקול הפרסה (Horseshoe Bend):</strong> מסלול רגלי קצר וסלול (1.2 ק"מ) מחניון הקראוונים המסודר אל התצפית המפורסמת מעל עיקול נהר הקולורדו מגובה 300 מטר.</li>
-                <li><strong>11:00 – 12:45 | Navajo Bridge & Lee's Ferry:</strong> נסיעה על כביש 89A, עצירה בגשר נבאחו (צפייה בקונדורים קליפורניים מקננים) וירידה לחוף Lee's Ferry לטבילת רגליים במי הקולורדו.</li>
-                <li><strong>12:45 – 15:00 | נסיעה לגראנד קניון (Desert View Drive):</strong> נסיעה דרומה דרך צומת Cameron וכניסה לפארק הלאומי דרך השער המזרחי הנופי (כביש 64).</li>
-                <li><strong>15:00 – 16:15 | מגדל התצפית Desert View Watchtower:</strong> עצירה במגדל האבן ההיסטורי המשקיף על פיתולי נהר הקולורדו הנכנסים אל תוך הקניון.</li>
-                <li><strong>16:45 – 17:30 | התמקמות ב-Trailer Village RV:</strong> הגעה לחניון הקראוונים בתוך Grand Canyon Village, התחברות לחשמל/מים/ביוב והתארגנות קלה.</li>
-                <li><strong>17:45 – 19:00 | שקיעה ב-Rim Trail:</strong> הליכה רגלית או נסיעה קצרה בשאטל לתצפית <strong>Mather Point / Yavapai Point</strong> לצפייה בשקיעה המרהיבה על שכבות הסלע של הגראנד קניון (🌅 <strong>שקיעת שמש: 18:19</strong>).</li>
+                <li><strong>🥾 מסלול 1 | עיקול הפרסה (Horseshoe Bend):</strong> מסלול הליכה קל ורחב (2.4 ק"מ הלוך-חזור, שעה אחת) מחניון הקראוונים אל תצפית המצוק מעל נהר הקולורדו (גובה 300 מ').</li>
+                <li><strong>גשר נבאחו & Lee's Ferry:</strong> צפייה בקונדורים קליפורניים וטבילת רגליים במי הקולורדו.</li>
+                <li><strong>Desert View Watchtower:</strong> כניסה לגראנד קניון דרך השער המזרחי ותצפית ממגדל האבן.</li>
+                <li><strong>התמקמות:</strong> כניסה ל-Trailer Village RV Park בתוך הפארק.</li>
+                <li><strong>🥾 מסלול 2 | Rim Trail (גראנד קניון):</strong> הליכה נינוחה וסלולה (2-3 ק"מ לאורך שפת המצוק) אל תצפיות Mather Point ו-Yavapai Point לצפייה בשקיעה (🌅 <strong>שקיעה: 18:19</strong>).</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
-            <a href="https://maps.google.com/?q=Horseshoe+Bend+Parking+Page+AZ" target="_blank" class="map-btn">📸 ניווט לפרסת הסוס (Horseshoe Bend)</a>
-            <a href="https://maps.google.com/?q=Navajo+Bridge+Interpretive+Center" target="_blank" class="map-btn">🦅 ניווט לגשר נבאחו (Navajo Bridge)</a>
+            <a href="https://maps.google.com/?q=Horseshoe+Bend+Parking+Page+AZ" target="_blank" class="map-btn">📸 ניווט לפרסת הסוס</a>
             <a href="https://maps.google.com/?q=Lees+Ferry+Campground+Marble+Canyon" target="_blank" class="map-btn">🌊 ניווט ל-Lee's Ferry</a>
             <a href="https://maps.google.com/?q=Desert+View+Watchtower+Grand+Canyon" target="_blank" class="map-btn">🏰 ניווט למגדל Desert View</a>
             <a href="https://maps.google.com/?q=Trailer+Village+RV+Park+Grand+Canyon" target="_blank" class="map-btn">⛺ ניווט ל-Trailer Village RV Park</a>
         </div>
     </div>
 
-<!-- יום 25 -->
+    <!-- יום 25 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 25: Grand Canyon to Lake Havasu / Parker via Route 66</h2>
@@ -1583,31 +972,25 @@
         </div>
         <div class="day-content">
             <div class="tag-group">
-                <span class="tag drive">🚗 כ-4.5 שעות נהיגה (במקטעים קלים)</span>
-                <span class="tag hike">🎢 מגלשות הרים & Route 66</span>
+                <span class="tag drive">🚗 כ-4.5 שעות נהיגה</span>
+                <span class="tag hike">🎢 Canyon Coaster & Route 66</span>
                 <span class="tag stay">⛺ Lake Havasu / Parker</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומקטעי היום:</div>
+            <div class="section-title">📍 לוח זמנים מתוזמן:</div>
             <ul>
-                <li><strong>08:30 – 09:45 | מקטע 1:</strong> ירידה מהגראנד קניון דרומה על כביש AZ-64 אל עיירת כביש 66 – <strong>Williams</strong>.</li>
-                <li><strong>09:45 – 11:45 | Canyon Coaster Adventure Park:</strong> גלישה במגלשת ההרים האלפינית הארוכה באריזונה (The Canyon Coaster - שליטה עצמית על המהירות), מסלול אבובים יבש (Mountain Tubing) וקפה בבקתת ההר.</li>
-                <li><strong>11:45 – 12:45 | מקטע 2:</strong> נסיעה מערבה על I-40 אל עבר בירת כביש 66 הנוסטלגית – <strong>Seligman</strong>.</li>
-                <li><strong>12:45 – 14:00 | צהריים ואווירת כביש 66:</strong> שיטוט בין הדיינרים של שנות ה-50, רכבי האספנות (ההשראה לרדיאטור ספרינגס מ"מכוניות") וגלידה/המבורגר ב-<em>Delgadillo's Snow Cap</em>.</li>
-                <li><strong>14:00 – 15:30 | מקטע 3 (כביש 66 הישן):</strong> נסיעה בתוואי ההיסטורי דרך תחנת הדרכים והגרוטאות המפורסמת <strong>Hackberry General Store</strong> אל Kingman.</li>
-                <li><strong>15:30 – 17:30 | מקטע 4 לנהר הקולורדו:</strong> ירידה דרומה בכביש AZ-95 אל חופי אגם הוואסו.</li>
-                <li><strong>17:30 ואילך | גשר לונדון והתמקמות:</strong> צפייה ב-<strong>London Bridge</strong> ההיסטורי שהועתק מאנגליה ללב המדבר, התמקמות בחניון על קו המים (Lake Havasu State Park / Pirate Cove Resort) וארוחת ערב מול הנהר.</li>
+                <li><strong>Canyon Coaster (Williams):</strong> גלישה במגלשת ההרים האלפינית הארוכה באריזונה ואבובים יבשים על כביש 66.</li>
+                <li><strong>Seligman & Hackberry:</strong> שיטוט בין דיינרים נוסטלגיים משנות ה-50 ורכבי אספנות ("מכוניות").</li>
+                <li><strong>גשר לונדון (Lake Havasu):</strong> צפייה ב-London Bridge המקורי שהובא מאנגליה.</li>
+                <li><strong>לינה מול המים:</strong> התמקמות ב-Lake Havasu State Park או Buckskin Mountain / Pirate Cove.</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
-            <a href="https://maps.google.com/?q=Canyon+Coaster+Adventure+Park+Williams+AZ" target="_blank" class="map-btn" style="background-color: #d90429;">🎢 ניווט למגלשות ההרים (Canyon Coaster)</a>
+            <a href="https://maps.google.com/?q=Canyon+Coaster+Adventure+Park+Williams+AZ" target="_blank" class="map-btn" style="background-color: #d90429;">🎢 ניווט למגלשות ההרים (Williams)</a>
             <a href="https://maps.google.com/?q=Delgadillos+Snow+Cap+Seligman+AZ" target="_blank" class="map-btn">🍔 ניווט ל-Seligman (כביש 66)</a>
-            <a href="https://maps.google.com/?q=Hackberry+General+Store+Kingman+AZ" target="_blank" class="map-btn">⛽ ניווט לתחנת הדרכים Hackberry</a>
             <a href="https://maps.google.com/?q=London+Bridge+Lake+Havasu+City+AZ" target="_blank" class="map-btn">🌉 ניווט לגשר לונדון (Lake Havasu)</a>
             <a href="https://maps.google.com/?q=Lake+Havasu+State+Park+Campground" target="_blank" class="map-btn">⛺ ניווט ל-Lake Havasu State Park</a>
         </div>
     </div>
 
-<!-- יום 26 -->
+    <!-- יום 26 -->
     <div class="day-card">
         <div class="day-header">
             <h2>יום 26: Lake Havasu to San Diego 🌊</h2>
@@ -1619,17 +1002,12 @@
                 <span class="tag food">🛍️ אאוטלט ענק ב-Cabazon</span>
                 <span class="tag stay">⛺ Campland on the Bay</span>
             </div>
-            <div class="section-title">📍 לוח זמנים מתוזמן ומקטעי היום:</div>
+            <div class="section-title">📍 לוח זמנים מתוזמן:</div>
             <ul>
-                <li><strong>08:30 – 12:00 | מקטע נסיעה 1 (3.5 שעות):</strong> יציאה מלייק הוואסו מערבה, חציית מדבר קליפורניה בכביש I-10 המהיר אל אזור פאלם ספרינגס.</li>
-                <li><strong>12:00 – 15:30 | שופינג באאוטלט הענק (Desert Hills Cabazon):</strong> חניה מרווחת לקראוונים באאוטלט המותגים הגדול והמוביל בקליפורניה (מעל 180 חנויות) והפסקת צהריים.</li>
-                <li><strong>15:30 – 17:30 | מקטע נסיעה 2 (שעתיים):</strong> נסיעה דרומה בכביש I-15 לעבר חופי האוקיינוס השקט וסן דייגו.</li>
-                <li><strong>17:30 ואילך | התמקמות ב-Campland on the Bay:</strong> כניסה לריזורט הקראוונים המפורסם ב-Mission Bay, חיבור לתשתיות, הליכה לחוף ושקיעה על המפרץ (🌅 <strong>שקיעת שמש: 18:36</strong>).</li>
+                <li><strong>Desert Hills Premium Outlets (Cabazon):</strong> עצירת שופינג גדולה (180 מותגים) עם חניה נוחה לקראוון.</li>
+                <li><strong>הגעה לחוף:</strong> נסיעה דרומה והתמקמות ב-<strong>Campland on the Bay</strong> ב-Mission Bay מול השקיעה (🌅 <strong>שקיעה: 18:36</strong>).</li>
             </ul>
-            
-            <!-- כפתורי ניווט -->
-            <a href="https://maps.google.com/?q=Desert+Hills+Premium+Outlets+Cabazon" target="_blank" class="map-btn" style="background-color: #d90429;">🛍️ ניווט לאאוטלט הענק (Desert Hills Cabazon)</a>
-            <a href="https://maps.google.com/?q=Cabazon+Dinosaurs" target="_blank" class="map-btn">🦖 הדינוזאורים הענקיים של קבאזון (צמוד לאאוטלט)</a>
+            <a href="https://maps.google.com/?q=Desert+Hills+Premium+Outlets+Cabazon" target="_blank" class="map-btn" style="background-color: #d90429;">🛍️ ניווט לאאוטלט הענק (Cabazon)</a>
             <a href="https://maps.google.com/?q=Campland+on+the+Bay+San+Diego" target="_blank" class="map-btn">⛺ ניווט ל-Campland on the Bay</a>
         </div>
     </div>
@@ -1643,16 +1021,15 @@
         <div class="day-content">
             <div class="tag-group">
                 <span class="tag drive">🚗 0 שעות נהיגה</span>
-                <span class="tag hike">🐬 SeaWorld / גלים זוהרים</span>
+                <span class="tag hike">🐬 SeaWorld & Old Town</span>
                 <span class="tag stay">⛺ Campland on the Bay</span>
                 <span class="tag laundry">🧺 כביסה אחרונה (Campland)</span>
             </div>
             <div class="section-title">📍 אטרקציות ופעילויות:</div>
             <ul>
-                <li><strong>SeaWorld San Diego:</strong> יום בילוי בפארק הימי הענק. צפייה באקווריומים, רכבות הרים, וחיות ים.</li>
-                <li><strong>אולד טאון (Old Town):</strong> אחה"צ רגוע בסמטאות העיר העתיקה ההיסטורית, סעודה מקסיקנית ואווירת פייסטה.</li>
-                <li><strong>פעילות לילה - גלים זוהרים:</strong> כדאי לבדוק בקבוצות המקומיות האם יש פריחת פלנקטון (Bioluminescence). במידה וכן, ביקור לילי באחד החופים מאפשר לצפות עם הזוהרים בגלים הזוהרים באור ניאון כחול - חוויה יוצאת דופן!</li>
-                <li><strong>כביסה אחרונה:</strong> לחזור הביתה עם מזוודות נקיות! נצלו את מכבסת החניון של Campland.</li>
+                <li><strong>SeaWorld San Diego:</strong> יום שלם בפארק הימי.</li>
+                <li><strong>אולד טאון (Old Town):</strong> ערב של אווירה מקסיקנית ומסעדות מעולות.</li>
+                <li><strong>כביסות אחרונות:</strong> ניצול מכבסת החניון לחזרה עם מזוודות נקיות.</li>
             </ul>
         </div>
     </div>
@@ -1666,20 +1043,42 @@
         <div class="day-content">
             <div class="tag-group">
                 <span class="tag drive">🚗 2.5 שעות נהיגה</span>
-                <span class="tag stay">🚐 החזרת הקראוון</span>
+                <span class="tag hike">🦭 La Jolla Cove (שביל החוף - 1.5 ק"מ)</span>
+                <span class="tag stay">🚐 החזרת הקראוון ב-Carson</span>
             </div>
-            <div class="section-title">📍 אטרקציות ופעילויות:</div>
+            <div class="section-title">📍 סיום המסע:</div>
             <ul>
-                <li><strong>La Jolla Cove:</strong> לפני העלייה לכביש המהיר, תצפית בוקר אחרונה על מושבות כלבי הים.</li>
-                <li>נסיעה צפונה על כביש החוף הפסיפי לעבר לוס אנג'לס.</li>
-                <li>ניקיון, פינוי מיכלים, והחזרת הקראוון בתחנת ההשכרה בלוס אנג'לס (Carson).</li>
-                <li><strong>סיום מדהים למסע הקראוונים! 🎉</strong></li>
+                <li><strong>🥾 La Jolla Cove Coastal Walk:</strong> הליכה קצרה ופנורמית לאורך מצוקי הים (1.5 ק"מ, 45 דק') מול מושבות כלבי הים ואריות הים השוכבים על החוף.</li>
+                <li>נסיעה צפונה על כביש החוף ללוס אנג'לס.</li>
+                <li>ריקון מיכלים, ניקיון והחזרת הקראוון בסוכנות ב-Carson.</li>
+                <li><strong>🎉 סיום המסע הגדול בארה"ב!</strong></li>
             </ul>
-            <a href="https://www.google.com/maps/place/2233+E+223rd+St,+Carson,+CA+90810,+%D7%90%D7%A8%D7%A6%D7%95%D7%AA+%D7%94%D7%91%D7%A8%D7%99%D7%AA%E2%80%AD/@33.8248518,-118.2305658,580m/data=!3m2!1e3!4b1!4m6!3m5!1s0x80dd3576f6f0f3ab:0xbec3fa80727bdcac!8m2!3d33.8248564!4d-118.233109!16s%2Fg%2F11w_hj6vf4?authuser=0&entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">🗺️ ניווט לנקודת ההחזרה</a>
+            <a href="https://maps.google.com/?q=La+Jolla+Cove+San+Diego" target="_blank" class="map-btn">🦭 ניווט ל-La Jolla Cove</a>
+            <a href="https://www.google.com/maps/place/2233+E+223rd+St,+Carson,+CA+90810" target="_blank" class="map-btn">🗺️ ניווט לנקודת ההחזרה (Carson)</a>
         </div>
     </div>
-
 </div>
+
+<script>
+    function openDcModal() { document.getElementById('dcModal').style.display = 'block'; }
+    function closeDcModal() { document.getElementById('dcModal').style.display = 'none'; }
+    function openBendModal() { document.getElementById('bendModal').style.display = 'block'; }
+    function closeBendModal() { document.getElementById('bendModal').style.display = 'none'; }
+    function openRaftingModal() { document.getElementById('raftingModal').style.display = 'block'; }
+    function closeRaftingModal() { document.getElementById('raftingModal').style.display = 'none'; }
+    function openYosemiteModal() { document.getElementById('yosemiteModal').style.display = 'block'; }
+    function closeYosemiteModal() { document.getElementById('yosemiteModal').style.display = 'none'; }
+
+    window.addEventListener('click', function(event) {
+        var modals = ['dcModal', 'bendModal', 'raftingModal', 'yosemiteModal'];
+        modals.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el && event.target === el) {
+                el.style.display = 'none';
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
