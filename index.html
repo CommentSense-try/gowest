@@ -442,6 +442,216 @@
                 <li><strong>17:00 | מנוחה וכביסות:</strong> חזרה ל-Fishing Bridge.</li>
             </ul>
             <a href="https://www.google.com/maps/dir/Fishing+Bridge+RV+Park/Hayden+Valley/Norris+Geyser+Basin/Mammoth+Hot+Springs/Brink+of+the+Lower+Falls/Fishing+Bridge+RV+Park" target="_blank" class="map-btn">🗺️ ניווט לולאה צפונית מלאה</a>
+<!-- כפתור אופציית גשם -->
+<button id="rainOptBtn" class="rain-btn" onclick="openRainModal()">
+  🌧️ תוכנית חלופית (אופציית גשם וקיצור טווח)
+</button>
+
+<!-- חלון פופ-אפ (Modal) -->
+<div id="rainModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeRainModal()">&times;</span>
+    
+    <div class="modal-header">
+      <h2>🌧️ יום 7 (9.9) – תוכנית גשם וצמצום טווח לבויזי</h2>
+      <p class="subtitle">התאמת מסלולים למזג אוויר סגרירי ויציאה מוקדמת מהפארק</p>
+    </div>
+
+    <div class="modal-body">
+      <div class="alert-box">
+        <strong>💡 החלטה לוגיסטית:</strong> ויתור על הלילה השני ב-Fishing Bridge. חוסך פרסה מיותרת בתוך הפארק ומקצר את יום הנהיגה המתיש של מחר לבויזי בכ-3 שעות.
+      </div>
+
+      <div class="itinerary-step">
+        <div class="step-time">06:30 - 08:30</div>
+        <div class="step-details">
+          <strong>ספארי בוקר בעמק היידן (Hayden Valley):</strong>
+          <p>תצפית על ביזונים וחיות בר מתוך החום של הקרוואן. פעילות מושלמת לבוקר גשום וערפילי.</p>
+        </div>
+      </div>
+
+      <div class="itinerary-step">
+        <div class="step-time">09:00 - 11:00</div>
+        <div class="step-details">
+          <strong>הקניון הגדול של ילוסטון (חלופה נוחה):</strong>
+          <p>מוותרים על הירידה החלקה ב-Brink of the Lower Falls. עוברים לתצפיות הנגישות <strong>Artist Point</strong> ו-<strong>Lookout Point</strong> לצפייה במפל ובקניון ללא סיכון החלקה.</p>
+        </div>
+      </div>
+
+      <div class="itinerary-step">
+        <div class="step-time">11:30 - 15:30</div>
+        <div class="step-details">
+          <strong>נוריס וממות' הוט ספרינגס:</strong>
+          <p>סיור רגלי ממוקד על שבילי העץ באגן נוריס (Norris) וטיפוס בטרסות של Mammoth Hot Springs. הליכה זהירה על הדקים הרטובים.</p>
+        </div>
+      </div>
+
+      <div class="itinerary-step">
+        <div class="step-time">16:00 ואילך</div>
+        <div class="step-details">
+          <strong>יציאה מהפארק ונסיעת צמצום טווח:</strong>
+          <p>יציאה דרך השער המערבי (West Yellowstone) והמשך נסיעה ישירה של כשעתיים על כביש US-20 W ללינה ב-<strong>אידהו פולס (Idaho Falls)</strong>.</p>
+        </div>
+      </div>
+
+      <div class="summary-badge">
+        🚗 <strong>רווח למחר:</strong> מאידהו פולס לבויזי נשארות כ-4.5 שעות נהיגה קלות בלבד (על כביש I-84) במקום 7.5 שעות ממעמקי הפארק.
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* עיצוב כפתור */
+  .rain-btn {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    direction: rtl;
+  }
+  .rain-btn:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* שכבת הרקע של הפופאפ */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+    font-family: inherit;
+  }
+
+  /* תוכן החלון */
+  .modal-content {
+    background: #ffffff;
+    border-radius: 14px;
+    max-width: 620px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: right;
+  }
+
+  /* כפתור סגירה */
+  .close-btn {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .close-btn:hover {
+    color: #111;
+  }
+
+  .modal-header h2 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    color: #1e293b;
+  }
+  .modal-header .subtitle {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  .alert-box {
+    background-color: #eff6ff;
+    border-right: 4px solid #3b82f6;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1e40af;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .itinerary-step {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
+  }
+  .step-time {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    height: fit-content;
+    white-space: nowrap;
+  }
+  .step-details strong {
+    font-size: 15px;
+    color: #0f172a;
+  }
+  .step-details p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.4;
+  }
+
+  .summary-badge {
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.5;
+  }
+</style>
+
+<script>
+  function openRainModal() {
+    document.getElementById('rainModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeRainModal() {
+    document.getElementById('rainModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  function closeModalOnOverlay(event) {
+    if (event.target.id === 'rainModal') {
+      closeRainModal();
+    }
+  }
+</script>
+
         </div>
     </div>
 
