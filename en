@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great US Road Trip</title>
+    <style>
+        :root {
+            --primary: #1b3b5f;
+            --accent: #e67e22;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --border: #e1e8ed;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0d233a 0%, #1b3b5f 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        header h1 { margin: 0; font-size: 2.2rem; font-weight: 800; }
+        header p { margin-top: 0.5rem; opacity: 0.9; font-size: 1.1rem; }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
+
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+
+        .day-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .day-header h2 { margin: 0; font-size: 1.25rem; }
+        .day-header .date { font-size: 0.95rem; background: rgba(255,255,255,0.15); padding: 0.2rem 0.6rem; border-radius: 6px; }
+
+        .day-content {
+            padding: 1.25rem;
+        }
+
+        .tag-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .tag.drive { background-color: #fef3c7; color: #92400e; }
+        .tag.hike { background-color: #d1fae5; color: #065f46; }
+        .tag.food { background-color: #ffe4e6; color: #9f1239; }
+        .tag.stay { background-color: #e0e7ff; color: #3730a3; }
+        .tag.alert { background-color: #fee2e2; color: #b91c1c; border: 1px solid #f87171; }
+        .tag.time { background-color: #f3e8ff; color: #7e22ce; border: 1px solid #d8b4fe; }
+        .tag.laundry { background-color: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+        .tag.drink { background-color: #fce7f3; color: #831843; border: 1px solid #fbcfe8; }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 1rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+
+        .map-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 0.6rem 1.1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            margin-right: 0.5rem;
+        }
+
+        .map-btn:hover { background-color: #1d4ed8; }
+
+        ul { margin: 0; padding-left: 1.2rem; }
+        li { margin-bottom: 0.4rem; }
+        li strong { color: var(--primary); }
+
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(3px);
+            overflow-y: auto;
+            direction: ltr;
+            text-align: left;
+        }
+        .custom-modal-content {
+            background-color: #ffffff;
+            margin: 4% auto;
+            padding: 24px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 680px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .close-modal-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .close-modal-btn:hover {
+            color: #000;
+        }
+        .custom-modal h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.35rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .modal-intro {
+            color: #444;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+        .spot-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 15px;
+        }
+        .spot-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.05rem;
+            color: #1a252f;
+        }
+        .spot-card p {
+            margin: 6px 0;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #333;
+        }
+        .mini-nav-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background-color: #2b7a78;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .mini-nav-btn:hover {
+            background-color: #17252a;
+        }
+        .nav-btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 600px) {
+            .day-header { flex-direction: column; align-items: flex-start; }
+            header h1 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🚐 The Great US Road Trip</h1>
+    <p>Washington ⬅️ Salt Lake City ⬅️ Los Angeles | September 2026</p>
+</header>
+
+<div class="container">
+    <!-- Day 1 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 1: TLV-JFK-Washington DC</h2>
+            <span class="date">Sept 3 (Thu)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">✈️ 13.5h Flight Time</span>
+                <span class="tag food">🥞 Breakfast in Arlington</span>
+                <span class="tag food">🦐 Ballston Quarter</span>
+                <span class="tag stay">🏨 Arlington</span>
+            </div>
+            <div class="section-title">✈️ Flights & Logistics:</div>
+            <ul>
+                <li><strong>Flight LY3 to JFK at 00:05</strong></li>
+                <li><strong>Landing in New York at 04:55</strong></li>
+                <li><strong>Flight LY4265 to DCA at 08:55</strong></li>
+                <li><strong>Landing in Washington at 10:26</strong></li>
+            </ul>
+            <div class="section-title">📍 Activities & Meetups:</div>
+            <ul>
+                <li><strong>Meet up with Orly and get settled in the city.</strong></li>
+            </ul>
+            <a href="https://maps.app.goo.gl/96CVGZXDfSK7Lybi6" target="_blank" class="map-btn">🗺️ Navigate to Orly</a>
+            <a href="https://maps.app.goo.gl/2jWujawq5pDtJf87A" target="_blank" class="map-btn">🗺️ Navigate to Apartment</a>
+        </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 2: Washington DC (The National Mall)</h2>
+            <span class="date">Sept 4 (Fri)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 0.0h Driving (Taxis/Walking)</span>
+                <span class="tag hike">🥾 National Mall Trail (6.5 km / 4 miles)</span>
+                <span class="tag food">🦞 Old Ebbitt & District Taco</span>
+                <span class="tag stay">🏛️ Washington DC</span>
+            </div>
+            <div class="section-title">📍 Urban Trek & Highlights:</div>
+            <ul>
+                <li><strong>Walking tour on the National Mall:</strong> A continuous walk of ~6.5 km (~3-4 leisurely hours) from the US Capitol and the Air and Space Museum, past the Washington Monument, Lincoln Memorial Reflecting Pool, and Lincoln Memorial, concluding with views of the White House.</li>
+                <li><strong>Happy Hour & Dining:</strong> Wrap up the day with dinner and drinks at the historic Old Ebbitt Grill or District Taco.</li>
+            </ul> 
+            <div class="section-title">📍 Logistics & Transportation:</div>
+            <ul> 
+                <li><strong>Taxis/Rideshares:</strong> Ride to the Capitol start point, and back to the hotel after dinner.</li>
+            </ul>
+
+            <a href="https://www.google.com/maps/dir/United+States+Capitol/National+Air+and+Space+Museum/Washington+Monument/Lincoln+Memorial/The+White+House/Old+Ebbitt+Grill" target="_blank" class="map-btn">🗺️ Full Walking Route on Google Maps</a>
+            <a href="javascript:void(0)" onclick="openDcModal()" class="map-btn" style="cursor: pointer; background-color: #2c3e50;">🏛️ What's on the Mall? (Attraction Guide)</a>
+
+            <div id="dcModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeDcModal()">&times;</span>
+                    <h2>🏛️ The National Mall</h2>
+                    <p class="modal-intro">America's premier civic boulevard spanning ~3 km, lined with landmark government institutions and national monuments.</p>
+                    <div class="spot-card">
+                        <h3>🏛️ US Capitol</h3>
+                        <p>Seat of the United States Congress anchoring the eastern end of the Mall.</p>
+                        <a href="https://maps.app.goo.gl/9t7qK6H8u2XW3vQv5" target="_blank" class="mini-nav-btn">📍 Navigate to Capitol</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🚀 National Air and Space Museum</h3>
+                        <p>Home to the original Wright Flyer, Bell X-1, Apollo artifacts, and lunar rock samples.</p>
+                        <a href="https://maps.app.goo.gl/aLWPEUrh6jTtdGtD7" target="_blank" class="mini-nav-btn">📍 Navigate to Museum</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🗼 Washington Monument</h3>
+                        <p>The iconic 169 m marble obelisk honoring George Washington at the Mall's center.</p>
+                        <a href="https://maps.app.goo.gl/6mEwvW1t2Lbx1mDFA" target="_blank" class="mini-nav-btn">📍 Navigate to Monument</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🏛️ Lincoln Memorial & Reflecting Pool</h3>
+                        <p>Colossal seated statue of Abraham Lincoln overlooking the pool—site of the "I Have a Dream" speech.</p>
+                        <a href="https://maps.app.goo.gl/rVdpvGz7VwBekNqh8" target="_blank" class="mini-nav-btn">📍 Navigate to Memorial</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🇺🇸 The White House</h3>
+                        <p>Official residence and workplace of the US President. Great viewpoints from the North or South Lawn perimeter.</p>
+                        <a href="https://maps.app.goo.gl/QUFXwkewTyp9DL95A" target="_blank" class="mini-nav-btn">📍 Navigate to White House</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 3: Salt Lake City to Logan (Heading North)</h2>
+            <span class="date">Sept 5 (Sat)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">✈️ 4.5h Flight Time</span>
+                <span class="tag drive">🚗 1.5-2h Driving</span>
+                <span class="tag food">🛒 Walmart Grocery Run</span>
+                <span class="tag stay">⛺ Logan Area (or Bear Lake)</span>
+            </div>
+            <div class="section-title">📍 Schedule & Logistics:</div>
+            <ul>
+                <li><strong>Flight to Salt Lake City:</strong> Delta 432 at 07:00 AM (landing in SLC around 10:00 AM).</li>
+                <li><strong>RV Pick-Up & Stocking:</strong> Collect vehicle in Millcreek (4125 S State St), take I-15 North for a major provisioning haul at Walmart Supercenter in Layton.</li>
+                <li><strong>Drive to Logan / Bear Lake:</strong> Cruise through Logan Canyon National Scenic Byway (US-89) toward Bear Lake or overnight in Logan.</li>
+            </ul>
+            <a href="https://www.google.com/maps/place/4125+S+State+St,+Millcreek,+UT+84107" target="_blank" class="map-btn">🗺️ Navigate to RV Depot</a>
+            <a href="https://www.google.com/maps/dir/4125+S+State+St,+Millcreek/Walmart+Supercenter,+Layton/Logan,+UT" target="_blank" class="map-btn">🗺️ Route: RV Rental -> Walmart -> Logan</a>
+        </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 4: Via Bear Lake to Grand Teton</h2>
+            <span class="date">Sept 6 (Sun)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~4.5h Cumulative Drive</span>
+                <span class="tag hike">🚴 Jackson Hole Bike Park</span>
+                <span class="tag stay">⛺ Colter Bay</span>
+            </div>
+            <div class="section-title">📍 Activities & Stops:</div>
+            <ul>
+                <li><strong>Morning | Logan Canyon & Bear Lake:</strong> Mountain driving route with a stop in Garden City for a fresh raspberry shake at LaBeau's.</li>
+                <li><strong>Midday | Jackson Supplies:</strong> Quick stop in Jackson for fresh provisions. Whiskey enthusiasts can stop by <strong>Jackson Hole Still Works</strong> (craft distillery).</li>
+                <li><strong>Afternoon | Teton Village Biking:</strong> Bike rental and gondola lift up to cruise the flowy downhill green trails.</li>
+                <li><strong>Evening | Enter Grand Teton:</strong> Drive up to Colter Bay Campground to set up camp.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Logan,+UT/Garden+City,+UT/Teton+Village,+WY/Colter+Bay+Village,+WY" target="_blank" class="map-btn">🗺️ Route: Logan -> Bear Lake -> Biking -> Colter Bay</a>
+        </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 5: Grand Teton (Deep Canyon Trek)</h2>
+            <span class="date">Sept 7 (Mon)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~1.5h Driving</span>
+                <span class="tag hike">🥾 Cascade Canyon Trek (7.5-14.5 km)</span>
+                <span class="tag stay">⛺ Colter Bay</span>
+            </div>
+            <div class="section-title">📍 Trek Details & Schedule:</div>
+            <ul>
+                <li><strong>07:30 | Early Jenny Lake Arrival:</strong> Secure oversized RV parking and take the shuttle boat across the lake.</li>
+                <li><strong>🥾 Cascade Canyon Trek:</strong> 
+                    <ul>
+                        <li><strong>Profile:</strong> Classic alpine canyon trek with moderate-challenging terrain.</li>
+                        <li><strong>Distance & Timing:</strong> 7.5 km out-and-back (~3h to Inspiration Point & Canyon entrance) or up to 14.5 km deep into the canyon facing the Grand Teton spire (~5h, 350 m elevation gain).</li>
+                    </ul>
+                </li>
+                <li><strong>Afternoon | Moose Bike Ride:</strong> Cruise along the dedicated Multi-use Pathway facing the Teton Range.</li>
+                <li><strong>Evening:</strong> Return to Colter Bay Campground for campfire and BBQ.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Colter+Bay+Village/Jenny+Lake+Visitor+Center/Colter+Bay+Village" target="_blank" class="map-btn">🗺️ Route: Colter Bay to Jenny Lake & Back</a>
+        </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 6: Grand Teton to Yellowstone (Geyser Day)</h2>
+            <span class="date">Sept 8 (Tue)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~2.5h Driving</span>
+                <span class="tag hike">🌋 Observation Point & Fairy Falls (12 km total)</span>
+                <span class="tag stay">⛺ Fishing Bridge</span>
+            </div>
+            <div class="section-title">📍 Trails & Highlights:</div>
+            <ul>
+                <li><strong>Morning Stops:</strong> Moose Falls, Lewis Falls, and West Thumb Geyser Basin along Yellowstone Lake.</li>
+                <li><strong>🥾 Trail 1 | Observation Point (Old Faithful):</strong> Climb above the crowds for an elevated geyser view (1.8 km round trip, 45 min, gentle 70 m gain).</li>
+                <li><strong>🥾 Trail 2 | Grand Prismatic Overlook, Fairy Falls & Imperial Geyser:</strong>
+                    <ul>
+                        <li><strong>Distance & Duration:</strong> 10.5 km full loop (~3.5h, easy-moderate flat terrain).</li>
+                        <li><strong>Highlights:</strong> Panoramic aerial views over Grand Prismatic's turquoise waters, 60-meter Fairy Falls, and wild bubbling Imperial Geyser. Bear spray required!</li>
+                    </ul>
+                </li>
+                <li><strong>17:30 | Fishing Bridge:</strong> Check-in and hook up at the campground.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Colter+Bay+Village/Moose+Falls/Lewis+Falls/West+Thumb+Geyser+Basin/Old+Faithful" target="_blank" class="map-btn">🗺️ Morning Route: Colter Bay -> Old Faithful</a>
+            <a href="https://www.google.com/maps/dir/Old+Faithful/Fairy+Falls+Trailhead/Fishing+Bridge+RV+Park" target="_blank" class="map-btn">🗺️ Afternoon Route: Old Faithful -> Prismatic -> Fishing Bridge</a>
+        </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 7: Northern Loop (Canyons & Switchbacks)</h2>
+            <span class="date">Sept 9 (Wed)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 Split Driving Intervals</span>
+                <span class="tag hike">🥾 Brink of Lower Falls & Mammoth (6 km)</span>
+                <span class="tag stay">⛺ Fishing Bridge</span>
+                <span class="tag laundry">🧺 Campground Laundry</span>
+            </div>
+            <div class="section-title">📍 Trail Itinerary:</div>
+            <ul>
+                <li><strong>06:30 | Hayden Valley Wildlife Safari:</strong> Spotting bison herds and wolves in the morning mist.</li>
+                <li><strong>🥾 Trail 1 | Norris Geyser Basin:</strong> Boardwalk loops (~2.5 km, 1.5h) around the park's hottest and oldest thermal area.</li>
+                <li><strong>🥾 Trail 2 | Mammoth Hot Springs Terraces:</strong> Wooden boardwalk stair climb (1.5 km, 45 min) past surreal white travertine formations.</li>
+                <li><strong>🥾 Trail 3 | Brink of the Lower Falls (Grand Canyon of Yellowstone):</strong> 
+                    <ul>
+                        <li><strong>Profile:</strong> Steep switchbacks (1.2 km out-and-back, 180 m descent/ascent, 45 min workout) down to the thunderous edge of the giant falls.</li>
+                    </ul>
+                </li>
+                <li><strong>17:00 | Rest & Laundry:</strong> Return to Fishing Bridge.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Fishing+Bridge+RV+Park/Hayden+Valley/Norris+Geyser+Basin/Mammoth+Hot+Springs/Brink+of+the+Lower+Falls/Fishing+Bridge+RV+Park" target="_blank" class="map-btn">🗺️ Full Northern Loop Route</a>
+
+            <!-- Rainy Day Button -->
+            <button id="rainOptBtn" class="rain-btn" onclick="openRainModal()">
+                🌧️ Alternate Plan (Rain Contingency & Mileage Saver)
+            </button>
+
+            <!-- Rainy Day Modal -->
+            <div id="rainModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeRainModal()">&times;</span>
+                    
+                    <div class="modal-header">
+                        <h2>🌧️ Day 7 (Sept 9) – Rain Plan & Idaho Falls Realignment</h2>
+                        <p class="subtitle">Inclement weather adjustments & early park exit</p>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="alert-box">
+                            <strong>💡 Logistics Choice:</strong> Skipping the 2nd night at Fishing Bridge. Eliminates backtracking inside the park and trims tomorrow's long drive to Boise by ~3 hours.
+                        </div>
+
+                        <div class="itinerary-step">
+                            <div class="step-time">06:30 - 08:30</div>
+                            <div class="step-details">
+                                <strong>Hayden Valley Wildlife Safari:</strong>
+                                <p>Spot bison and wildlife safely from the heated RV. Ideal for foggy, rainy mornings.</p>
+                            </div>
+                        </div>
+
+                        <div class="itinerary-step">
+                            <div class="step-time">09:00 - 11:00</div>
+                            <div class="step-details">
+                                <strong>Grand Canyon of the Yellowstone (Weather Alternative):</strong>
+                                <p>Skip the slippery switchbacks at Brink of the Lower Falls. Head to paved, accessible platforms at <strong>Artist Point</strong> and <strong>Lookout Point</strong> to see the canyon safely.</p>
+                            </div>
+                        </div>
+
+                        <div class="itinerary-step">
+                            <div class="step-time">11:30 - 15:30</div>
+                            <div class="step-details">
+                                <strong>Norris & Mammoth Hot Springs:</strong>
+                                <p>Boardwalk walks at Norris Basin and travertine terraces at Mammoth. Tread carefully on wet decks.</p>
+                            </div>
+                        </div>
+
+                        <div class="itinerary-step">
+                            <div class="step-time">16:00 Onward</div>
+                            <div class="step-details">
+                                <strong>Park Exit & Advance Drive:</strong>
+                                <p>Exit through West Yellowstone and drive 2 hours west along US-20 W to sleep in <strong>Idaho Falls</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="summary-badge">
+                            🚗 <strong>Next Day Advantage:</strong> Idaho Falls to Boise is an easy 4.5h on I-84 instead of a grueling 7.5h haul from inside Yellowstone.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .rain-btn {
+                    background-color: #2c3e50;
+                    color: #ffffff;
+                    border: none;
+                    padding: 12px 20px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+                    transition: all 0.2s ease-in-out;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-family: inherit;
+                    direction: ltr;
+                    margin-top: 1rem;
+                }
+                .rain-btn:hover {
+                    background-color: #34495e;
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                }
+                .modal-overlay {
+                    display: none;
+                    position: fixed;
+                    z-index: 9999;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.65);
+                    backdrop-filter: blur(3px);
+                    align-items: center;
+                    justify-content: center;
+                    direction: ltr;
+                    font-family: inherit;
+                }
+                .modal-content {
+                    background: #ffffff;
+                    border-radius: 14px;
+                    max-width: 620px;
+                    width: 90%;
+                    max-height: 85vh;
+                    overflow-y: auto;
+                    padding: 24px;
+                    position: relative;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                    text-align: left;
+                }
+                .close-btn {
+                    position: absolute;
+                    top: 14px;
+                    right: 18px;
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #888;
+                    cursor: pointer;
+                    transition: color 0.2s;
+                }
+                .close-btn:hover { color: #111; }
+                .modal-header h2 { margin: 0 0 4px 0; font-size: 20px; color: #1e293b; }
+                .modal-header .subtitle { margin: 0 0 16px 0; font-size: 14px; color: #64748b; }
+                .alert-box {
+                    background-color: #eff6ff;
+                    border-left: 4px solid #3b82f6;
+                    padding: 12px 14px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    color: #1e40af;
+                    margin-bottom: 20px;
+                    line-height: 1.5;
+                }
+                .itinerary-step {
+                    display: flex;
+                    gap: 14px;
+                    margin-bottom: 16px;
+                    border-bottom: 1px solid #f1f5f9;
+                    padding-bottom: 12px;
+                }
+                .step-time {
+                    background-color: #f1f5f9;
+                    color: #475569;
+                    font-weight: bold;
+                    font-size: 13px;
+                    padding: 4px 8px;
+                    border-radius: 6px;
+                    height: fit-content;
+                    white-space: nowrap;
+                }
+                .step-details strong { font-size: 15px; color: #0f172a; }
+                .step-details p { margin: 4px 0 0 0; font-size: 14px; color: #334155; line-height: 1.4; }
+                .summary-badge {
+                    background-color: #ecfdf5;
+                    border: 1px solid #a7f3d0;
+                    color: #065f46;
+                    padding: 12px;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    margin-top: 15px;
+                    line-height: 1.5;
+                }
+            </style>
+
+            <script>
+                function openRainModal() {
+                    document.getElementById('rainModal').style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+                function closeRainModal() {
+                    document.getElementById('rainModal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                function closeModalOnOverlay(event) {
+                    if (event.target.id === 'rainModal') {
+                        closeRainModal();
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- Day 8 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 8: Yellowstone to Boise (Crossing Idaho) 🍎</h2>
+            <span class="date">Sept 10 (Thu)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag alert">⚠️ Drive Warning (~8h Net)</span>
+                <span class="tag hike">🏂 Bruneau Dunes (Climb & Sandboard)</span>
+                <span class="tag drink">🍷 Local Wine at Telaya Wine Co.</span>
+                <span class="tag stay">⛺ Boise Riverside RV Park</span>
+            </div>
+            <div class="section-title">📍 Trails, Dunes & Wine:</div>
+            <ul>
+                <li><strong>Potato Museum & Perrine Bridge:</strong> Roadside stops in Blackfoot and the Perrine Memorial Bridge in Twin Falls.</li>
+                <li><strong>🥾 Dune Adventure | Bruneau Dunes:</strong> Scale North America's tallest freestanding sand dune (1.5 km, 1.5h) with sandboard rentals.</li>
+                <li><strong>🍷 Telaya Wine Co. (Boise):</strong> Tasting premier Snake River Valley wines (Syrah, Cab Franc, Chardonnay) on the patio beside the Boise River Greenbelt.</li>
+                <li><strong>Evening:</strong> Dinner and live patio entertainment a few steps away at <em>The Sandbar Patio Bar & Grill</em>.</li>
+            </ul>
+            <a href="https://www.google.com/maps/dir/Fishing+Bridge+RV+Park/Idaho+Potato+Museum/Perrine+Memorial+Bridge/Bruneau+Dunes+State+Park/Boise+Riverside+RV+Park" target="_blank" class="map-btn">🗺️ Navigate Across Idaho to RV Park</a>
+            <a href="https://www.google.com/maps/dir/Boise+Riverside+RV+Park/Telaya+Wine+Co/The+Sandbar+Patio+Bar+%26+Grill" target="_blank" class="map-btn">🍷 Route: Winery & River Restaurant</a>
+        </div>
+    </div>
+
+    <!-- Day 9 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 9: Boise to Bend 🍏 (Rosh Hashanah Eve)</h2>
+            <span class="date">Sept 11 (Fri)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag time">🕰️ Timezone: Gain 1 Hour (-1)</span>
+                <span class="tag drive">🚗 6h Driving</span>
+                <span class="tag hike">🥾 Painted Hills Trails (1.5 km)</span>
+                <span class="tag stay">⛺ The Camp (Bend)</span>
+            </div>
+            <div class="section-title">📍 Activities & Route:</div>
+            <ul>
+                <li><strong>Morning Golf:</strong> Quick round at <strong>Pierce Park Greens</strong> in Boise.</li>
+                <li><strong>🥾 Painted Hills Overlook & Painted Cove:</strong> Two short, paved boardwalk strolls (1.5 km total, 45 min) through the vivid red-and-gold clay stratifications.</li>
+                <li><strong>Arrive in Bend:</strong> Check in at The Camp RV Park; optional evening high school football game at Bend Senior High School (19:00).</li>
+            </ul>
+            <a href="https://maps.app.goo.gl/xThcV3ywtvHVxZ2H9" target="_blank" class="map-btn">🗺️ Navigate to Pierce Park Greens</a>
+            <a href="https://maps.google.com/?q=Painted+Hills+Oregon" target="_blank" class="map-btn">🗺️ Navigate to Painted Hills</a>
+            <a href="https://maps.app.goo.gl/DCGC8qbnMzDejHSJ7" target="_blank" class="map-btn">🗺️ Navigate to The Camp RV Park</a>
+        </div>
+    </div>
+
+    <!-- Day 10 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 10: Bend (Hub Day) (Rosh Hashanah)</h2>
+            <span class="date">Sept 12 (Sat)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 1.5h Driving</span>
+                <span class="tag hike">🥾 Tumalo Falls Trail (3.5 km)</span>
+                <span class="tag drink">🥃 Straight Rye at Oregon Spirit</span>
+                <span class="tag stay">⛺ Bend</span>
+            </div>
+            <div class="section-title">📍 Nature, Craft & Distilleries:</div>
+            <ul>
+                <li><strong>🥾 Nature Walk | Tumalo Falls:</strong> Forest trail along the creek canyon up to the upper viewpoints and Double Falls (3.5 km round trip, 1.5h, mild elevation).</li>
+                <li><strong>🥃 Rye Whiskey Capital | Oregon Spirit Distillers:</strong> Premier craft distillery specializing in 100% Straight American Rye and bourbon aged in new charred oak. Open patio tasting room.</li>
+                <li><strong>Craft Beer & Shopping:</strong> Tax-free shopping in Old Mill District, Big Eddy river rafting, or sunset beers on the lawn at <strong>Crux Fermentation Project</strong>.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Tumalo+Falls" target="_blank" class="map-btn">🗺️ Navigate to Tumalo Falls</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="map-btn">🥃 Navigate to Oregon Spirit</a>
+            <a href="javascript:void(0)" onclick="openBendModal()" class="map-btn" style="cursor: pointer;">🏙️ Bend City Guide</a>
+            <a href="javascript:void(0)" onclick="openRaftingModal()" class="map-btn" style="cursor: pointer; background-color: #0077b6;">🚣 Big Eddy Rafting Guide</a>
+
+            <div id="bendModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeBendModal()">&times;</span>
+                    <h2>🌲 Exploring Bend, Oregon</h2>
+                    <div class="spot-card">
+                        <h3>🥃 Oregon Spirit Distillers</h3>
+                        <p><strong>Award-winning Rye:</strong> 100% Oregon grain, distilled on-site, serving curated flight tastings and cocktails.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Oregon+Spirit+Distillers+Bend" target="_blank" class="mini-nav-btn">📍 Navigate to Distillery</a>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🏭 Old Mill District</h3>
+                        <p>Tax-free shopping and dining along the Deschutes River.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🍺 Craft Breweries</h3>
+                        <p><em>Deschutes Brewery</em> downtown and <em>Crux Fermentation Project</em> with sunset lawn games.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>📼 The Last Blockbuster</h3>
+                        <p>The final operational Blockbuster video store on Earth!</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=The+Last+Blockbuster+Bend+OR" target="_blank" class="mini-nav-btn">📍 Navigate to Blockbuster</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="raftingModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeRaftingModal()">&times;</span>
+                    <h2>🚣 Big Eddy Rafting (Deschutes River)</h2>
+                    <div class="spot-card">
+                        <p><strong>Grade & Style:</strong> Class III rapids, rollers, and splashy chutes (2.5-3h total run with Sun Country Tours).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 11 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 11: Cascade Lakes Highway to Umpqua Waterfalls</h2>
+            <span class="date">Sept 13 (Sun)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~4.5h Driving</span>
+                <span class="tag hike">🌊 3 Waterfalls (3.2 km combined)</span>
+                <span class="tag stay">⛺ Diamond Lake RV Park</span>
+            </div>
+            <div class="section-title">📍 Waterfall Trail Hikes (Hwy 138):</div>
+            <ul>
+                <li><strong>Morning:</strong> Scenic route via Cascade Lakes Byway with lake panoramas at Sparks Lake and Devils Lake.</li>
+                <li><strong>🥾 Trail 1 | Toketee Falls:</strong> Enchanted old-growth forest path (1.3 km return, 40 min, 200 wooden steps) to striking columnar basalt gorges.</li>
+                <li><strong>🥾 Trail 2 | Watson Falls:</strong> Steady climb through deep woods (1.6 km return, 45 min, 90 m gain) to southern Oregon's tallest fall (83 m drop).</li>
+                <li><strong>🥾 Trail 3 | Clearwater Falls:</strong> Gentle 300-meter stroll to spring water tumbling through moss and lava rocks.</li>
+                <li><strong>Camp:</strong> Lakeside rest at Diamond Lake RV Park.</li>
+            </ul>
+            <a href="https://maps.app.goo.gl/pEZtexT9db3afZsB6" target="_blank" class="map-btn">🗺️ Navigate to Diamond Lake RV Park</a>
+        </div>
+    </div>
+
+    <!-- Day 12 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 12: Diamond Lake to Klamath Falls</h2>
+            <span class="date">Sept 14 (Mon)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~2.5h Driving</span>
+                <span class="tag hike">🏞️ Cleetwood Cove (Crater Descent - 3.5 km)</span>
+                <span class="tag stay">⛺ Klamath Falls KOA</span>
+            </div>
+            <div class="section-title">📍 Crater Lake & Springs:</div>
+            <ul>
+                <li><strong>🥾 Cleetwood Cove Trail (Crater Lake):</strong> 
+                    <ul>
+                        <li><strong>Profile:</strong> The only authorized trail accessing the shoreline of Crater Lake. Smooth descent with a steep, strenuous return climb (11% grade).</li>
+                        <li><strong>Distance & Timing:</strong> 3.5 km round trip, 215 m climb (~2 hours). Polar plunges into crystal-clear cold water encouraged!</li>
+                    </ul>
+                </li>
+                <li><strong>Rim Drive Overlooks:</strong> Phantom Ship overlook and coffee stop at Rim Village.</li>
+                <li><strong>Spring Creek & Collier Park:</strong> Dip feet into crystal clear, icy blue artisan spring streams.</li>
+                <li><strong>Evening:</strong> Settle in at Klamath Falls KOA with smoked meats at Wubba's BBQ Shack.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Cleetwood+Cove+Trailhead" target="_blank" class="map-btn">🗺️ Navigate to Cleetwood Cove</a>
+            <a href="https://maps.google.com/?q=Spring+Creek+Day+Use+Area+Chiloquin+OR" target="_blank" class="map-btn">🗺️ Navigate to Spring Creek</a>
+            <a href="https://maps.app.goo.gl/6ZK1nXXMXpicE5Xd7" target="_blank" class="map-btn">🗺️ Navigate to Klamath Falls KOA</a>
+        </div>
+    </div>
+
+    <!-- Day 13 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 13: Klamath Falls to Lassen Volcanic</h2>
+            <span class="date">Sept 15 (Tue)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~3.5h Driving</span>
+                <span class="tag hike">🌋 Burney Falls & Subway Cave (3.5 km)</span>
+                <span class="tag stay">⛺ Manzanita Lake</span>
+            </div>
+            <div class="section-title">📍 Daily Trail Breakdown:</div>
+            <ul>
+                <li><strong>🥾 Trail 1 | McArthur-Burney Falls:</strong> Shaded loop trail (2.1 km, 45 min) wrapping around spring-fed roaring falls.</li>
+                <li><strong>🥾 Trail 2 | Subway Cave:</strong> Subterranean 1 km walk through a pitch-black volcanic lava tube (warm layers and high-lumen flashlights required!).</li>
+                <li><strong>Manzanita Lake:</strong> Enter Lassen Volcanic National Park; kayak on the lake reflecting Lassen Peak or hike the flat shoreline perimeter trail (2.5 km).</li>
+            </ul>
+            <a href="https://maps.google.com/?q=McArthur-Burney+Falls+Memorial+State+Park" target="_blank" class="map-btn">🗺️ Navigate to Burney Falls</a>
+            <a href="https://maps.google.com/?q=Subway+Cave+Lava+Tubes" target="_blank" class="map-btn">🗺️ Navigate to Subway Cave</a>
+        </div>
+    </div>
+
+    <!-- Day 14 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 14: Lassen to Lake Tahoe (via Almanor & Truckee)</h2>
+            <span class="date">Sept 16 (Wed)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 4 Segments (~4.5h Net)</span>
+                <span class="tag hike">🌋 Bumpass Hell (4.8 km)</span>
+                <span class="tag drink">🥃 Whiskey at Old Tahoe Distillery</span>
+                <span class="tag stay">⛺ Camp Richardson (Tahoe)</span>
+                <span class="tag laundry">🧺 Resort Laundry</span>
+            </div>
+            <div class="section-title">📍 Volcanic Wonder, Alpine Spirits & The Lake:</div>
+            <ul>
+                <li><strong>🥾 Bumpass Hell Trail (Lassen):</strong>
+                    <ul>
+                        <li><strong>Profile:</strong> Boardwalk trail (4.8 km out-and-back, ~2 hours, 150 m elevation) traversing steaming thermal calderas, boiling mud pots, and sulfur vents.</li>
+                    </ul>
+                </li>
+                <li><strong>Sierra Midday:</strong> Drive by Lake Almanor followed by lunch in rustic Sierraville / Graeagle.</li>
+                <li><strong>🥃 Alpine Spirits in Historic Truckee:</strong> Stop in the historic logging & railway town for a local Straight Rye tasting at <strong>Old Tahoe Distillery</strong> (or regional wine at Truckee River Winery).</li>
+                <li><strong>Evening:</strong> Scenic drive down Lake Tahoe's western shore to check in at <strong>Camp Richardson Historic Resort</strong>.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Bumpass+Hell+Trailhead" target="_blank" class="map-btn">🗺️ Navigate to Bumpass Hell</a>
+            <a href="https://maps.google.com/?q=Old+Tahoe+Distillery+Truckee" target="_blank" class="map-btn">🥃 Navigate to Old Tahoe Distillery</a>
+            <a href="https://maps.google.com/?q=Camp+Richardson+Historic+Resort+and+Marina" target="_blank" class="map-btn">⛺ Navigate to Camp Richardson</a>
+        </div>
+    </div>
+
+    <!-- Day 15 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 15: Lake Tahoe to Monterey & Carmel</h2>
+            <span class="date">Sept 17 (Thu)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~5.5h Driving</span>
+                <span class="tag hike">🌊 Sunset on Carmel Beach</span>
+                <span class="tag drink">🍷 Carmel Valley Wines</span>
+                <span class="tag stay">⛺ Moss Landing KOA</span>
+            </div>
+            <div class="section-title">📍 Road Stops, Wine & Coast:</div>
+            <ul>
+                <li><strong>En-Route Stops:</strong> Round1 Arcade in Roseville and lunch at Outback Steakhouse Modesto.</li>
+                <li><strong>Monterey:</strong> Old Fisherman's Wharf, free clam chowder tastings, and viewing barking sea lions.</li>
+                <li><strong>🍷 Carmel-by-the-Sea & Tasting Rooms:</strong> Wander fairy-tale Comstock cottages and secluded courtyards along Ocean Ave, boasting over 15 boutique tasting cellars (such as <em>Galante Vineyards</em> and <em>Albatross Ridge</em>).</li>
+                <li><strong>Sunset:</strong> Watch the sunset on the white sands of Carmel Beach.</li>
+                <li><strong>Camp:</strong> Overnight at Moss Landing KOA Express.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Sunset+Cultural+Center+Carmel" target="_blank" class="map-btn" style="background-color: #d90429;">🅿️ Authorized RV Parking in Carmel</a>
+            <a href="https://maps.google.com/?q=Moss+Landing+KOA+Express" target="_blank" class="map-btn">⛺ Navigate to Moss Landing KOA</a>
+        </div>
+    </div>
+
+    <!-- Day 16 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 16: Moss Landing to Yosemite ⭐️</h2>
+            <span class="date">Sept 18 (Fri)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag hike">🐋 Whale Watching (3.5h)</span>
+                <span class="tag drive">🚗 2 Segments (~3.5h Net)</span>
+                <span class="tag stay">⛺ Thousand Trails Yosemite</span>
+                <span class="tag laundry">🧺 Night Laundry at Camp</span>
+            </div>
+            <div class="section-title">📍 Scheduled Timeline:</div>
+            <ul>
+                <li><strong>08:30 – 12:30 | Marine Whale Watch:</strong> Charter cruise into Monterey Submarine Canyon watching humpbacks and dolphins.</li>
+                <li><strong>12:30 | Lunch:</strong> Crab chowder and cioppino stew at famous <strong>Phil's Fish Market</strong>.</li>
+                <li><strong>Valley Resupply & Mountain Ascent:</strong> Provisions run at Walmart Supercenter in Los Banos before climbing into Thousand Trails Yosemite.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Moss+Landing+Boat+Hatchery+Whale+Watching" target="_blank" class="map-btn">🐋 Navigate to Whale Watching Harbor</a>
+            <a href="https://maps.google.com/?q=Thousand+Trails+Yosemite+Lakes+RV+Campground" target="_blank" class="map-btn">⛺ Navigate to Thousand Trails Yosemite</a>
+        </div>
+    </div>
+
+    <!-- Day 17 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 17: Yosemite National Park 🕯️</h2>
+            <span class="date">Sept 19 (Sat)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~2.5h Driving</span>
+                <span class="tag hike">🥾 Mist Trail & Sentinel Dome (9 km)</span>
+                <span class="tag stay">⛺ Thousand Trails Yosemite</span>
+            </div>
+            <div class="section-title">📍 Yosemite Trail Plan:</div>
+            <ul>
+                <li><strong>🥾 Trail 1 | Mist Trail (To Vernal Fall Footbridge):</strong> 
+                    <ul>
+                        <li><strong>Profile:</strong> 3.8 km round trip, ~2 hours, steady 120 m ascent along the Merced River to the roaring falls overlook.</li>
+                    </ul>
+                </li>
+                <li><strong>🥾 Trail 2 | Lower Yosemite Fall Loop:</strong> Flat, paved 1.6 km loop (30 min) to the base of the highest falls in North America.</li>
+                <li><strong>Tunnel View Vista:</strong> Classic photo stop framing El Capitan, Bridalveil Fall, and Half Dome.</li>
+                <li><strong>🥾 Trail 3 | Sentinel Dome & Glacier Point:</strong> 
+                    <ul>
+                        <li><strong>Profile:</strong> 3.5 km return (1.5h) from Glacier Point Road to the summit of the granite dome (elevation 2,470 m / 8,100 ft) for unbroken 360-degree high-country vistas. Follow with Glacier Point cliff overlook.</li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="javascript:void(0)" onclick="openYosemiteModal()" class="map-btn" style="cursor: pointer; background-color: #2b7a78;">🏔️ Yosemite Complete Trail Guide</a>
+            <a href="https://maps.google.com/?q=Curry+Village+Parking+Yosemite" target="_blank" class="map-btn">🅿️ Morning RV Parking (Curry Village)</a>
+            <a href="https://maps.google.com/?q=Sentinel+Dome+Trailhead" target="_blank" class="map-btn">🥾 Navigate to Sentinel Dome Trailhead</a>
+            <a href="https://maps.google.com/?q=Glacier+Point+Yosemite" target="_blank" class="map-btn">🗺️ Navigate to Glacier Point</a>
+
+            <div id="yosemiteModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <span class="close-modal-btn" onclick="closeYosemiteModal()">&times;</span>
+                    <h2>🏔️ Yosemite: Trail Details</h2>
+                    <div class="spot-card">
+                        <h3>🥾 Mist Trail</h3>
+                        <p><strong>3.8 km out-and-back | 2 hours | Moderate:</strong> Ascent along the Merced River up to the Vernal Fall Footbridge.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>🚶 Lower Yosemite Fall</h3>
+                        <p><strong>1.6 km loop | 30 minutes | Easy:</strong> Level forest stroll straight to the base of the falls.</p>
+                    </div>
+                    <div class="spot-card">
+                        <h3>⛰️ Sentinel Dome</h3>
+                        <p><strong>3.5 km round trip | 1.5 hours | Moderate:</strong> Granite dome ascent yielding 360-degree panoramas of Yosemite Valley and the High Sierra peaks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 18 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 18: Yosemite to Mammoth via Tioga Pass ✡️ (Yom Kippur Eve)</h2>
+            <span class="date">Sept 20 (Sun)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~2.5h Driving</span>
+                <span class="tag hike">🏞️ Mono Lake South Tufa (1.6 km)</span>
+                <span class="tag food">🧗 Coasters & Zip Lines</span>
+                <span class="tag stay">⛺ Mammoth Mountain</span>
+            </div>
+            <div class="section-title">📍 Alpine Passes & Eastern Sierra:</div>
+            <ul>
+                <li><strong>Tioga Pass:</strong> Mountain pass at 3,031 m (9,943 ft) with scenic stops at Tenaya Lake and Tuolumne Meadows.</li>
+                <li><strong>Mammoth Mountain Thrills:</strong> Alpine coaster runs and tandem zip line at Woolly's Adventure Summit.</li>
+                <li><strong>🥾 Mono Lake Reserve (South Tufa):</strong> Easy boardwalk trail (1.6 km, 40 min) through limestone tufa spires rising out of the saline waters.</li>
+                <li><strong>Yom Kippur Eve:</strong> Settle in at Mammoth Mountain RV Park for pre-fast meal and holiday start.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Tenaya+Lake+Yosemite" target="_blank" class="map-btn">💎 Navigate to Tenaya Lake</a>
+            <a href="https://maps.google.com/?q=Woolly's+Adventure+Summit+Mammoth+Lakes" target="_blank" class="map-btn" style="background-color: #d90429;">🧗 Mountain Coasters & Zip Line</a>
+            <a href="https://maps.google.com/?q=Mono+Lake+South+Tufa+Area" target="_blank" class="map-btn">🗿 Navigate to Tufa Towers (Mono Lake)</a>
+        </div>
+    </div>
+
+    <!-- Day 19 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 19: Mammoth to Lone Pine & Alabama Hills (Yom Kippur) ✡️</h2>
+            <span class="date">Sept 21 (Mon)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~2h Driving</span>
+                <span class="tag hike">🏔️ Little Lakes Valley & Mobius Arch (5 km)</span>
+                <span class="tag stay">⛺ Alabama Hills (BLM Dispersed Camping)</span>
+            </div>
+            <div class="section-title">📍 Walking Trails & Vistas:</div>
+            <ul>
+                <li><strong>Hot Creek:</strong> Geothermal canyon overlook with boiling turquoise pools and rising steam vents.</li>
+                <li><strong>🥾 Little Lakes Valley Trail:</strong>
+                    <ul>
+                        <li><strong>Profile:</strong> Trailhead begins at 3,100 m (10,300 ft) at Mosquito Flat in Rock Creek. Exceptionally gentle alpine valley trail framed by 13,000 ft granite spires.</li>
+                        <li><strong>Distance:</strong> Modular 3 to 5 km stroll (~2 hours) visiting Heart Lake, Box Lake, and Long Lake.</li>
+                    </ul>
+                </li>
+                <li><strong>🥾 Mobius Arch Loop (Alabama Hills):</strong> Flat loop trail (1 km, 30 min) framing Mt. Whitney within the natural granite rock window.</li>
+                <li><strong>Evening:</strong> Holiday concludes, celebratory meal, and dry camping under starry desert skies.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Mosquito+Flat+Trailhead+Rock+Creek" target="_blank" class="map-btn" style="background-color: #2b7a78;">🏔️ Navigate to Little Lakes Trail (Mosquito Flat)</a>
+            <a href="https://maps.google.com/?q=Mobius+Arch+Trailhead" target="_blank" class="map-btn">🪨 Navigate to Mobius Arch</a>
+            <a href="https://maps.google.com/?q=Movie+Flat+Road+Lone+Pine+CA" target="_blank" class="map-btn">🎬 Navigate to Movie Flat Rd (BLM Camping)</a>
+        </div>
+    </div>
+
+    <!-- Day 20 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 20: Lone Pine to Las Vegas</h2>
+            <span class="date">Sept 22 (Tue)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 2 Segments (~4.5h Net)</span>
+                <span class="tag hike">🛸 Aliens & Red Rock Scenic Drive</span>
+                <span class="tag stay">🏨 Las Vegas Hotel</span>
+            </div>
+            <div class="section-title">📍 Scheduled Timeline:</div>
+            <ul>
+                <li><strong>Alien Travel Center:</strong> Refreshment stop at the iconic alien-themed outpost in Amargosa Valley.</li>
+                <li><strong>Red Rock Canyon:</strong> 21 km one-way paved Scenic Drive winding past red sandstone bluffs.</li>
+                <li><strong>RV Docking & Hotel Check-in:</strong> Park RV at Oasis Las Vegas RV Resort, grab roll-aboard suitcases, and head straight to hotel check-in on the Strip.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Alien+Travel+Center+Amargosa+Valley+NV" target="_blank" class="map-btn">🛸 Navigate to Alien Travel Center</a>
+            <a href="https://maps.google.com/?q=Red+Rock+Canyon+Visitor+Center+Las+Vegas" target="_blank" class="map-btn">🏜️ Navigate to Red Rock Canyon</a>
+            <a href="https://maps.google.com/?q=Oasis+Las+Vegas+RV+Resort" target="_blank" class="map-btn">⛺ Navigate to Oasis Las Vegas RV Resort</a>
+            <a href="https://maps.app.goo.gl/5WJuN3qA7QMHFw5n8" target="_blank" class="map-btn" style="background-color: #d90429;">🏨 Direct Route to Vegas Hotel</a>
+        </div>
+    </div>
+
+    <!-- Day 21 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 21: Las Vegas (Rest & Exploration)</h2>
+            <span class="date">Sept 23 (Wed)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 0h Driving</span>
+                <span class="tag drink">🥃 Rum & Whiskey Tastings / Speakeasy</span>
+                <span class="tag stay">🏨 Las Vegas Hotel</span>
+                <span class="tag laundry">🧺 Laundry at Oasis RV</span>
+            </div>
+            <div class="section-title">📍 Distilleries, Shows & Highlights:</div>
+            <ul>
+                <li><strong>Pool & Relaxation:</strong> Leisurely morning at the hotel (or easy laundry facilities at Oasis RV).</li>
+                <li><strong>🥃 Distilleries & Speakeasies:</strong> 
+                    <ul>
+                        <li><em>Lost Spirits Distillery</em> (Area15 / Omega Mart) – Theatrical immersive rum and whiskey distillery tour.</li>
+                        <li><em>The Underground at The Mob Museum</em> – Authentic basement speakeasy serving house-distilled moonshine and craft cocktails.</li>
+                    </ul>
+                </li>
+                <li><strong>Evening:</strong> Bellagio fountains, Strip lights, and fine dining dinner.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Day 22 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 22: Las Vegas to Zion National Park 🌿</h2>
+            <span class="date">Sept 24 (Thu)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag time">🕰️ Timezone: Lose 1 Hour (+1)</span>
+                <span class="tag drive">🚗 ~3.5h Driving</span>
+                <span class="tag hike">🥾 Kanarra Falls & Emerald Pools (8 km)</span>
+                <span class="tag stay">⛺ Zion Canyon Campground</span>
+            </div>
+            <div class="section-title">📍 Canyons, Falls & Logistics:</div>
+            <ul>
+                <li><strong>Morning:</strong> Pick up RV from storage, cross into Utah (lose 1 hour), and stock up at Costco in St. George.</li>
+                <li><strong>🥾 Trail 1 | Kanarra Falls Slot Canyon:</strong> 
+                    <ul>
+                        <li><strong>Profile:</strong> 6 km round trip, ~2.5 hours, moderate. Water wading inside a vibrant red slot canyon leading to the iconic wooden ladder falls (Permits and water shoes required!).</li>
+                    </ul>
+                </li>
+                <li><strong>Check-in:</strong> Settle at Zion Canyon Campground (Springdale) and switch to the free park shuttles.</li>
+                <li><strong>🥾 Trail 2 | Lower Emerald Pools / Pa'rus Trail:</strong> 2.2 km paved loop (1h) leading under hanging weeping gardens, or an easy sunset walk along the Virgin River.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Costco+Wholesale+St+George+UT" target="_blank" class="map-btn">🛒 Navigate to Costco St. George</a>
+            <a href="https://maps.google.com/?q=Kanarra+Falls+Parking+and+Trailhead" target="_blank" class="map-btn">💧 Navigate to Kanarra Falls</a>
+            <a href="https://maps.google.com/?q=Zion+Canyon+Campground+and+RV+Resort" target="_blank" class="map-btn">⛺ Navigate to Zion Canyon Campground</a>
+        </div>
+    </div>
+
+    <!-- Day 23 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 23: Zion to Page / Lake Powell 🍋 (Sukkot Eve)</h2>
+            <span class="date">Sept 25 (Fri)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag time">🕰️ Timezone: Gain 1 Hour (-1)</span>
+                <span class="tag drive">🚗 ~2.5h Driving (UT-59 Bypass)</span>
+                <span class="tag hike">🌊 The Narrows in Zion (4-7 km in river)</span>
+                <span class="tag stay">⛺ Lone Rock Beach (Waterfront)</span>
+            </div>
+            <div class="section-title">📍 The Narrows & Drive to Page:</div>
+            <ul>
+                <li><strong>🥾 The Narrows (Bottom-Up, Zion):</strong> 
+                    <ul>
+                        <li><strong>Profile:</strong> World-famous river hike deep between towering canyon walls. Wading upstream over river rocks (moderate, trekking pole and neoprene water boots essential).</li>
+                        <li><strong>Distance:</strong> Modular 4 to 7 km return walk (3 to 3.5h) departing from Stop 9 (Temple of Sinawava).</li>
+                    </ul>
+                </li>
+                <li><strong>RV Tunnel Bypass (UT-59 / AZ-389):</strong> Standard RV-friendly bypass around the restricted Zion-Mt. Carmel Tunnel via Kanab. Regain 1 hour entering Arizona.</li>
+                <li><strong>Toadstool Hoodoos & Glen Canyon Dam:</strong> Quick roadside walk to rock hoodoos (20 min) and overlook at Glen Canyon Dam bridge.</li>
+                <li><strong>Camp:</strong> Arrive by 15:30-16:00 at Lone Rock Beach for swimming and sunset heading into Sukkot Eve (🌅 <strong>Sunset: 18:18</strong>).</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Temple+of+Sinawava+Zion" target="_blank" class="map-btn">🌊 Navigate to Narrows Shuttle Stop</a>
+            <a href="https://maps.google.com/?q=Springdale+UT+to+Page+AZ+via+UT-59+S" target="_blank" class="map-btn" style="background-color: #d90429;">🛣️ RV Bypass Route (UT-59 / US-89)</a>
+            <a href="https://maps.google.com/?q=Glen+Canyon+Dam+Overlook" target="_blank" class="map-btn">🌊 Navigate to Dam Overlook</a>
+            <a href="https://maps.google.com/?q=Lone+Rock+Beach+Campground+Lake+Powell" target="_blank" class="map-btn">⛺ Navigate to Lone Rock Beach</a>
+        </div>
+    </div>
+
+    <!-- Day 24 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 24: Page to Grand Canyon (Sukkot)</h2>
+            <span class="date">Sept 26 (Sat)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~3.5h Driving</span>
+                <span class="tag hike">🌅 Horseshoe Bend & Rim Trail (5 km)</span>
+                <span class="tag stay">⛺ Trailer Village RV Park</span>
+            </div>
+            <div class="section-title">📍 Overlooks & Rim Trails:</div>
+            <ul>
+                <li><strong>🥾 Trail 1 | Horseshoe Bend:</strong> Wide, graded pathway (2.4 km round trip, 1 hour) leading to the 300-meter sheer cliff drops above the curving Colorado River.</li>
+                <li><strong>Navajo Bridge & Lee's Ferry:</strong> Spot endangered California condors and dip feet in the cool Colorado River.</li>
+                <li><strong>Desert View Watchtower:</strong> Enter Grand Canyon via East Gate with views from the historic Mary Colter stone tower.</li>
+                <li><strong>Check-in:</strong> Settle into full-hookup sites at Trailer Village RV Park inside the park.</li>
+                <li><strong>🥾 Trail 2 | Rim Trail (Grand Canyon):</strong> Leisurely paved walk (2-3 km along the edge) between Mather Point and Yavapai Point for sunset (🌅 <strong>Sunset: 18:19</strong>).</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Horseshoe+Bend+Parking+Page+AZ" target="_blank" class="map-btn">📸 Navigate to Horseshoe Bend</a>
+            <a href="https://maps.google.com/?q=Lees+Ferry+Campground+Marble+Canyon" target="_blank" class="map-btn">🌊 Navigate to Lee's Ferry</a>
+            <a href="https://maps.google.com/?q=Desert+View+Watchtower+Grand+Canyon" target="_blank" class="map-btn">🏰 Navigate to Desert View Tower</a>
+            <a href="https://maps.google.com/?q=Trailer+Village+RV+Park+Grand+Canyon" target="_blank" class="map-btn">⛺ Navigate to Trailer Village RV Park</a>
+        </div>
+    </div>
+
+    <!-- Day 25 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 25: Grand Canyon to Lake Havasu / Parker via Route 66</h2>
+            <span class="date">Sept 27 (Sun)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~4.5h Driving</span>
+                <span class="tag hike">🎢 Canyon Coaster & Route 66</span>
+                <span class="tag stay">⛺ Lake Havasu / Parker</span>
+            </div>
+            <div class="section-title">📍 Scheduled Timeline:</div>
+            <ul>
+                <li><strong>Canyon Coaster (Williams):</strong> Ride Arizona's premier alpine mountain coaster and summer tubing slopes right on Route 66.</li>
+                <li><strong>Seligman & Hackberry:</strong> Vintage 1950s neon diners, retro road memorabilia, and classic collector cars.</li>
+                <li><strong>London Bridge (Lake Havasu):</strong> Marvel at the original 1830s London Bridge transported brick-by-brick from England.</li>
+                <li><strong>Waterfront Camp:</strong> Overnight at Lake Havasu State Park or Buckskin Mountain / Pirate Cove.</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Canyon+Coaster+Adventure+Park+Williams+AZ" target="_blank" class="map-btn" style="background-color: #d90429;">🎢 Navigate to Canyon Coaster (Williams)</a>
+            <a href="https://maps.google.com/?q=Delgadillos+Snow+Cap+Seligman+AZ" target="_blank" class="map-btn">🍔 Navigate to Seligman (Route 66)</a>
+            <a href="https://maps.google.com/?q=London+Bridge+Lake+Havasu+City+AZ" target="_blank" class="map-btn">🌉 Navigate to London Bridge</a>
+            <a href="https://maps.google.com/?q=Lake+Havasu+State+Park+Campground" target="_blank" class="map-btn">⛺ Navigate to Lake Havasu State Park</a>
+        </div>
+    </div>
+
+    <!-- Day 26 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 26: Lake Havasu to San Diego 🌊</h2>
+            <span class="date">Sept 28 (Mon)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 ~5.5h Driving (2 Segments)</span>
+                <span class="tag food">🛍️ Mega Outlets in Cabazon</span>
+                <span class="tag stay">⛺ Campland on the Bay</span>
+            </div>
+            <div class="section-title">📍 Scheduled Timeline:</div>
+            <ul>
+                <li><strong>Desert Hills Premium Outlets (Cabazon):</strong> Expansive shopping run (180+ luxury brands) with ample oversize RV parking.</li>
+                <li><strong>Arrive at the Coast:</strong> Drive south and check in at <strong>Campland on the Bay</strong> on Mission Bay for sunset (🌅 <strong>Sunset: 18:36</strong>).</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Desert+Hills+Premium+Outlets+Cabazon" target="_blank" class="map-btn" style="background-color: #d90429;">🛍️ Navigate to Cabazon Outlets</a>
+            <a href="https://maps.google.com/?q=Campland+on+the+Bay+San+Diego" target="_blank" class="map-btn">⛺ Navigate to Campland on the Bay</a>
+        </div>
+    </div>
+
+    <!-- Day 27 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 27: San Diego (Full Day)</h2>
+            <span class="date">Sept 29 (Tue)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 0h Driving</span>
+                <span class="tag hike">🐬 SeaWorld & Old Town</span>
+                <span class="tag stay">⛺ Campland on the Bay</span>
+                <span class="tag laundry">🧺 Final Laundry Run (Campland)</span>
+            </div>
+            <div class="section-title">📍 Highlights & Exploration:</div>
+            <ul>
+                <li><strong>SeaWorld San Diego:</strong> Full day exploring marine exhibits, coasters, and shows.</li>
+                <li><strong>Old Town San Diego:</strong> Evening enjoying historic Mexican ambiance, fresh handmade tortillas, and margaritas.</li>
+                <li><strong>Final Laundry:</strong> Utilize resort facilities to have clothes clean and ready for packing.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Day 28 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 28: San Diego to Los Angeles 🏁</h2>
+            <span class="date">Sept 30 (Wed)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 2.5h Driving</span>
+                <span class="tag hike">🦭 La Jolla Cove (Coast Trail - 1.5 km)</span>
+                <span class="tag stay">🚐 Return RV in Carson</span>
+            </div>
+            <div class="section-title">📍 RV Finale & Transition:</div>
+            <ul>
+                <li><strong>🥾 La Jolla Cove Coastal Walk:</strong> Short scenic cliff walk (1.5 km, 45 min) watching sea lions and harbor seals basking on rocks and beaches.</li>
+                <li>Scenic drive north along the coastal highway toward Los Angeles.</li>
+                <li>Empty holding tanks, quick interior sweep, and return RV at the rental depot in Carson.</li>
+                <li><strong>🎉 RV Road Trip Completed – LA Segment Begins!</strong></li>
+                <li><strong>Midday:</strong> Head north to check in at our rental villa in Studio City (near Universal Studios).</li>
+                <li><strong>15:30:</strong> Hollywood Walk of Fame, TCL Chinese Theatre, and Hollywood Sign viewpoint from Ovation Hollywood.</li>
+                <li><strong>18:00 – Griffith Observatory:</strong> Sunset views over the Los Angeles basin and planetarium exhibits.</li>
+            </ul>
+
+            <!-- Button for LA Modal -->
+            <button class="la-open-btn" onclick="toggleLAPopup(true)">📍 Discover Los Angeles Beaches & Highlights</button>
+
+            <!-- LA Popup Modal -->
+            <div id="laPopupModal" class="la-modal-overlay" onclick="handleLAOverlayClick(event)">
+                <div class="la-modal-content" dir="ltr">
+                    <div class="la-modal-header">
+                        <h2>🌴 Attractions, Viewpoints & Surfing Beaches in LA</h2>
+                        <button class="la-close-btn" onclick="toggleLAPopup(false)">&times;</button>
+                    </div>
+
+                    <div class="la-modal-body">
+                        <!-- Category: Surfing Beaches -->
+                        <div class="la-category-title">🏄‍♂️ Beginner Surf Beaches & Gear Rentals</div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Will Rogers State Beach / Sunset Point (Pacific Palisades)</h3>
+                                <p>Closest beach from Studio City. Direct beach parking and gentle, long-rolling waves perfect for beginners and longboarders.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Sunset+Point+Beach+Pacific+Palisades" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Sunset+Point+Beach+Pacific+Palisades" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Santa Monica Beach (Tower 26)</h3>
+                                <p>Soft sandy bottom with consistent easy waves. Multiple board rental stands like Perry's Cafe nearby.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Lifeguard+Tower+26+Santa+Monica" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Lifeguard+Tower+26+Santa+Monica" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Venice Beach Breakwater</h3>
+                                <p>Gentler break created by the stone barrier. Numerous boardwalk surf shops rent wet suits and foam boards.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Venice+Beach+Breakwater" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Venice+Beach+Breakwater" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>El Porto / Manhattan Beach</h3>
+                                <p>Legendary South Bay beach break offering consistent surf over sand bars for all skill levels.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=El+Porto+Beach+Manhattan+Beach" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=El+Porto+Beach+Manhattan+Beach" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <!-- Category: Culture & Iconic Sights -->
+                        <div class="la-category-title">🏛️ Culture & Landmarks</div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Griffith Observatory</h3>
+                                <p>Free grounds admission with sweeping views of the LA basin and Hollywood Sign.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Griffith+Observatory" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Griffith+Observatory" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Hollywood Walk of Fame</h3>
+                                <p>Walk among the coral terrazzo stars and explore the TCL Chinese Theatre forecourt.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Hollywood+Walk+of+Fame" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Hollywood+Walk+of+Fame" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Los Angeles Central Library</h3>
+                                <p>Stunning historic downtown landmark featuring grand murals, architecture, and rotating exhibits.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Los+Angeles+Central+Library" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Los+Angeles+Central+Library" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Walt Disney Concert Hall</h3>
+                                <p>Explore public outdoor gardens and the iconic curved stainless-steel architecture designed by Frank Gehry.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Walt+Disney+Concert+Hall" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Walt+Disney+Concert+Hall" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>The Broad (Downtown LA)</h3>
+                                <p>World-class contemporary art museum with free admission (timed reservation required online).</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=The+Broad+Los+Angeles" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=The+Broad+Los+Angeles" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>The Getty Center</h3>
+                                <p>Hilltop art pavilions and gardens in Brentwood offering citywide panoramas (Free admission, reservation required; paid parking).</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=The+Getty+Center" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=The+Getty+Center" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>The Getty Villa (Malibu)</h3>
+                                <p>Recreated Roman country villa dedicated to Greek, Roman, and Etruscan antiquities (Free with reservation).</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=The+Getty+Villa" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=The+Getty+Villa" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <!-- Category: Coastal & Promenades -->
+                        <div class="la-category-title">🏖️ Coastlines & Boardwalks</div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Santa Monica Pier</h3>
+                                <p>Historic wooden pier with Pacific Park amusements, street performers, and the official End of Route 66 sign.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Santa+Monica+Pier" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Santa+Monica+Pier" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Venice Beach Boardwalk</h3>
+                                <p>Famous oceanfront walkway passing Muscle Beach, skate parks, and colorful street performances.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Venice+Beach+Boardwalk" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Venice+Beach+Boardwalk" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Venice Canals Historic District</h3>
+                                <p>Tranquil walking paths along 1905 canals linked by pedestrian bridges and unique coastal architecture.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Venice+Canals+Historic+District" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Venice+Canals+Historic+District" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Manhattan Beach Pier</h3>
+                                <p>Scenic pier featuring the roundhouse aquarium at the tip (free admission).</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Manhattan+Beach+Pier" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Manhattan+Beach+Pier" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Universal CityWalk</h3>
+                                <p>Vibrant pedestrian promenade with dining, neon lights, and shopping outside the theme park (free entrance).</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Universal+CityWalk+Hollywood" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Universal+CityWalk+Hollywood" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <!-- Category: Trails & Outdoors -->
+                        <div class="la-category-title">🥾 Trails, Parks & Scenic Views</div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Lake Hollywood Park</h3>
+                                <p>Grassy park and easy walking path providing the premier close-up photo angle of the Hollywood Sign.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Lake+Hollywood+Park" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Lake+Hollywood+Park" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Runyon Canyon Park</h3>
+                                <p>Popular hiking loop in the Hollywood Hills overlooking the metro area and downtown.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Runyon+Canyon+Park" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Runyon+Canyon+Park" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Echo Park Lake</h3>
+                                <p>Charming urban oasis with lotus flower beds, walking paths, and direct views of downtown skyscrapers.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Echo+Park+Lake" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Echo+Park+Lake" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Kenneth Hahn State Recreation Area</h3>
+                                <p>Home to the famous skyline viewpoint capturing downtown LA backed by snow-capped mountains.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kenneth+Hahn+State+Recreation+Area" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Kenneth+Hahn+State+Recreation+Area" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>El Matador State Beach</h3>
+                                <p>Rugged Malibu shoreline with dramatic sea caves and natural rock arches.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=El+Matador+State+Beach" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=El+Matador+State+Beach" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <!-- Category: Historic Markets & Neighborhoods -->
+                        <div class="la-category-title">🌮 Historic Markets & Districts</div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Olvera Street</h3>
+                                <p>Historic Mexican marketplace and birthplace of modern Los Angeles, featuring live music and food stalls.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Olvera+Street+Los+Angeles" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Olvera+Street+Los+Angeles" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>The Original Farmers Market</h3>
+                                <p>Bustling outdoor food market operating since 1934, directly adjacent to The Grove.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=The+Original+Farmers+Market+Los+Angeles" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=The+Original+Farmers+Market+Los+Angeles" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+
+                        <div class="la-card">
+                            <div class="la-card-info">
+                                <h3>Point Fermin Lighthouse & Park (San Pedro)</h3>
+                                <p>Cliffside views, lush oceanfront lawns, and a historic Victorian lighthouse.</p>
+                            </div>
+                            <div class="la-nav-actions">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Point+Fermin+Park+San+Pedro" target="_blank" class="nav-btn gmaps">Google Maps</a>
+                                <a href="https://waze.com/ul?q=Point+Fermin+Park+San+Pedro" target="_blank" class="nav-btn waze">Waze</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group" style="margin-top: 1rem;">
+                <a href="https://www.google.com/maps/place/2233+E+223rd+St,+Carson,+CA+90810" target="_blank" class="map-btn">🗺️ Navigate to RV Drop-off (Carson)</a>
+                <a href="https://maps.google.com/?q=4073+Kraft+Avenue,+Los+Angeles,+CA" target="_blank" class="map-btn">🗺️ Navigate to Villa in Studio City</a>
+                <a href="https://maps.google.com/?q=Hollywood+Walk+of+Fame" target="_blank" class="map-btn">🗺️ Navigate to Walk of Fame</a>
+                <a href="https://maps.google.com/?q=Griffith+Observatory" target="_blank" class="map-btn">🗺️ Navigate to Griffith Observatory</a>
+                <a href="https://maps.google.com/?q=La+Jolla+Cove+San+Diego" target="_blank" class="map-btn">🦭 Navigate to La Jolla Cove</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 29 -->
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 29: Los Angeles (Full Day)</h2>
+            <span class="date">Oct 1 (Thu)</span>
+        </div>
+        <div class="day-content">
+            <div class="tag-group">
+                <span class="tag drive">🚗 0.5h Driving</span>
+                <span class="tag hike">🎥 Universal Studios</span>
+                <span class="tag stay">⭐⭐⭐ Hollywood</span>
+            </div>
+            <div class="section-title">📍 Highlights & Exploration:</div>
+            <ul>
+                <li><strong>Universal Studios:</strong> Full day inside Universal Studios Hollywood.</li>
+            </ul>
+            <a href="https://maps.app.goo.gl/cxkoRc8zZERwDTLX7" target="_blank" class="map-btn">🎥 Navigate to Universal Studios</a>
+            <a href="https://maps.app.goo.gl/ABRTrFfpomr1MVTC7" target="_blank" class="map-btn">⭐⭐⭐ Navigate to Hollywood Walk of Fame</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .la-open-btn {
+        background-color: #0d9488;
+        color: #ffffff;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.2s ease;
+        font-family: inherit;
+        margin-top: 1rem;
+    }
+    .la-open-btn:hover {
+        background-color: #0f766e;
+        transform: translateY(-2px);
+    }
+    .la-modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.65);
+        z-index: 99999;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .la-modal-content {
+        background: #ffffff;
+        width: 100%;
+        max-width: 820px;
+        max-height: 88vh;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        animation: laFadeIn 0.25s ease-out;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    @keyframes laFadeIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .la-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 24px;
+        background-color: #f8fafc;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    .la-modal-header h2 {
+        margin: 0;
+        font-size: 20px;
+        color: #0f172a;
+        font-weight: 700;
+    }
+    .la-close-btn {
+        background: transparent;
+        border: none;
+        font-size: 28px;
+        color: #64748b;
+        cursor: pointer;
+        line-height: 1;
+        padding: 0 6px;
+    }
+    .la-close-btn:hover { color: #0f172a; }
+    .la-modal-body {
+        padding: 20px 24px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .la-category-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: #0f766e;
+        margin-top: 14px;
+        margin-bottom: 4px;
+        padding-bottom: 4px;
+        border-bottom: 2px solid #ccfbf1;
+    }
+    .la-category-title:first-child { margin-top: 0; }
+    .la-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 14px 16px;
+        gap: 16px;
+        transition: border-color 0.2s;
+    }
+    .la-card:hover {
+        border-color: #cbd5e1;
+        background-color: #fcfcfc;
+    }
+    .la-card-info { flex: 1; }
+    .la-card-info h3 {
+        margin: 0 0 4px 0;
+        font-size: 15px;
+        font-weight: 600;
+        color: #1e293b;
+    }
+    .la-card-info p {
+        margin: 0;
+        font-size: 13.5px;
+        color: #64748b;
+        line-height: 1.45;
+    }
+    .la-nav-actions {
+        display: flex;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+    .nav-btn {
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 6px;
+        transition: opacity 0.2s;
+        display: inline-flex;
+        align-items: center;
+    }
+    .nav-btn:hover { opacity: 0.88; }
+    .nav-btn.gmaps { background-color: #ea4335; color: #ffffff; }
+    .nav-btn.waze { background-color: #33ccff; color: #083344; }
+
+    @media (max-width: 640px) {
+        .la-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .la-nav-actions {
+            width: 100%;
+            justify-content: flex-start;
+        }
+    }
+</style>
+
+<script>
+    function toggleLAPopup(show) {
+        const modal = document.getElementById('laPopupModal');
+        if (modal) {
+            modal.style.display = show ? 'flex' : 'none';
+            document.body.style.overflow = show ? 'hidden' : '';
+        }
+    }
+    function handleLAOverlayClick(event) {
+        if (event.target.id === 'laPopupModal') {
+            toggleLAPopup(false);
+        }
+    }
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            toggleLAPopup(false);
+        }
+    });
+
+    function openDcModal() { document.getElementById('dcModal').style.display = 'block'; }
+    function closeDcModal() { document.getElementById('dcModal').style.display = 'none'; }
+    function openBendModal() { document.getElementById('bendModal').style.display = 'block'; }
+    function closeBendModal() { document.getElementById('bendModal').style.display = 'none'; }
+    function openRaftingModal() { document.getElementById('raftingModal').style.display = 'block'; }
+    function closeRaftingModal() { document.getElementById('raftingModal').style.display = 'none'; }
+    function openYosemiteModal() { document.getElementById('yosemiteModal').style.display = 'block'; }
+    function closeYosemiteModal() { document.getElementById('yosemiteModal').style.display = 'none'; }
+
+    window.addEventListener('click', function(event) {
+        var modals = ['dcModal', 'bendModal', 'raftingModal', 'yosemiteModal'];
+        modals.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el && event.target === el) {
+                el.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
